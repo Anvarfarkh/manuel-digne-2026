@@ -1,0 +1,37 @@
+MANUEL DE PRÉPARATION AU STAGE ALPIN — VERSION WEB
+==================================================
+
+CONTENU DU DOSSIER
+  index.html            la page complète du manuel
+  assets/media/         images
+  assets/vid/           animations (ex-GIF, converties en vidéo)
+  assets/poster/        images d'attente des animations
+  assets/models/        les 3 modèles 3D de failles (.glb)
+  assets/js/            bibliothèque d'affichage 3D (locale, pas de CDN)
+
+POUR TESTER
+  Ouvrir index.html dans un navigateur.
+  Les modèles 3D ont besoin d'un vrai serveur pour se charger : en local,
+  lancer dans ce dossier
+      python3 -m http.server 8000
+  puis ouvrir http://localhost:8000
+  (Une fois le dossier mis en ligne, cela fonctionne directement.)
+
+POUR PUBLIER
+  Aller sur https://app.netlify.com/drop et glisser CE DOSSIER ENTIER
+  sur la page. Un lien public est créé en quelques secondes.
+  Alternatives : GitHub Pages, ou l'espace web de l'université.
+
+LIEN DE TÉLÉCHARGEMENT WORD
+  La page contient deux liens vers la version Word. Pour les activer,
+  copier le fichier .docx dans ce dossier en le nommant exactement :
+      M1_GEOSEN_stage_Digne_2026.docx
+  Sinon, supprimer les deux liens dans index.html (chercher "download").
+
+NOTES
+  - Les 11 GIF animés sont devenus des MP4 : 61 Mo → 5,6 Mo, sans perte visible.
+  - Les 3 modèles 3D de Word (faille normale, inverse, décrochante) sont
+    réintégrés et animés ; ils se manipulent à la souris ou au doigt.
+    Ils ne fonctionnaient ni en PDF ni dans l'export HTML de Word.
+  - Tout est en chargement différé : un téléphone ne télécharge que ce
+    qui est affiché à l'écran.

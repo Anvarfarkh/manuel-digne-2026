@@ -1,0 +1,2422 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manuel de préparation au stage alpin — Digne-les-Bains 2026</title>
+<meta name="description" content="Manuel de préparation au stage de terrain géologique, Master GEOSEN, CY Cergy Paris Université. Digne-les-Bains 2026.">
+<style>:root{
+  --paper:#EEEFEA;
+  --paper-2:#E5E7E0;
+  --ink:#191D1B;
+  --slate:#55605B;
+  --rule:#CDD0C8;
+  --accent:#0E5B4C;
+  --ochre:#8A6520;
+  --rail-w:288px;
+  --serif:Charter,"Bitstream Charter","Iowan Old Style","Sitka Text",Georgia,"Times New Roman",serif;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:1.0625rem;
+  line-height:1.66;
+  text-rendering:optimizeLegibility;
+}
+
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:1rem;top:1rem;z-index:99;background:var(--ink);color:var(--paper);padding:.6rem 1rem;border-radius:2px}
+
+/* ---------------------------------------------------------------- layout */
+.shell{display:flex;align-items:flex-start;gap:0}
+
+main{
+  flex:1 1 auto;
+  min-width:0;
+  max-width:74ch;
+  margin:0 auto;
+  padding:4.5rem 1.75rem 7rem;
+}
+
+/* ------------------------------------------------- rail / stratigraphy */
+.rail{
+  position:sticky;
+  top:0;
+  flex:0 0 var(--rail-w);
+  width:var(--rail-w);
+  height:100vh;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  padding:2.25rem 1.25rem 2.5rem 1.75rem;
+  background:var(--paper-2);
+  border-right:1px solid var(--rule);
+  font-family:var(--sans);
+  font-size:.8125rem;
+  line-height:1.4;
+}
+.rail-head{margin-bottom:1.75rem}
+.rail-title{margin:0;font-family:var(--serif);font-size:1.0625rem;font-weight:600;letter-spacing:-.01em}
+.rail-sub{margin:.15rem 0 0;color:var(--slate);font-size:.75rem}
+
+.toc ol{list-style:none;margin:0;padding:0}
+.toc a{
+  display:block;
+  padding:.28rem .5rem .28rem .7rem;
+  color:var(--slate);
+  text-decoration:none;
+  border-left:2px solid transparent;
+  border-radius:0 2px 2px 0;
+}
+.toc a:hover{color:var(--ink);background:rgba(0,0,0,.035)}
+.toc a.current{color:var(--accent);border-left-color:var(--accent);background:rgba(14,91,76,.06);font-weight:600}
+
+/* each top-level part reads as a band in a stratigraphic column */
+.toc > ol > li.part{margin:0 0 1.1rem;border-left:3px solid var(--rule);padding-left:.1rem}
+.toc > ol > li.part > a{color:var(--ink);font-weight:600;font-size:.875rem;padding-left:.65rem}
+.toc li.part > ol{margin:.15rem 0 0}
+.toc li.chapter a{padding-left:1.35rem;font-variant-numeric:tabular-nums}
+.toc li.sub a{padding-left:2.1rem;font-size:.78125rem;color:#6C7671}
+
+.rail-foot{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.78125rem}
+.rail-foot a{color:var(--accent)}
+
+.nav-toggle{
+  display:none;
+  position:fixed;top:.75rem;left:.75rem;z-index:40;
+  font-family:var(--sans);font-size:.8125rem;
+  padding:.5rem .85rem;
+  background:var(--ink);color:var(--paper);
+  border:0;border-radius:3px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.35);
+}
+
+/* ------------------------------------------------------------ headings */
+h1,h2,h3,h4{line-height:1.22;letter-spacing:-.012em;scroll-margin-top:1.5rem}
+h1{
+  font-size:1.75rem;font-weight:600;
+  margin:3.5rem 0 1rem;
+  padding-bottom:.4rem;
+  border-bottom:1px solid var(--rule);
+}
+main > h1:first-of-type{margin-top:0}
+h2{font-size:1.3125rem;font-weight:600;margin:2.5rem 0 .7rem}
+h3{font-size:1.0625rem;font-weight:600;margin:1.9rem 0 .5rem;color:#2E3733}
+
+p{margin:0 0 1.05rem}
+strong{font-weight:600}
+ul,ol{margin:0 0 1.15rem;padding-left:1.4rem}
+li{margin:.3rem 0}
+
+a{color:var(--accent);text-underline-offset:.16em;text-decoration-thickness:.06em}
+a:hover{color:#0A4438}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* -------------------------------------------------------------- media */
+.fig{margin:1.9rem 0;padding:0}
+.fig img,.fig video{
+  display:block;
+  max-width:100%;
+  height:auto;
+  border-radius:2px;
+  background:var(--paper-2);
+}
+.fig video{box-shadow:0 0 0 1px var(--rule)}
+
+/* ----------------------------------------------------------- 3D models */
+.model{
+  margin:2.25rem 0;
+  padding:0;
+  border:1px solid var(--rule);
+  border-radius:3px;
+  background:linear-gradient(180deg,#F5F6F2,#E7E9E2);
+  overflow:hidden;
+}
+.model model-viewer{
+  display:block;
+  width:100%;
+  height:min(60vh,420px);
+  background:transparent;
+  --poster-color:transparent;
+}
+.model figcaption{
+  font-family:var(--sans);
+  font-size:.8125rem;
+  line-height:1.5;
+  color:var(--slate);
+  padding:.75rem .95rem .85rem;
+  border-top:1px solid var(--rule);
+  background:rgba(255,255,255,.5);
+}
+.model figcaption b{color:var(--ink)}
+.hint{display:block;margin-top:.3rem;font-size:.75rem;color:#78827D}
+
+/* ------------------------------------------------------------ callouts */
+.callout-head{
+  margin-top:2rem;
+  padding-left:.85rem;
+  border-left:3px solid var(--ochre);
+  color:var(--ochre);
+  font-family:var(--sans);
+  font-size:.9375rem;
+}
+
+/* ---------------------------------------------------------------- misc */
+table{border-collapse:collapse;width:100%;margin:1.6rem 0;font-size:.9375rem}
+th,td{border:1px solid var(--rule);padding:.5rem .6rem;text-align:left;vertical-align:top}
+th{background:var(--paper-2);font-weight:600}
+
+.doc-foot{
+  margin-top:5rem;padding-top:1.5rem;
+  border-top:1px solid var(--rule);
+  font-family:var(--sans);font-size:.8125rem;color:var(--slate);
+}
+.doc-foot p{margin:.25rem 0}
+
+/* --------------------------------------------------------- responsive */
+@media (max-width:900px){
+  .nav-toggle{display:block}
+  .rail{
+    position:fixed;z-index:35;left:0;top:0;
+    transform:translateX(-100%);
+    transition:transform .22s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.18);
+  }
+  .rail.open{transform:translateX(0)}
+  main{padding:4.25rem 1.15rem 5rem;max-width:none}
+  h1{font-size:1.5rem}
+  h2{font-size:1.1875rem}
+  .fig img,.fig video{width:100% !important}
+  .model model-viewer{height:min(52vh,340px)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+}
+
+@media print{
+  .rail,.nav-toggle{display:none}
+  main{max-width:none;padding:0}
+  body{background:#fff}
+}
+
+/* ------------------------------------------------------------ title page */
+.titlepage{margin-bottom:1rem}
+.titlepage .fig{margin:0 0 2rem}
+.titlepage p:nth-of-type(1) strong{
+  display:block;
+  font-size:2rem;
+  font-weight:600;
+  line-height:1.15;
+  letter-spacing:-.02em;
+  margin-bottom:.35rem;
+}
+.titlepage p:nth-of-type(1){margin-bottom:.5rem}
+.titlepage p:nth-of-type(2),
+.titlepage p:nth-of-type(3){color:var(--slate);margin-bottom:.3rem}
+.titlepage p:nth-of-type(4){
+  color:var(--slate);font-size:.9375rem;
+  padding-bottom:1.5rem;margin-bottom:2rem;
+  border-bottom:1px solid var(--rule);
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<button class="nav-toggle" aria-expanded="false" aria-controls="sommaire">Sommaire</button>
+
+<div class="shell">
+  <aside id="sommaire" class="rail">
+    <div class="rail-head">
+      <p class="rail-title">Manuel de terrain</p>
+      <p class="rail-sub">Digne-les-Bains 2026</p>
+    </div>
+    <nav class="toc" aria-label="Sommaire"><ol>
+<li class="part"><a href="#objectif-de-ce-manuel">Objectif de ce manuel</a><ol>
+</ol></li>
+<li class="part"><a href="#fondamentaux-de-g-ologie">Fondamentaux de géologie</a><ol>
+<li class="chapter"><a href="#1-1-structure-interne-de-la-terre">1.1 Structure interne de la Terre</a></li>
+<li class="chapter"><a href="#1-2-roches-et-min-raux">1.2 Roches et minéraux</a></li>
+<li class="chapter"><a href="#1-3-les-trois-familles-de-roches">1.3 Les trois familles de roches</a></li>
+<li class="chapter"><a href="#1-4-contextes-g-odynamiques">1.4 Contextes géodynamiques</a></li>
+</ol></li>
+<li class="part"><a href="#syst-mes-s-dimentaires">Systèmes sédimentaires</a><ol>
+<li class="chapter"><a href="#2-1-faci-s-et-reconnaissance-des-roches-s-dimentaires">2.1 Faciès et reconnaissance des roches sédimentaires</a></li>
+<li class="sub"><a href="#le-principe-d-actualisme">Le principe d&#x27;actualisme</a></li>
+<li class="sub"><a href="#la-notion-de-faci-s-s-dimentaire">La notion de faciès sédimentaire</a></li>
+<li class="sub"><a href="#les-carbonates">Les carbonates</a></li>
+<li class="sub"><a href="#les-roches-silico-d-tritiques">Les roches silico-détritiques</a></li>
+<li class="sub"><a href="#les-vaporites">Les évaporites</a></li>
+<li class="chapter"><a href="#2-2-transport-et-structures-s-dimentaires">2.2 Transport et structures sédimentaires</a></li>
+<li class="sub"><a href="#la-nature-des-courants">La nature des courants</a></li>
+<li class="sub"><a href="#les-modes-de-transport">Les modes de transport</a></li>
+<li class="sub"><a href="#le-diagramme-de-hjulstr-m">Le diagramme de Hjulström</a></li>
+<li class="sub"><a href="#les-structures-s-dimentaires">Les structures sédimentaires</a></li>
+<li class="sub"><a href="#les-figures-de-courant-unidirectionnel">Les figures de courant unidirectionnel</a></li>
+<li class="sub"><a href="#les-figures-de-courant-oscillatoire">Les figures de courant oscillatoire</a></li>
+<li class="sub"><a href="#les-autres-figures-s-dimentaires">Les autres figures sédimentaires</a></li>
+<li class="chapter"><a href="#2-3-les-milieux-de-d-p-t">2.3 Les milieux de dépôt</a></li>
+<li class="sub"><a href="#le-milieu-continental">Le milieu continental</a></li>
+<li class="sub"><a href="#le-milieu-marin-peu-profond-plateforme">Le milieu marin peu profond (plateforme)</a></li>
+<li class="sub"><a href="#le-milieu-de-bassin-profond-h-mip-lagique-et-p-lagique">Le milieu de bassin profond (hémipélagique et pélagique)</a></li>
+</ol></li>
+<li class="part"><a href="#structures-tectoniques">Structures tectoniques</a><ol>
+<li class="chapter"><a href="#3-1-types-de-failles">3.1 Types de failles</a></li>
+<li class="chapter"><a href="#3-2-types-de-plis">3.2 Types de plis</a></li>
+<li class="chapter"><a href="#3-3-nappes-de-charriage-et-fen-tres-tectoniques">3.3 Nappes de charriage et fenêtres tectoniques</a></li>
+<li class="chapter"><a href="#3-4-discordances">3.4 Discordances</a></li>
+</ol></li>
+<li class="part"><a href="#g-ologie-alpine">Géologie alpine</a><ol>
+<li class="chapter"><a href="#4-1-formation-des-alpes-du-trias-aujourd-hui">4.1 Formation des Alpes – du Trias à aujourd&#x27;hui</a></li>
+</ol></li>
+<li class="part"><a href="#cartographie-de-terrain">Cartographie de terrain</a><ol>
+<li class="chapter"><a href="#5-1-organiser-une-campagne-de-cartographie-de-terrain">5.1 Organiser une campagne de cartographie de terrain</a></li>
+<li class="chapter"><a href="#5-2-tenir-un-carnet-de-terrain">5.2 Tenir un carnet de terrain</a></li>
+<li class="chapter"><a href="#5-3-mesurer-les-structures-avec-une-boussole-clinom-tre">5.3 Mesurer les structures avec une boussole-clinomètre</a></li>
+<li class="chapter"><a href="#5-4-fieldmove-clino-carnet-de-terrain-num-rique">5.4 FieldMove Clino – carnet de terrain numérique</a></li>
+<li class="chapter"><a href="#5-5-de-la-minute-de-terrain-la-carte-g-ologique">5.5 De la minute de terrain à la carte géologique</a></li>
+<li class="chapter"><a href="#5-6-la-carte-g-ologique">5.6 La carte géologique</a></li>
+<li class="chapter"><a href="#5-7-les-coupes-g-ologiques">5.7 Les coupes géologiques</a></li>
+</ol></li>
+</ol></nav>
+    <p class="rail-foot"><a href="M1_GEOSEN_stage_Digne_2026.docx" download>Télécharger la version Word</a></p>
+  </aside>
+
+  <main id="contenu">
+    <header class="titlepage"><figure class="fig"><img src="assets/media/image1.jpeg" loading="lazy" decoding="async" alt="" style="width:796px"></figure>
+<p><strong>Manuel de préparation au stage alpin</strong></p>
+<p>Stage de terrain géologique – Digne-les-Bains 2026</p>
+<p>Anvar FARKHUTDINOV, Benjamin HEUDES, Geoffroy MOHN</p>
+<p><em>Fondamentaux · Systèmes sédimentaires · Structures tectoniques · Géologie alpine· Cartographie de terrain</em></p>
+<p><strong>Bienvenue</strong></p>
+<p>Bienvenue dans le Master GEOSEN de CY Cergy Paris Université !</p>
+<p>Que tu arrives d’une licence de géologie ou d’une autre discipline scientifique, nous sommes heureux de t’accueillir dans cette formation.</p>
+<p>Dès le mois de septembre, avant même que les cours magistraux ne débutent, tu partiras en stage de terrain géologique dans les Alpes françaises. C’est une chance rare : aller directement sur le terrain, lire les roches, mesurer les structures, cartographier. Mais c’est aussi un défi : ce stage suppose un socle de connaissances commun que tous les étudiants ne possèdent pas forcément au même niveau.</p>
+<p>C’est précisément pour cela que ce manuel existe.</p>
+</header>
+    <h1 id="objectif-de-ce-manuel">Objectif de ce manuel</h1>
+<p>Il s’adresse à tout le monde, quel que soit ton parcours. Si tu es géologue de formation, tu y trouveras une remise à niveau rapide et des références utiles pour le terrain. Si tu viens d’une autre spécialité, il te donnera toutes les clés pour aborder le stage dans les meilleures conditions. Tu peux lire ce manuel du début à la fin, ou sauter les parties que tu maîtrises déjà. Il n’y a pas d’ordre imposé.</p>
+<p><strong>Comment utiliser ce manuel</strong></p>
+<p>Ce manuel est organisé en cinq parties progressives. Chaque partie est autonome : tu peux les lire dans l’ordre, ou aller directement à celles dont tu as besoin.</p>
+<table>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Partie</strong></th>
+<th><strong>Thèmes abordés</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Partie 1 – Fondamentaux de géologie</strong></td>
+<td>Structure de la Terre · Roches et minéraux · Familles de roches · Contextes géodynamiques</td>
+</tr>
+<tr class="even">
+<td><strong>Partie 2 – Systèmes sédimentaires</strong></td>
+<td>Faciès · Reconnaissance des roches sédimentaires · Transport et structures sédimentaires stratigraphique · Milieux de dépôt</td>
+</tr>
+<tr class="odd">
+<td><strong>Partie 3 – Structures tectoniques</strong></td>
+<td>Types de failles · Types de plis · Discordances · Nappes de charriage · Fenêtres tectoniques</td>
+</tr>
+<tr class="even">
+<td><strong>Partie 4 – Géologie alpine</strong></td>
+<td>Formation des Alpes (rift → subduction → collision)</td>
+</tr>
+<tr class="odd">
+<td><strong>Partie 5 – Cartographie de terrain</strong></td>
+<td>Carnet de terrain · Boussole-clinomètre · FieldMove Clino / carte / coupes</td>
+</tr>
+</tbody>
+</table>
+<figure class="fig"><img src="assets/media/image2.png" loading="lazy" decoding="async" alt="Podium" style="width:96px"></figure><strong>Le quiz de préparation</strong></p>
+<p>Pour vérifier que tu es prêt(e) à tirer le meilleur parti du stage,</p>
+<p>un quiz (33 questions) t’est proposé. Il couvre l’ensemble</p>
+<p>des cinq parties de ce manuel.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Quiz de préparation – mode d’emploi</strong></p>
+<ul>
+<li><p><strong>Seuil recommandé :</strong> Le seuil recommandé est de 28 bonnes réponses sur 33.</p></li>
+<li><p>Tu peux passer le quiz avant de lire le manuel (pour évaluer ton niveau de départ), après (pour valider tes acquis), ou les deux. Tu peux le repasser autant de fois que tu le souhaites. Il n’y a pas de piège : toutes les réponses se trouvent dans ce manuel.</p></li>
+</ul>
+<blockquote>
+<p>Accéder au quiz → [<a href="https://ahaslides.com/RBU73">QUIZ</a>]</p>
+</blockquote></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><figure class="fig"><img src="assets/media/image4.png" loading="lazy" decoding="async" alt="Checklist" style="width:96px"></figure><strong>Passeport de compétences – Stage Digne 2026</strong></p>
+<p><em>Ce passeport est donné à titre informatif. Il décrit les compétences que le stage lui-même te permettra d’acquérir – pas ce que tu dois savoir avant de partir. L’avoir sous les yeux dès maintenant te donne simplement une vision claire de là où tu vas.</em></p>
+<table>
+<colgroup>
+<col style="width: 87%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Compétence</strong></th>
+<th><strong>Acquise</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td colspan="2"><strong>Gestes techniques</strong></td>
+</tr>
+<tr class="even">
+<td>Je sais m’orienter sur le terrain avec une boussole et une carte topographique</td>
+<td>☐</td>
+</tr>
+<tr class="odd">
+<td>Je sais mesurer et reporter sur la carte le pendage et la direction de pendage</td>
+<td>☐</td>
+</tr>
+<tr class="even">
+<td>Je sais décrire un affleurement, en faire l’esquisse et prélever un échantillon de roche</td>
+<td>☐</td>
+</tr>
+<tr class="odd">
+<td>Je sais distinguer les principales roches rencontrées sur le terrain (calcaire, grès, dolomie, gypse, etc.)</td>
+<td>☐</td>
+</tr>
+<tr class="even">
+<td>Je sais distinguer les principaux minéraux rencontrés sur le terrain (quartz, calcite, dolomite, etc.)</td>
+<td>☐</td>
+</tr>
+<tr class="odd">
+<td>Je sais réaliser un panorama avec une interprétation géologique</td>
+<td>☐</td>
+</tr>
+<tr class="even">
+<td>Je sais construire un log stratigraphique</td>
+<td>☐</td>
+</tr>
+<tr class="odd">
+<td>Je sais construire une coupe géologique et un profil topographique</td>
+<td>☐</td>
+</tr>
+<tr class="even">
+<td colspan="2"><strong>Savoirs disciplinaires</strong></td>
+</tr>
+<tr class="odd">
+<td>Je comprends la stratigraphie, la tectonique et l’histoire géologique de la demi-fenêtre de Digne</td>
+<td>☐</td>
+</tr>
+<tr class="even">
+<td>Je comprends les grandes lignes de la stratigraphie, la tectonique et l’histoire géologique de la zone subalpine (Bourg-d’Oisans)</td>
+<td>☐</td>
+</tr>
+<tr class="odd">
+<td>Je connais la géologie des Alpes dans les grandes lignes</td>
+<td>☐</td>
+</tr>
+<tr class="even">
+<td colspan="2"><strong>Production et présentation</strong></td>
+</tr>
+<tr class="odd">
+<td>Je sais créer une carte géologique basée sur mes mesures sur une minute de terrain et dans QGIS</td>
+<td>☐</td>
+</tr>
+<tr class="even">
+<td>Je sais présenter oralement mon terrain devant un groupe</td>
+<td>☐</td>
+</tr>
+<tr class="odd">
+<td>Je sais rédiger un rapport scientifique de terrain</td>
+<td>☐</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table des matières</strong></p>
+<p><a href="#objectif-de-ce-manuel">Objectif de ce manuel <span>1</span></a></p>
+<p><a href="#fondamentaux-de-géologie">Fondamentaux de géologie <span>5</span></a></p>
+<p><a href="#structure-interne-de-la-terre">1.1 Structure interne de la Terre <span>5</span></a></p>
+<p><a href="#roches-et-minéraux">1.2 Roches et minéraux <span>7</span></a></p>
+<p><a href="#les-trois-familles-de-roches">1.3 Les trois familles de roches <span>7</span></a></p>
+<p><a href="#section-21">1.4 Contextes géodynamiques <span>11</span></a></p>
+<p><a href="#systèmes-sédimentaires">Systèmes sédimentaires <span>16</span></a></p>
+<p><a href="#faciès-et-reconnaissance-des-roches-sédimentaires">2.1 Faciès et reconnaissance des roches sédimentaires <span>16</span></a></p>
+<p><a href="#la-notion-de-faciès-sédimentaire">La notion de faciès sédimentaire <span>16</span></a></p>
+<p><a href="#les-carbonates">Les carbonates <span>18</span></a></p>
+<p><a href="#section-23">Les roches silico-détritiques <span>20</span></a></p>
+<p><a href="#les-évaporites">Les évaporites <span>22</span></a></p>
+<p><a href="#transport-et-structures-sédimentaires">2.2 Transport et structures sédimentaires <span>23</span></a></p>
+<p><a href="#la-nature-des-courants">La nature des courants <span>23</span></a></p>
+<p><a href="#les-modes-de-transport">Les modes de transport <span>24</span></a></p>
+<p><a href="#_Toc238552041">Les structures sédimentaires <span>25</span></a></p>
+<p><a href="#les-figures-de-courant-unidirectionnel">Les figures de courant unidirectionnel <span>26</span></a></p>
+<p><a href="#les-figures-de-courant-oscillatoire">Les figures de courant oscillatoire <span>28</span></a></p>
+<p><a href="#les-autres-figures-sédimentaires">Les autres figures sédimentaires <span>29</span></a></p>
+<p><a href="#les-milieux-de-dépôt">2.3 Les milieux de dépôt <span>36</span></a></p>
+<p><a href="#le-milieu-continental">Le milieu continental <span>36</span></a></p>
+<p><a href="#le-milieu-marin-peu-profond-plateforme">Le milieu marin peu profond (plateforme) <span>40</span></a></p>
+<p><a href="#le-milieu-de-bassin-profond-hémipélagique-et-pélagique">Le milieu de bassin profond (hémipélagique et pélagique) <span>42</span></a></p>
+<p><a href="#structures-tectoniques">Structures tectoniques <span>45</span></a></p>
+<p><a href="#types-de-failles">3.1 Types de failles <span>45</span></a></p>
+<p><a href="#types-de-plis">3.2 Types de plis <span>48</span></a></p>
+<p><a href="#nappes-de-charriage-et-fenêtres-tectoniques">3.3 Nappes de charriage et fenêtres tectoniques <span>52</span></a></p>
+<p><a href="#discordances">3.4 Discordances <span>54</span></a></p>
+<p><a href="#géologie-alpine">Géologie alpine <span>57</span></a></p>
+<p><a href="#formation-des-alpes-du-trias-à-aujourdhui">4.1 Formation des Alpes – du Trias à aujourd'hui <span>57</span></a></p>
+<p><a href="#cartographie-de-terrain">Cartographie de terrain <span>61</span></a></p>
+<p><a href="#organiser-une-campagne-de-cartographie-de-terrain">5.1 Organiser une campagne de cartographie de terrain <span>61</span></a></p>
+<p><a href="#tenir-un-carnet-de-terrain">5.2 Tenir un carnet de terrain <span>62</span></a></p>
+<p><a href="#mesurer-les-structures-avec-une-boussole-clinomètre">5.3 Mesurer les structures avec une boussole-clinomètre <span>64</span></a></p>
+<p><a href="#fieldmove-clino-carnet-de-terrain-numérique">5.4 FieldMove Clino – carnet de terrain numérique <span>66</span></a></p>
+<p><a href="#de-la-minute-de-terrain-à-la-carte-géologique">5.5 De la minute de terrain à la carte géologique <span>68</span></a></p>
+<p><a href="#la-carte-géologique">5.6 La carte géologique <span>70</span></a></p>
+<p><a href="#les-coupes-géologiques">5.7 Les coupes géologiques <span>71</span></a></p>
+
+
+
+
+
+
+
+
+<p><figure class="fig"><img src="assets/media/image6.png" loading="lazy" decoding="async" alt="Climbing" style="width:66px"></figure><strong>PARTIE 1</strong></p>
+<h1 id="fondamentaux-de-g-ologie">Fondamentaux de géologie</h1>
+<p><em><u>Ce premier chapitre pose les bases indispensables à tout travail de terrain géologique. Si tu viens d'une autre discipline ou si tu as besoin d'une remise à niveau rapide, c'est ici que tout commence. Ces notions seront mobilisées en permanence pendant le stage : ne passe pas à la suite sans les avoir bien assimilées.</u></em></p>
+<h1 id="1-1-structure-interne-de-la-terre">1.1 Structure interne de la Terre</h1>
+<p>La Terre n'est pas un bloc homogène. Elle est organisée en enveloppes concentriques dont les propriétés physiques et chimiques varient considérablement. Comprendre cette organisation est essentiel pour saisir pourquoi et comment les roches que l'on observe en surface se sont formées.</p>
+<p><strong>Les grandes enveloppes</strong></p>
+<p>De l'extérieur vers l'intérieur, on distingue quatre enveloppes principales :</p>
+<p><strong>La croûte :</strong> l'enveloppe la plus externe, solide et froide. Elle existe sous deux formes très différentes (continentale et océanique).</p>
+<p><strong>Le manteau :</strong> la plus volumineuse des enveloppes (~84 % du volume terrestre). Il est essentiellement solide à l'échelle géologique, mais se comporte comme un fluide très visqueux sur des millions d'années.</p>
+<p><strong>Le noyau externe :</strong> liquide, composé principalement de fer et de nickel. Sa convection génère le champ magnétique terrestre.</p>
+<p><strong>Le noyau interne :</strong> solide malgré des températures extrêmes (~5 000-6 000 °C), car la pression y est colossale.</p>
+<p><figure class="fig"><img src="assets/media/image8.jpeg" loading="lazy" decoding="async" alt="Le puzzle géologique : comment se forment montagnes et continents" style="width:496px"></figure>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Croûte continentale vs croûte océanique</strong></p>
+<p>Ces deux types de croûte sont fondamentalement différents et il est crucial de les distinguer :</p>
+<ul>
+<li><p>Croûte continentale : épaisseur 30-70 km (jusqu'à 80 km sous les chaînes de montagnes), densité ~2,7 g/cm³, composition granitique (riche en Si, Al). Elle est ancienne – certains cratons ont plus de 3 milliards d'années.</p></li>
+<li><p>Croûte océanique : épaisseur 5-10 km, densité ~3,0 g/cm³, composition basaltique (riche en Fe, Mg). Elle est jeune – jamais plus de 200 millions d'années car elle est continuellement recyclée par subduction.</p></li>
+<li><p>Conséquence clé : lorsque deux plaques entrent en collision, c'est toujours la plaque portant la croûte océanique (plus dense) qui plonge sous l'autre. C'est la subduction.</p></li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><strong>Lithosphère et asthénosphère – la rhéologie de la Terre</strong></p>
+<p>En géologie, on distingue deux autres enveloppes définies non par leur composition chimique, mais par leur comportement mécanique (rhéologie) :</p>
+<p><strong>La lithosphère :</strong> couche externe rigide et cassante, épaisseur ~100 km. Elle comprend la croûte + le manteau supérieur froid. C'est elle qui est découpée en plaques tectoniques.</p>
+<p><strong>L'asthénosphère :</strong> zone du manteau sous-jacente, ductile et capable de fluer lentement. Elle « lubrifie » le déplacement des plaques lithosphériques.</p>
+<p>Cette distinction rigide/ductile est fondamentale : c'est parce que la lithosphère est rigide qu'elle se casse (failles), et c'est parce que l'asthénosphère est ductile que les plaques peuvent se déplacer.</p>
+<figure class="model">
+  <model-viewer src="assets/models/model3d1.glb" alt="Faille inverse"
+    camera-controls touch-action="pan-y" autoplay animation-name="All Animations"
+    camera-orbit="0deg 72deg auto" field-of-view="26deg"
+    shadow-intensity="0.6" exposure="1.1" interaction-prompt="none"
+    poster-color="transparent" loading="lazy" reveal="auto"></model-viewer>
+  <figcaption><b>Faille inverse</b> — Le compartiment supérieur remonte le long du plan de faille. Fais tourner le bloc pour voir le déplacement.
+  <span class="hint">Glisse pour faire tourner le bloc · molette ou pincement pour zoomer</span></figcaption>
+</figure>
+
+<figure class="fig"><img src="assets/media/image9.jpeg" loading="lazy" decoding="async" alt="" style="width:181px"></figure><figure class="fig"><video src="assets/vid/image10.mp4" style="width:274px" poster="assets/poster/image10.jpg" autoplay loop muted playsinline preload="none" controls></video></figure><figure class="fig"><video src="assets/vid/image11.mp4" style="width:312px" poster="assets/poster/image11.jpg" autoplay loop muted playsinline preload="none" controls></video></figure>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p class="callout-head"><strong>À retenir</strong></p>
+<ul>
+<li><p>Lithosphère = croûte + manteau supérieur froid → rigide → se fracture → donne des failles</p></li>
+<li><p>Asthénosphère = manteau ductile → flue lentement → permet le déplacement des plaques</p></li>
+<li><p>Croûte océanique → dense → plonge en subduction</p></li>
+<li><p>Croûte continentale → légère → flotte, s'épaissit en chaîne de montagnes</p></li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<h1 id="1-2-roches-et-min-raux">1.2 Roches et minéraux</h1>
+<p>La lithosphère (littéralement, la « sphère de pierre ») est composée de roches. Avant de pouvoir classer une roche, il faut comprendre de quoi elle est faite. Sur le terrain, on raisonne toujours à deux échelles emboîtées : le minéral, puis la roche.</p>
+<p><strong>Un minéral</strong> est un solide naturel, inorganique, avec une composition chimique définie (ou variant dans des limites précises) et une structure cristalline ordonnée. C’est l’unité de base de toute roche. <strong>Une roche</strong> est un assemblage naturel d’un ou plusieurs minéraux. C’est cet assemblage – sa composition minéralogique, la taille des cristaux, leur agencement – qui détermine le nom de la roche et raconte son histoire.</p>
+<figure class="fig"><img src="assets/media/image13.png" loading="lazy" decoding="async" alt="" style="width:620px"></figure>
+<p><strong>Roche Minéral Maille cristalline Atomes</strong></p>
+<p>Une poignée de minéraux – dits minéraux fondamentaux – suffit pour reconnaître la grande majorité des roches du terrain :</p>
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 76%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Minéral</strong></th>
+<th><strong>Critères de reconnaissance sur le terrain</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Quartz</td>
+<td>Vitreux, incolore à gris fumé, cassure conchoïdale, très dur (raye le verre), pas de clivage net</td>
+</tr>
+<tr class="even">
+<td>Feldspaths</td>
+<td>Blancs à roses (orthose) ou gris-blancs avec macles striées (plagioclase), clivage net à 90°, les plus abondants de la croûte</td>
+</tr>
+<tr class="odd">
+<td>Micas</td>
+<td>Clivage en feuillets fins et brillants ; biotite (noire) et muscovite (claire, argentée)</td>
+</tr>
+<tr class="even">
+<td>Amphiboles / Pyroxènes</td>
+<td>Minéraux sombres (noirs à vert foncé), prismatiques, typiques des roches basiques (gabbro, basalte)</td>
+</tr>
+<tr class="odd">
+<td>Olivine</td>
+<td>Vert olive caractéristique, aspect vitreux, typique du manteau (péridotite)</td>
+</tr>
+<tr class="even">
+<td>Calcite</td>
+<td>Tendre (dureté 3, s’érafle au couteau), réagit vivement à l’acide, clivage rhomboédrique net – minéral clé des roches carbonatées</td>
+</tr>
+</tbody>
+</table>
+<p>C’est la nature de ces minéraux, leur proportion et leur arrangement (texture) qui permettent de ranger chaque roche dans l’une des trois grandes familles décrites ci-dessous.</p>
+<h1 id="1-3-les-trois-familles-de-roches">1.3 Les trois familles de roches</h1>
+<p>Toute roche que tu rencontreras sur le terrain appartient à l'une de ces trois grandes familles. Savoir identifier rapidement la famille d'appartenance est la première étape de toute description lithologique.</p>
+<p><strong>1 – Les roches magmatiques (ou ignées)</strong></p>
+<p>Elles se forment par refroidissement et cristallisation d'un magma (roche en fusion). On les subdivise selon leur lieu de refroidissement :</p>
+<p><strong>Roches plutoniques (intrusives) :</strong> le magma refroidit lentement en profondeur → grands cristaux bien visibles à l'œil nu. Exemples : granite, gabbro, diorite.</p>
+<p><strong>Roches volcaniques (extrusives) :</strong> le magma sort en surface (lave) et refroidit rapidement → petits cristaux ou texture vitreuse. Exemples : basalte, rhyolite, andésite.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Roche</strong></th>
+<th><strong>Caractéristiques principales</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Granite / Granodiorite</td>
+<td>Plutonique, croûte continentale, grands cristaux (quartz, feldspath, mica)</td>
+</tr>
+<tr class="even">
+<td>Gabbro</td>
+<td>Plutonique, croûte océanique, sombre, pyroxène + plagioclase</td>
+</tr>
+<tr class="odd">
+<td>Basalte</td>
+<td>Volcanique, croûte océanique, sombre, fin grain</td>
+</tr>
+<tr class="even">
+<td>Dolérite</td>
+<td>Filonien, sombre, grain moyen, dykes océaniques</td>
+</tr>
+<tr class="odd">
+<td>Rhyolite</td>
+<td>Volcanique, pâle, équivalent volcanique du granite</td>
+</tr>
+<tr class="even">
+<td>Péridotite</td>
+<td>Plutonique, manteau supérieur, très sombre, olivine + pyroxène</td>
+</tr>
+</tbody>
+</table>
+<figure class="fig"><img src="assets/media/image14.jpeg" loading="lazy" decoding="async" alt="Komatiite | mineralogie.club" style="width:546px"></figure>
+<p><strong>2 – Les roches métamorphiques</strong></p>
+<p>Elles résultent de la transformation à l'état solide d'une roche préexistante (quelle que soit sa nature) sous l'effet de la chaleur, de la pression, ou des deux. Le minéral d'origine se recristallise en nouveaux minéraux stables dans les nouvelles conditions.</p>
+<p>On distingue deux grands types de métamorphisme :</p>
+<ul>
+<li><p>Métamorphisme régional : lié aux grandes zones de collision ou de subduction. Affecte des volumes considérables de croûte. Donne des roches avec une foliation (schistosité, gneissosité) due à la pression dirigée.</p></li>
+<li><p>Métamorphisme de contact (ou thermique) : lié à l'intrusion d'un corps magmatique chaud. Affecte une auréole de quelques mètres à quelques kilomètres autour de l'intrusion. Pas de foliation marquée.</p></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Roche métamorphique</strong></th>
+<th><strong>Caractéristiques / origine</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Schiste</td>
+<td>Métamorphisme faible, foliation bien marquée, micas visibles</td>
+</tr>
+<tr class="even">
+<td>Gneiss</td>
+<td>Métamorphisme fort, alternance lits clairs/sombres, structure planaire</td>
+</tr>
+<tr class="odd">
+<td>Marbre</td>
+<td>Calcaire métamorphosé, texture grenue, réagit à l'acide</td>
+</tr>
+<tr class="even">
+<td>Quartzite</td>
+<td>Grès métamorphosé, très dur, ne réagit pas à l'acide</td>
+</tr>
+<tr class="odd">
+<td>Serpentinite</td>
+<td>Péridotite hydratée, vert sombre, aspect gras, manteau supérieur</td>
+</tr>
+<tr class="even">
+<td>Métagabbro</td>
+<td>Gabbro métamorphosé, reconnaissable aux pyroxènes et plagioclases</td>
+</tr>
+</tbody>
+</table>
+<figure class="fig"><img src="assets/media/image15.png" loading="lazy" decoding="async" alt="Introduction à la géologie des ressources minérales - Roches métamorphiques" style="width:545px"></figure>
+<p><strong>3 – Les roches sédimentaires</strong></p>
+<p>Elles représentent ~75 % des roches affleurantes en surface. Elles se forment par accumulation de sédiments (fragments de roches, restes d'organismes, précipités chimiques) qui se lithifient avec le temps. Elles sont stratifiées – c'est leur caractéristique fondamentale.</p>
+<p>On distingue trois grandes catégories :</p>
+<ul>
+<li><p>Roches détritiques : formées de fragments de roches transportés et déposés. La taille des grains reflète l'énergie du milieu de dépôt. Exemples : conglomérat (galet), grès (sable), siltite (silt), argilite (argile).</p></li>
+</ul>
+<figure class="fig"><img src="assets/media/image16.png" loading="lazy" decoding="async" alt="TP-TD 2 : La fabrication des roches sédimentaires - Vieterre" style="width:525px"></figure>
+<ul>
+<li><p>Roches carbonatées : formées par accumulation de carbonate de calcium (CaCO₃), souvent d'origine biologique. Exemples : calcaire, dolomie, craie. Test clé : elles réagissent à l'acide chlorhydrique dilué (HCl) en produisant des bulles de CO₂.</p></li>
+<li><p>Roches évaporitiques : précipitées par évaporation d'eau de mer dans des bassins confinés. Exemples : gypse (dureté 2 sur l'échelle de Mohs – s'érafle à l'ongle), sel gemme, anhydrite.</p></li>
+</ul>
+<figure class="fig"><img src="assets/media/image17.jpeg" loading="lazy" decoding="async" alt="Classification des roches sédimentaires" style="width:620px"></figure>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Test à l'acide – indispensable sur le terrain</strong></p>
+<p>Quelques gouttes d'acide chlorhydrique dilué (HCl 10 %) sur une roche :</p>
+<ul>
+<li><p>Effervescence vive et immédiate → calcaire (carbonate de calcium CaCO₃)</p></li>
+<li><p>Effervescence faible, seulement après avoir gratté → dolomie (carbonate de magnésium et calcium)</p></li>
+<li><p>Pas de réaction → pas de carbonate (grès, quartzite, granite, basalte…)</p></li>
+</ul>
+<p>Attention : toujours tester sur une surface fraîchement cassée, jamais sur la patine d'altération.</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><strong>Le cycle des roches</strong></p>
+<p>Toute roche peut se transformer en une autre : une roche magmatique s'érode → sédiment → roche sédimentaire → enfouie et chauffée → roche métamorphique → fondue → magma → roche magmatique. Ce cycle est continu, mais très lent (millions à centaines de millions d'années).</p></td>
+</tr>
+</tbody>
+</table>
+<figure class="fig"><img src="assets/media/image18.png" loading="lazy" decoding="async" alt="Le cycle des roches" style="width:592px"></figure>
+
+<h1 id="1-4-contextes-g-odynamiques">1.4 Contextes géodynamiques</h1>
+<p>La tectonique des plaques est le moteur de la géologie. Comprendre dans quel contexte géodynamique une région s'est formée permet de prédire quelles roches et quelles structures on va y rencontrer.</p>
+<p><strong>Les trois types de frontières de plaques</strong></p>
+<h3 id="divergence-les-dorsales-oc-aniques">Divergence – les dorsales océaniques</h3>
+<p>Deux plaques s'écartent l'une de l'autre. Le manteau remonte, fond partiellement (décompression), et produit du magma basaltique qui forme une nouvelle croûte océanique. C'est l'accrétion océanique.</p>
+<ul>
+<li><p>Roches typiques : basaltes en coussins (pillow lavas), gabbros, péridotites serpentinisées, ophiolites</p></li>
+<li><p>Structures : rift, failles normales, fissures éruptives</p></li>
+<li><p>Exemple actuel : dorsale médio-atlantique, rift Est-africain</p></li>
+</ul>
+<figure class="fig"><video src="assets/vid/image19.mp4" style="width:370px" poster="assets/poster/image19.jpg" autoplay loop muted playsinline preload="none" controls></video></figure>
+<h3 id="convergence-subduction-et-collision">Convergence – subduction et collision</h3>
+<p>Deux plaques se rapprochent. Le résultat dépend de la nature des croûtes en présence :</p>
+<ul>
+<li><p>Subduction (croûte océanique vs continentale, ou deux croûtes océaniques) : la plaque dense plonge dans le manteau. Fusion partielle → volcanisme d'arc, formation de roches plutoniques (granitoïdes d'arc). Métamorphisme haute-pression sur la plaque subduite.</p></li>
+</ul>
+<blockquote>
+<figure class="fig"><video src="assets/vid/image20.mp4" style="width:458px" poster="assets/poster/image20.jpg" autoplay loop muted playsinline preload="none" controls></video></figure>
+</blockquote>
+<ul>
+<li><p>Collision (deux croûtes continentales) : aucune des deux ne peut facilement plonger (trop légères). La croûte s'épaissit, se déforme, se plisse, se chevauche → formation d'une chaîne de montagnes. Métamorphisme régional. C'est le contexte des Alpes.</p></li>
+</ul>
+<figure class="fig"><video src="assets/vid/image21.mp4" style="width:435px" poster="assets/poster/image21.jpg" autoplay loop muted playsinline preload="none" controls></video></figure>
+<p>Roches et structures typiques de la collision :</p>
+<ul>
+<li><p>Plis, chevauchements, nappes de charriage</p></li>
+<li><p>Métamorphisme régional (schistes, gneiss)</p></li>
+<li><p>Ophiolites charriées (vestiges d'un ancien océan fermé)</p></li>
+</ul>
+<h3 id="d-crochement-les-failles-transformantes">Décrochement – les failles transformantes</h3>
+<p>Deux plaques glissent horizontalement l'une contre l'autre. Pas de création ni de destruction de croûte. Structures typiques : failles décrochantes sub-verticales, bassins en pull-apart. Exemple : faille de San Andreas (Californie).</p>
+<figure class="fig"><video src="assets/vid/image22.mp4" style="width:575px" poster="assets/poster/image22.jpg" autoplay loop muted playsinline preload="none" controls></video></figure>
+<figure class="fig"><img src="assets/media/image23.png" loading="lazy" decoding="async" alt="Tectonique des plaques — Wikipédia" style="width:521px"></figure>
+<figure class="fig"><img src="assets/media/image24.png" loading="lazy" decoding="async" alt="La recherche d&amp;#39;un océan disparu à l&amp;#39;aide de la carte de France au millionième - myMaxicours" style="width:715px"></figure>
+<p><strong>Synthèse de la Partie 1</strong></p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Ce que tu dois savoir faire après cette partie</strong></p>
+<ul>
+<li><p>Décrire les grandes enveloppes de la Terre et distinguer lithosphère / asthénosphère</p></li>
+<li><p>Différencier croûte continentale et croûte océanique</p></li>
+<li><p>Identifier la famille d'une roche (magmatique / sédimentaire / métamorphique) à partir de ses caractéristiques visuelles</p></li>
+<li><p>Associer un contexte géodynamique à ses roches et structures caractéristique</p></li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Mots-clés à maîtriser</strong></p>
+<p>Croûte continentale · Croûte océanique · Manteau · Lithosphère · Asthénosphère · Rhéologie · Roche magmatique · Roche sédimentaire · Roche métamorphique · Granite · Basalte · Gabbro · Calcaire · Dolomie · Gypse · Schiste · Gneiss · Divergence · Subduction · Collision · Foliation</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<figure class="fig"><img src="assets/media/image25.png" loading="lazy" decoding="async" alt="Wave" style="width:84px"></figure><strong>PARTIE 2</strong></p>
+<h1 id="syst-mes-s-dimentaires">Systèmes sédimentaires</h1>
+<p><em><u>Les roches sédimentaires couvrent environ 75 % des surfaces continentales. Sur un terrain alpin comme celui que tu vas parcourir, la grande majorité des formations visibles sont sédimentaires. Savoir lire une roche sédimentaire, c'est savoir lire l'histoire d'un environnement de dépôt disparu – mer peu profonde, fleuve, lagon, bassin profond. Cette partie t'apprend à faire exactement cela, en trois temps : reconnaître la roche et décrire son faciès (2.1), comprendre les processus qui l'ont mise en place et lire les figures qu'ils ont laissées (2.2), puis restituer le milieu de dépôt (2.3).</u></em></p>
+<h1 id="2-1-faci-s-et-reconnaissance-des-roches-s-dimentaires">2.1 Faciès et reconnaissance des roches sédimentaires</h1>
+<p>Cette section est un guide pratique de reconnaissance des principales roches sédimentaires que tu rencontreras en terrain alpin. Pour chaque roche : comment la reconnaître, comment la tester, et ce qu'elle t'apprend sur son milieu de dépôt. Mais avant de nommer une roche, il faut savoir la décrire – c'est l'objet de la notion de faciès.</p>
+<h2 id="le-principe-d-actualisme">Le principe d'actualisme</h2>
+<p>Toute cette partie repose sur un principe : <strong>les lois qui gouvernent la Terre aujourd'hui sont les mêmes que dans le passé.</strong> C'est l'actualisme — « le présent est la clé du passé ».</p>
+<p>Si tu comprends comment une ride se forme aujourd'hui sur une plage, tu peux interpréter une ride fossilisée dans un grès de 150 millions d'années. Le mécanisme est le même, seul le temps les sépare. Sans ce principe, une roche sédimentaire resterait muette.</p>
+<p><figure class="fig"><img src="assets/media/image27.jpg" loading="lazy" decoding="async" alt="" style="width:605px"></figure>
+<h2 id="la-notion-de-faci-s-s-dimentaire">La notion de faciès sédimentaire</h2>
+<p>Le géologue de terrain est d'abord un naturaliste : devant un affleurement, la première question n'est pas « qu'est-ce que cela signifie ? » mais « qu'est-ce que j'observe ? ».</p>
+<p>Le faciès sédimentaire est l'ensemble des caractéristiques observables d'une roche sédimentaire. On le décrit selon trois familles de critères.</p>
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Famille de critères</strong></th>
+<th><strong>Ce que tu observes sur le terrain</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lithologie et texture</td>
+<td>Nom de la roche · <strong>granulométrie</strong> (taille des grains) · <strong>pétrographie</strong> (nature minéralogique des grains) · <strong>morphoscopie</strong> (forme et usure des grains)</td>
+</tr>
+<tr class="even">
+<td>Figures et structures sédimentaires</td>
+<td>Litage, laminations, rides, granoclassement, surfaces particulières (détaillées en 2.2)</td>
+</tr>
+<tr class="odd">
+<td>Contenu paléobiologique</td>
+<td>Éléments biominéralisés et fossiles · traces fossiles ou <strong>ichnofossiles</strong></td>
+</tr>
+</tbody>
+</table>
+<figure class="fig"><img src="assets/media/image28.jpg" loading="lazy" decoding="async" alt="" style="width:594px"></figure>
+<p><em>Les indicateurs qui composent un faciès sédimentaire. D'après Homewood et al. (2002).</em></p>
+<p>Un faciès est donc la signature laissée par un environnement sédimentaire au moment du dépôt : identifier les faciès permet de reconstituer les environnements passés. Attention cependant – un faciès isolé donne une information très limitée. C'est la <strong>succession de faciès</strong>, telle qu'on la lit dans un log banc après banc, qui permet de reconstruire l'évolution d'un système au cours du temps, de repérer les variations du niveau marin et de suivre les migrations de dépôts (progradation, rétrogradation).</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>Sur le terrain – décrire un faciès en cinq points</strong></p>
+<ul>
+<li><p><strong>Lithologie et couleur</strong>, sur cassure fraîche <em>et</em> sur surface altérée.</p></li>
+<li><p><strong>Granulométrie</strong> : taille des grains, tri (homogène ou non), forme (anguleux ou arrondis).</p></li>
+<li><p><strong>Géométrie du banc</strong> : épaisseur, continuité latérale, nature des limites (base érosive ? plane ? passage progressif ?).</p></li>
+<li><p><strong>Structures internes et de surface</strong> : laminations, rides, granoclassement, bioturbation (voir 2.2).</p></li>
+<li><p><strong>Contenu fossile</strong> : nature, abondance, état de conservation.</p></li>
+</ul>
+<p>Et surtout : <strong>DECRIS D'ABORD, INTERPRETE ENSUITE</strong> – la règle d'or du carnet de terrain (voir 5.2).</p></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>Le cycle sédimentaire</strong></p>
+<p>Un cycle sédimentaire est la séquence ordonnée de processus qui contrôlent la production, le transport, le dépôt et la préservation des sédiments : <strong>altération / érosion → transport → sédimentation → diagenèse</strong>.</p>
+<p>Ce cycle ne fonctionne pas de la même façon selon la famille de roches — c'est ce que montrent les trois schémas qui ouvrent chacune des sous-sections ci-dessous. Dans les archives géologiques, il se traduit par des successions de faciès qui enregistrent une évolution systématique du milieu.</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="les-carbonates">Les carbonates</h2>
+<figure class="fig"><img src="assets/media/image29.png" loading="lazy" decoding="async" alt="" style="width:565px"></figure>
+<p><em>Le cycle des carbonates : le sédiment n'est pas seulement érodé puis transporté, il est <strong>produit sur place</strong>, par les organismes et par précipitation chimique. Le transport ne concerne que la fraction bioclastique.</em></p>
+<h3 id="calcaire">Calcaire</h3>
+<figure class="fig"><img src="assets/media/image30.jpeg" loading="lazy" decoding="async" alt="Limestone: Formation, Types, Composition, and Uses" style="width:269px"></figure>Roche composée majoritairement de carbonate de calcium (<strong>CaCO₃</strong>). C'est la roche sédimentaire la plus commune en terrain alpin mésozoïque.</p>
+<ul>
+<li><p>Aspect : gris à beige, parfois sombre (riche en matière organique), parfois blanc (craie, calcaire de plateforme chaude)</p></li>
+<li><p>Test à l'acide : effervescence vive et immédiate sur surface fraîche</p></li>
+<li><p>Dureté : ~3 sur l'échelle de Mohs (ne raye pas le verre facilement, mais se raye avec un couteau)</p></li>
+<li><p>Variantes importantes : calcaire <strong>micritique</strong> (boue carbonatée, grain très fin, mat), calcaire <strong>bioclastique</strong> (fragments de coquilles visibles), calcaire <strong>oolithique</strong> (grains sphériques concentriques ~0,5 mm), calcaire <strong>noduleux</strong> (bancs discontinus en nodules, milieu profond), calcaire <strong>massif</strong> (bancs épais résistants à l'érosion)</p></li>
+</ul>
+<h3 id="dolomie"><figure class="fig"><img src="assets/media/image31.jpeg" loading="lazy" decoding="async" alt="Dolostone (Dolomite Rock): Formation, Properties &amp;amp; Uses" style="width:242px"></figure>Dolomie</h3>
+<p>Roche composée de carbonate de calcium et de magnésium <strong>CaMg(CO₃)₂</strong>. Souvent issue d'une transformation diagénétique du calcaire (dolomitisation).</p>
+<ul>
+<li><p>Aspect : gris clair à beige, souvent avec une patine orangée à rouille. Surface altérée rugueuse à granuleuse, parfois aspect « peau d'éléphant »</p></li>
+<li><p>Test à l'acide : réaction faible à nulle sur surface fraîche. Effervescence notable seulement après avoir gratté (on expose une surface fraîche et pulvérulente)</p></li>
+<li><p>Dureté : ~3,5–4 (légèrement plus dure que le calcaire)</p></li>
+<li><p>Milieu de dépôt : marin peu profond à supratidal, souvent associé à des évaporites</p></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>Distinguer calcaire et dolomie – méthode terrain</strong></p>
+<ul>
+<li><p>Verser quelques gouttes de HCl 10 % sur une surface fraîchement cassée</p></li>
+<li><p>Effervescence vive → <strong>calcaire</strong></p></li>
+<li><p>Pas de réaction → gratter avec le marteau, puis retester → effervescence → <strong>dolomie</strong></p></li>
+<li><p>Toujours pas de réaction → ni calcaire ni dolomie (grès, quartzite, roche magmatique…)</p></li>
+</ul>
+<p>Si tu n'as pas d'acide : la dolomie est typiquement plus rugueuse en surface altérée et sonne légèrement différemment au marteau (son plus cristallin).</p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="marne">Marne</h3>
+<p>Roche mixte, intermédiaire entre argile et calcaire. Elle contient entre 35 % et 65 % de carbonate, le reste étant de l'argile.</p>
+<ul>
+<li><p>Aspect : gris à vert ou beige, peu résistante à l'érosion (forme souvent des pentes molles, des « bad-lands »)</p></li>
+<li><p>Test à l'acide : effervescence modérée</p></li>
+<li><p>Sur le terrain : les marnes laissent de fines traînées blanches sur les doigts (argile). Elles se délitent facilement en feuillets ou en éclats. Peu compétentes – elles créent des niveaux de glissement potentiels</p></li>
+<li><p>Milieu : plateforme distale à bassin peu profond, dépôt en eaux calmes</p></li>
+</ul>
+
+
+
+
+
+<h2 id="les-roches-silico-d-tritiques">Les roches silico-détritiques</h2>
+<p><figure class="fig"><img src="assets/media/image32.png" loading="lazy" decoding="async" alt="" style="width:565px"></figure>
+<p><em>Le cycle détritique classique : érosion → transport → sédimentation → diagenèse. Ici le sédiment vient d'ailleurs — il n'est pas produit sur place.</em></p>
+<p>La nomenclature des roches silico-détritiques dépend avant tout de la taille des particules qui les composent (classification d'Udden-Wentworth).</p>
+<figure class="fig"><img src="assets/media/image33.png" loading="lazy" decoding="async" alt="" style="width:674px"></figure>
+<p><em>Classification granulométrique d'Udden-Wentworth : à chaque classe de taille correspondent un sédiment meuble et une roche consolidée.</em></p>
+
+
+
+
+
+<h3 id="gr-s">Grès</h3>
+<figure class="fig"><img src="assets/media/image34.jpeg" loading="lazy" decoding="async" alt="Sandstone Explained: Origins, Varieties &amp;amp; Real-World Applications" style="width:156px"></figure>Roche sédimentaire détritique formée de grains de sable (0,063–2 mm) cimentés entre eux. Le grain dominant est souvent le quartz, très résistant à l'altération.</p>
+<ul>
+<li><p>Aspect : variable (blanc, jaune, rouge, gris), texture grenue visible à l'œil nu ou à la loupe</p></li>
+<li><p>Test à l'acide : <strong>pas de réaction si le ciment est siliceux</strong>. <strong>Réaction possible si le ciment est calcitique</strong></p></li>
+<li><p>Dureté : raye le marteau (car il contient du quartz, dureté 7)</p></li>
+<li><p>Structures visibles : laminations obliques, rides de courant, granoclassement</p></li>
+<li><p>Milieux : fluviatile (grès grossiers, laminés), littoral (grès bien triés), éolien (grès à grandes laminations obliques en dunes)</p></li>
+</ul>
+<h3 id="argilite-et-siltite"><figure class="fig"><img src="assets/media/image35.jpeg" loading="lazy" decoding="async" alt="" style="width:218px"></figure>Argilite et siltite</h3>
+<p>Roches à grain très fin : l'argilite est formée de particules inférieures à 0,004 mm (argile), la siltite de particules comprises entre 0,004 et 0,063 mm (silt).</p>
+<ul>
+<li><p>Aspect : gris, vert, rouge ou noir. Aspect mat, peut présenter une schistosité (feuilletage) si légèrement métamorphisée</p></li>
+<li><p>Sur le terrain : l'argilite tache les doigts, a une texture savonneuse humide et colle légèrement à la langue</p></li>
+<li><p>Milieux : plaine alluviale, lac, bassin marin calme, zone intertidale</p></li>
+</ul>
+<h3 id="conglom-rat"><figure class="fig"><img src="assets/media/image36.jpeg" loading="lazy" decoding="async" alt="Conglomerate - Minerals Education Coalition" style="width:225px"></figure>Conglomérat</h3>
+<p>Roche formée de galets (&gt; 2 mm) ou de graviers cimentés. L'équivalent non consolidé est le gravier ou les alluvions grossières.</p>
+<ul>
+<li><p>Aspect : hétérogène, galets arrondis (transport important) ou anguleux (brèche, peu de transport)</p></li>
+<li><p>Ce que la forme des galets indique : galets très arrondis → long transport fluviatile ; galets anguleux → dépôt proche de la source, peu de transport (cône alluvial, éboulis)</p></li>
+<li><p>Milieux : torrents, cônes alluviaux, littoral à haute énergie, base de séquence transgressive</p></li>
+</ul>
+<h2 id="les-vaporites">Les évaporites</h2>
+<p><figure class="fig"><img src="assets/media/image37.png" loading="lazy" decoding="async" alt="" style="width:565px"></figure>
+<p><em>Le cycle des évaporites : le transport se fait en <strong>phase dissoute</strong>, et le dépôt par <strong>précipitation</strong> lors de l'évaporation.</em></p>
+<h3 id="gypse">Gypse</h3>
+<figure class="fig"><img src="assets/media/image38.jpeg" loading="lazy" decoding="async" alt="Gypsum: mineral characteristics, properties, uses" style="width:196px"></figure>Sulfate de calcium hydraté (<strong>CaSO₄·2H₂O</strong>), formé par évaporation d'eau de mer dans un bassin confiné.</p>
+<ul>
+<li><p>Aspect : blanc à translucide, parfois rosé ou gris. Peut être massif, fibreux (variété « satin spar ») ou granuleux</p></li>
+<li><p>Dureté : 2 sur l'échelle de Mohs – s'éraflé facilement à l'ongle. C'est le test diagnostique par excellence</p></li>
+<li><p>Milieu : marin très peu profond à supratidal, conditions d'évaporation intense (mer épicontinentale en climat aride)</p></li>
+<li><p>Importance structurale : le gypse et les évaporites associées (sel, anhydrite) sont des niveaux de décollement majeurs. En terrain alpin, le Keuper (Trias supérieur) évaporitique joue souvent ce rôle de « savon » facilitant le glissement des nappes</p></li>
+</ul>
+<h3 id="cargneule">Cargneule</h3>
+<p><figure class="fig"><img src="assets/media/image39.jpeg" loading="lazy" decoding="async" alt="Cargneule — Wikipédia" style="width:172px"></figure> Roche carbonatée très poreuse, d'aspect caverneux et alvéolaire, résultant de la dissolution d'évaporites (gypse) remplacées par de la calcite ou de la dolomite.</p>
+<ul>
+<li><p>Aspect : aspect de gruyère, beige à orangé, très légère pour son volume</p></li>
+<li><p>Test à l'acide : réaction variable selon la proportion de carbonate résiduel</p></li>
+<li><p>Signification : présence ancienne d'évaporites, niveau de décollement potentiel</p></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 52%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Roche</strong></th>
+<th><strong>Critères de reconnaissance</strong></th>
+<th><strong>Milieu typique</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td colspan="3"><strong>Récapitulatif – reconnaissance rapide sur le terrain</strong></td>
+</tr>
+<tr class="even">
+<td>Calcaire</td>
+<td>Effervescence vive à l'acide, gris à beige</td>
+<td>Marin, plateforme carbonatée</td>
+</tr>
+<tr class="odd">
+<td>Dolomie</td>
+<td>Effervescence faible (seulement après grattage), patine orangée rugueuse</td>
+<td>Marin peu profond, lagune</td>
+</tr>
+<tr class="even">
+<td>Marne</td>
+<td>Effervescence modérée, tache les doigts, érosion en pentes molles</td>
+<td>Bassin calme, plateforme distale</td>
+</tr>
+<tr class="odd">
+<td>Grès</td>
+<td>Grain visible, raye le marteau, pas de réaction à l'acide (sauf si le ciment est de calcite)</td>
+<td>Fluviatile, littoral, éolien</td>
+</tr>
+<tr class="even">
+<td>Argilite</td>
+<td>Grain très fin, colle à la langue, tache les doigts</td>
+<td>Lac, plaine alluviale, bassin</td>
+</tr>
+<tr class="odd">
+<td>Conglomérat</td>
+<td>Galets visibles, hétérogène, base de séquence</td>
+<td>Torrent, cône alluvial, littoral</td>
+</tr>
+<tr class="even">
+<td>Gypse</td>
+<td>S'éraflé à l'ongle (dureté 2), blanc à translucide</td>
+<td>Évaporation, mer confinée</td>
+</tr>
+<tr class="odd">
+<td>Cargneule</td>
+<td>Aspect caverneux / alvéolaire, beige, très poreuse</td>
+<td>Dissolution d'évaporites</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p class="callout-head"><strong>À retenir – 2.1</strong></p>
+<ul>
+<li><p>Un <strong>faciès</strong> = lithologie + structures + contenu paléobiologique. Il se décrit avant d'être interprété.</p></li>
+<li><p>Un faciès isolé dit peu de chose : c'est la <strong>succession de faciès</strong> qui raconte une histoire.</p></li>
+<li><p>Le <strong>test à l'acide</strong> discrimine calcaire / dolomie / marne – c'est le geste de terrain le plus rentable.</p></li>
+<li><p>Les trois familles ne se fabriquent pas de la même façon : les détritiques sont <strong>transportés</strong>, les carbonates sont <strong>produits sur place</strong>, les évaporites <strong>précipitent</strong>.</p></li>
+<li><p>Gypse et cargneule signalent d'anciennes évaporites, donc un <strong>niveau de décollement potentiel</strong> : à repérer systématiquement en terrain alpin.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<h1 id="2-2-transport-et-structures-s-dimentaires">2.2 Transport et structures sédimentaires</h1>
+<p>Une roche sédimentaire n'enregistre pas seulement la nature de son sédiment, mais aussi la façon dont il est arrivé là. Comprendre les mécanismes de transport permet de lire directement les figures observées sur le terrain – et inversement, de remonter d'une figure au courant qui l'a produite.</p>
+<p><figure class="fig"><video src="assets/vid/image40.mp4" style="width:404px" poster="assets/poster/image40.jpg" autoplay loop muted playsinline preload="none" controls></video></figure>
+<h2 id="la-nature-des-courants">La nature des courants</h2>
+<p>Dans les milieux sédimentaires, la circulation de l'eau, du vent, de la glace et l'action de la gravité déplacent les particules. Selon la nature du courant, ces particules ne se comportent pas de la même manière, et cette dynamique conditionne directement les faciès observés sur le terrain.</p>
+<p>On distingue d'abord les courants unidirectionnels, typiques des rivières, des chenaux et des courants gravitaires : ils se déplacent dans une seule direction et exercent une force continue sur les particules. À l'inverse, les courants oscillatoires, liés à l'action des vagues et de la marée, alternent entre deux directions opposées : ils ne produisent pas de déplacement net des particules à long terme, mais ils remobilisent régulièrement le sédiment.</p>
+<figure class="fig"><img src="assets/media/image41.png" loading="lazy" decoding="async" alt="" style="width:494px"></figure>
+<p><em>Courants unidirectionnels et courants oscillatoires : trajectoire d'une particule au cours du temps.</em></p>
+<p>Les courants peuvent en outre être permanents ou non permanents (épisodiques). Certains conservent une vitesse stable au cours du temps, tandis que d'autres connaissent des variations brutales lors de crues, de tempêtes ou d'événements ponctuels. Ces pics d'énergie expliquent la présence de dépôts grossiers intercalés dans des séries plus fines, ou des successions de faciès très contrastés.</p>
+<figure class="fig"><img src="assets/media/image42.png" loading="lazy" decoding="async" alt="" style="width:432px"></figure>
+<p><em>Régime permanent et régime non permanent : évolution de la vitesse du courant au cours d'une année.</em></p>
+<h2 id="les-modes-de-transport">Les modes de transport</h2>
+<p>L'énergie du courant détermine la façon dont chaque particule voyage :</p>
+<ul>
+<li><p><strong>Traction</strong> (roulement, glissement) : les grains les plus grossiers se déplacent au contact du fond, quand l'énergie est élevée.</p></li>
+<li><p><strong>Saltation</strong> : les grains effectuent de petits sauts successifs – le courant est assez fort pour les soulever, pas assez pour les maintenir en suspension.</p></li>
+<li><p><strong>Suspension</strong> : silts et argiles sont portés par la turbulence de la colonne d'eau. Ils ne se déposent que lorsque l'énergie diminue, ce qui explique la présence de niveaux fins dans les milieux calmes ou distaux.</p></li>
+<li><p><strong>Solution</strong> : une partie des éléments chimiques voyage dissoute, sans phase solide. C'est le mode dominant dans les milieux carbonatés et évaporitiques.</p></li>
+</ul>
+<figure class="fig"><img src="assets/media/image43.png" loading="lazy" decoding="async" alt="Coastal processes and landforms - BBC Bitesize" style="width:482px"></figure>
+<p><em>Les modes de transport des particules dans un courant.</em><span id="_Toc238552041" class="anchor"></span></p>
+<h2 id="le-diagramme-de-hjulstr-m">Le diagramme de Hjulström</h2>
+<p>Ce diagramme relie la vitesse du courant et la taille des grains, et délimite trois domaines : érosion, transport, sédimentation.</p>
+<figure class="fig"><img src="assets/media/image44.png" loading="lazy" decoding="async" alt="Diagramme de Hjulström — Wikipédia" style="width:432px"></figure>
+<p><em>Diagramme de Hjulström. La courbe supérieure donne la vitesse nécessaire pour éroder un grain déjà déposé ; la courbe inférieure, la vitesse en dessous de laquelle il se dépose.</em></p>
+<p>Il livre un résultat contre-intuitif : les grains les plus faciles à arracher sont les sables fins (~0,2 mm), pas les argiles. Plus fines, les particules argileuses sont cohésives – elles se collent entre elles, et il faut autant d'énergie pour les éroder que pour déplacer un gravier.</p>
+<h2 id="les-structures-s-dimentaires">Les structures sédimentaires</h2>
+<p>Les structures sédimentaires sont des figures formées dans les sédiments au moment de leur dépôt ou juste après. Elles sont essentielles pour deux raisons : elles renseignent sur le milieu de dépôt et sur la dynamique des courants, et elles permettent de déterminer la polarité stratigraphique – c'est-à-dire de savoir où sont le sommet et la base d'une couche, information cruciale quand les séries sont tectoniquement perturbées.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>Pourquoi la polarité est-elle critique sur le terrain ?</strong></p>
+<p>Dans une région tectoniquement active comme les Alpes, les couches peuvent être inclinées, renversées, voire complètement retournées par des plis ou des chevauchements. Sans critères de polarité, on ne peut pas savoir si une série est <strong>normale</strong> (couche la plus ancienne en bas) ou <strong>inverse</strong> (couche la plus ancienne en haut). La détermination de la polarité est donc une étape obligatoire dès que les couches sont fortement inclinées.</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="les-figures-de-courant-unidirectionnel">Les figures de courant unidirectionnel</h2>
+<h3 id="formation-d-une-ride-de-courant">Formation d'une ride de courant</h3>
+<p>Les rides sont l'expression du mouvement du fluide à la surface du sédiment : l'eau ou le vent mobilise et organise les particules perpendiculairement au courant. Les plus fréquentes sont les rides asymétriques, produites par un courant unidirectionnel. Elles présentent un versant amont doux, exposé au courant (stoss side), et un versant aval plus raide, à l'abri (lee side).</p>
+<p>Le versant amont est érodé par le courant, et les particules sédimentent en micro-avalanches successives sur le versant aval. Ces avalanches construisent des laminations obliques inclinées dans le sens du courant : c'est le critère de terrain qui permet de restituer un paléocourant.</p>
+<figure class="fig"><img src="assets/media/image45.jpg" loading="lazy" decoding="async" alt="" style="width:601px"></figure>
+<p><em>Formation et caractères d'une ride sédimentaire asymétrique.</em></p>
+<h3 id="la-succession-des-figures-selon-l-nergie-du-courant">La succession des figures selon l'énergie du courant</h3>
+<p>À mesure que la vitesse du courant augmente, un fond sableux passe par une succession de figures caractéristiques. Attention : cette succession dépend aussi de la granulométrie. Les mégarides ne se forment pas dans les silts et les sables très fins, et les rides ne se forment pas dans les sables grossiers et les graviers.</p>
+<figure class="fig"><img src="assets/media/image46.png" loading="lazy" decoding="async" alt="" style="width:538px"></figure>
+<p><em>Succession des figures de courant unidirectionnel en fonction de la vitesse du courant et de la taille des grains. D'après Harms et al. (1975).</em></p>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 12%" />
+<col style="width: 35%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Figure</strong></th>
+<th><strong>Énergie</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Dans la roche</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fond plan de basse énergie (<em>lower plane bed</em>)</td>
+<td>Très faible</td>
+<td>Le courant ne suffit pas à structurer le fond. En sable fin, peu ou pas de transport ; en sable grossier, transport par traction sur un fond resté plat.</td>
+<td>Laminations planes</td>
+</tr>
+<tr class="even">
+<td>Rides de courant (<em>small ripples</em>)</td>
+<td>Faible à modérée</td>
+<td>λ ≈ 10–30 cm (jusqu'à 60 cm), hauteur ≈ 0,3–6 cm. Sables fins à moyens. Présentes dans la plupart des milieux, continentaux comme marins.</td>
+<td>Laminations obliques centimétriques – excellent indicateur de paléocourant et de polarité</td>
+</tr>
+<tr class="odd">
+<td>Mégarides ou dunes (<em>megaripples</em>)</td>
+<td>Forte</td>
+<td>λ dépassant le mètre, hauteur de plusieurs décimètres. Sables moyens à grossiers. Crêtes souvent irrégulières (formes 3D).</td>
+<td>Stratifications obliques décimétriques à métriques, souvent en auge (festons)</td>
+</tr>
+<tr class="even">
+<td>Fond plan de haute énergie (<em>upper plane bed</em>)</td>
+<td>Très forte</td>
+<td>Le courant est trop intense pour que les mégarides subsistent. Transport par traction et saltation contre le fond.</td>
+<td>Laminations planes, stries longitudinales (linéation de délit) et figures d'impact et d'érosion</td>
+</tr>
+</tbody>
+</table>
+<figure class="fig"><img src="assets/media/image47.jpg" loading="lazy" decoding="async" alt="" style="width:334px"></figure>
+<p><em>Mégarides et stratifications obliques associées. D'après Harms et al. (1975).</em></p>
+<figure class="fig"><img src="assets/media/image48.jpg" loading="lazy" decoding="async" alt="" style="width:565px"></figure>
+<p><em>Fond plan de haute énergie et laminations planes associées. D'après Harms et al. (1975).</em></p>
+<p><a href="https://www.youtube.com/shorts/GtE9WtPe10o"><u>▶ Animation – Crossbedding, Wind and Water</u></a></p>
+<h2 id="les-figures-de-courant-oscillatoire">Les figures de courant oscillatoire</h2>
+<p>Comme pour les courants unidirectionnels, les figures produites par les vagues dépendent de l'intensité du courant oscillatoire.</p>
+<figure class="fig"><img src="assets/media/image49.png" loading="lazy" decoding="async" alt="" style="width:442px"></figure>
+<p><em>Succession des figures de courant oscillatoire selon l'énergie : rides de vagues → hummocks → laminations subplanes.</em></p>
+<h3 id="les-rides-sym-triques-rides-de-vagues">Les rides symétriques (rides de vagues)</h3>
+<p>Elles se forment sous l'action des vagues, sur les plages et les fonds peu profonds, au-dessus de la limite d'action des vagues de beau temps. Le mécanisme est le même que pour les rides asymétriques, mais les deux flancs sont ici en sédimentation : les laminations obliques sont symétriques, en chevron, et suivent approximativement le contour de la ride.</p>
+<p>Conséquence pratique : <strong>les rides de vagues donnent l'orientation du paléocourant, mais pas son sens.</strong></p>
+<figure class="fig"><img src="assets/media/image50.png" loading="lazy" decoding="async" alt="" style="width:538px"></figure>
+<p><em>Rides symétriques et laminations en chevron. D'après Reineck et Singh (1980).</em></p>
+<p><a href="https://www.youtube.com/watch?v=zRGuMddjRGg"><u>▶ Vidéo – Dynamics of Wave Ripples</u></a></p>
+<h3 id="les-hummocks-et-les-d-p-ts-de-temp-te">Les hummocks et les dépôts de tempête</h3>
+<p>Lorsque l'énergie augmente – typiquement lors d'une tempête – le fond se structure en ondulations larges et de faible amplitude, les hummocks. Les laminations qui en résultent sont ondulées, à faible angle, et se recoupent en dômes et en creux : c'est la stratification entrecroisée en mamelons (HCS, hummocky cross-stratification).</p>
+<p>C'est la signature classique des dépôts de tempête, ou tempestites, mis en place entre la limite d'action des vagues de beau temps et celle des vagues de tempête. Au-delà, l'énergie efface toute ondulation et le fond redevient plan (laminations subplanes).</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>Sur le terrain – ride de vague ou ride de courant ?</strong></p>
+<ul>
+<li><p>Deux flancs de pente équivalente, crêtes pointues et creux arrondis → <strong>ride de vague</strong> (courant oscillatoire) → milieu marin peu profond agité.</p></li>
+<li><p>Un flanc doux, un flanc raide → <strong>ride de courant</strong> (courant unidirectionnel) → le flanc raide indique le sens du paléocourant.</p></li>
+<li><p>Crêtes sinueuses qui se bifurquent → plutôt des rides de vagues.</p></li>
+</ul>
+<p>Dans les deux cas, mesure l'orientation des crêtes à la boussole et note-la dans le carnet : c'est une donnée de paléocourant exploitable au retour.</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="les-autres-figures-s-dimentaires">Les autres figures sédimentaires</h2>
+<h3 id="granoclassement">Granoclassement</h3>
+<p>À l'intérieur d'un même banc, la taille des grains diminue progressivement de la base vers le sommet (granoclassement normal) – ou augmente (granoclassement inverse, plus rare). Le granoclassement normal est produit par décantation progressive lors d'une turbidite ou d'une crue.</p>
+<ul>
+<li><p><strong>Critère de polarité :</strong> le grain le plus grossier est à la base – c'est donc le bas du banc.</p></li>
+<li><p><strong>Milieu :</strong> turbidites (dépôts de courants de turbidité en milieu profond), cônes alluviaux, crues.</p></li>
+</ul>
+<figure class="fig"><img src="assets/media/image51.jpg" loading="lazy" decoding="async" alt="" style="width:307px"></figure>
+<p><em>Granoclassement normal dans un banc.</em></p>
+<h3 id="hardground">Hardground</h3>
+<p>Surface d'arrêt de sédimentation, souvent perforée et incrustée par des organismes fixés (huîtres, bryozoaires, serpules). Le sédiment sous la surface est induré (durci) par cimentation précoce.</p>
+<ul>
+<li><p><strong>Signification :</strong> ralentissement ou arrêt complet de la sédimentation. Souvent associé à une remontée du niveau marin ou à un changement de régime sédimentaire.</p></li>
+<li><p><strong>Sur le terrain :</strong> surface irrégulière et colorée (souvent rougeâtre par oxydation), parfois riche en fossiles condensés (accumulation de fossiles de plusieurs niveaux).</p></li>
+<li><p><strong>Critère de polarité :</strong> les perforations d'organismes foreurs s'enfoncent vers le bas, depuis la surface – elles indiquent donc le sommet du banc induré.</p></li>
+</ul>
+<figure class="fig"><img src="assets/media/image52.jpg" loading="lazy" decoding="async" alt="" style="width:432px"></figure>
+<p><em>Surface de hardground perforée.</em></p>
+<h3 id="stylolithes">Stylolithes</h3>
+<p>Surfaces irrégulières en dents de scie visibles dans les calcaires, résultant d'une dissolution sous pression (compaction chimique). Les stylolithes se développent perpendiculairement à la contrainte principale de compaction, généralement la charge sédimentaire verticale.</p>
+<ul>
+<li><p><strong>Sur le terrain :</strong> surfaces sombres (enrichies en insoluble argileux), en dents de scie ou en colonnettes. Se forment après le dépôt, lors de l'enfouissement.</p></li>
+<li><p><strong>Indice structural – et non critère de polarité :</strong> dans une série non déformée, les stylolithes de compaction sont sub-horizontaux. S'ils sont verticaux ou fortement inclinés, c'est que la série a été basculée ou que des stylolithes tectoniques se sont développés. Ils te disent que la série a été déformée, pas où est le haut.</p></li>
+</ul>
+<figure class="fig"><img src="assets/media/image53.jpg" loading="lazy" decoding="async" alt="" style="width:393px"></figure>
+<p><em>Stylolithes dans un calcaire.</em></p>
+<h3 id="figures-de-semelle-sole-marks">Figures de semelle (sole marks)</h3>
+<p>Les figures de semelle sont des moulages conservés à la <strong>base</strong> des bancs gréseux ou calcaires déposés sur un substrat argileux. Le mécanisme est toujours le même : une dépression se creuse – ou une déformation s'amorce – dans la boue encore molle, puis le sédiment du dépôt suivant la remplit et en prend l'empreinte. Comme le moulage fait saillie vers le bas, il indique sans ambiguïté la base du banc.</p>
+<p>Ces figures s'observent donc sur la <strong>face inférieure</strong> des bancs, en relief. Elles sont particulièrement fréquentes dans les séries turbiditiques, où chaque banc gréseux repose sur les argiles du dépôt précédent – un contexte omniprésent dans la région de Digne.</p>
+<figure class="fig"><img src="assets/media/image54.png" loading="lazy" decoding="async" alt="" style="width:567px"></figure>
+<p><em>Les deux principales figures de semelle. <strong>A.</strong> Flute casts : le courant creuse une dépression dans la boue, profonde et arrondie en amont, effilée en aval ; le sable la moule. <strong>B.</strong> Load casts : sans courant, le sable dense s'enfonce par gravité dans la boue gorgée d'eau, qui remonte en flammes entre les lobes.</em></p>
+<p><strong>Flute casts (moulages d'affouillement)</strong></p>
+<figure class="fig"><img src="assets/media/image55.jpeg" loading="lazy" decoding="async" alt="5.4: Sedimentary Structures - Geosciences LibreTexts" style="width:263px"></figure>Un tourbillon du courant creuse dans la boue une dépression allongée, profonde et arrondie du côté amont, qui s'évase et s'atténue progressivement vers l'aval. Le sable transporté par le courant la remplit ensuite et la moule.</p>
+<ul>
+<li><p><strong>Aspect :</strong> bosses allongées en cuillère ou en langue, de quelques centimètres à quelques décimètres, saillant sous le banc. Elles sont généralement nombreuses, parallèles entre elles et orientées de la même façon.</p></li>
+<li><p><strong>Critère de polarité :</strong> les moulages sont en relief sur la face inférieure du banc. La surface qui les porte est donc la base.</p></li>
+<li><p><strong>Bonus – paléocourant :</strong> le bourrelet arrondi pointe vers l'amont, la queue effilée vers l'aval. Le flute cast est ainsi l'un des rares critères qui donne à la fois la polarité <strong>et le sens</strong> du courant.</p></li>
+</ul>
+<p><strong>Load casts (figures de charge)</strong></p>
+<p><figure class="fig"><img src="assets/media/image56.jpeg" loading="lazy" decoding="async" alt="Way-up structures – Historical Geology" style="width:254px"></figure> Ici, aucun courant n'est en jeu : il s'agit d'une déformation gravitaire postérieure au dépôt. Du sable dense se dépose sur une boue gorgée d'eau et non consolidée ; sous l'effet de la charge, le sable s'enfonce dans la boue en lobes arrondis, tandis que la boue, moins dense, remonte entre les lobes sous forme de flammes (<em>flame structures</em>).</p>
+<ul>
+<li><p><strong>Aspect :</strong> bourrelets et lobes arrondis, en « coussins » ou en « ballons », saillant sous la base du banc. Dans les cas extrêmes, les lobes se détachent complètement et forment des boules isolées dans l'argile (pseudo-nodules, <em>ball-and-pillow</em>).</p></li>
+<li><p><strong>Critère de polarité :</strong> les lobes de grès s'enfoncent vers le bas, les flammes d'argile pointent vers le haut. Le critère reste lisible même dans une série renversée.</p></li>
+<li><p><strong>Attention :</strong> contrairement aux flute casts, les figures de charge ne donnent <strong>pas</strong> le paléocourant.</p></li>
+</ul>
+<p><figure class="fig"><img src="assets/media/image57.jpeg" loading="lazy" decoding="async" alt="Way-up structures – Historical Geology" style="width:363px"></figure><strong>À signaler également – les groove casts (moulages de sillons)</strong></p>
+<p>Sillons rectilignes et parallèles creusés dans la boue par un objet traîné sur le fond (galet, fragment de coquille), puis moulés par le sable. Ils donnent la polarité <strong>–</strong> en relief sous le banc, comme les précédents <strong>–</strong> et l'<strong>orientation</strong> du courant, mais pas son sens.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>Sur le terrain – trouver et lire une semelle</strong></p>
+<ul>
+<li><p>Les figures de semelle ne se voient que sur la face <strong>inférieure</strong> des bancs : cherche les <strong>blocs éboulés retournés</strong> au pied de l'affleurement, c'est souvent le seul endroit où la semelle est accessible.</p></li>
+<li><p>Vérifie que le relief est bien <strong>en saillie</strong> (convexe) : c'est le moulage gréseux. Le creux correspondant reste dans l'argile, qui est rarement conservée.</p></li>
+<li><p>Ne les confonds pas avec des bioturbations : les figures de semelle sont régulières, alignées et orientées de façon cohérente ; les terriers sont anarchiques et souvent circulaires en section.</p></li>
+<li><p>Si tu vois des flute casts, <strong>mesure leur orientation à la boussole</strong> : c'est une donnée de paléocourant directement exploitable au retour.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<h3 id="fentes-de-dessiccation">Fentes de dessiccation</h3>
+<p>Fissures polygonales formées par le retrait d'argiles humides lors de leur exposition à l'air. Elles sont ouvertes vers le haut, où elles s'évasent.</p>
+<ul>
+<li><p><strong>Signification :</strong> émersion temporaire – le fond était exondé. Milieu de plaine alluviale, lagon peu profond, sebkha.</p></li>
+<li><p><strong>Critère de polarité :</strong> les fentes s'élargissent vers le haut stratigraphique.</p></li>
+</ul>
+<p><figure class="fig"><img src="assets/media/image58.png" loading="lazy" decoding="async" alt="" style="width:609px"></figure>
+<p><em>Fentes de dessiccation polygonales.</em></p>
+<figure class="fig"><img src="assets/media/image59.jpeg" loading="lazy" decoding="async" alt="4.4: Erosional and Post-Depositional Structures - Geosciences LibreTexts" style="width:640px"></figure>
+<h3 id="bioturbation-et-ichnofossiles">Bioturbation et ichnofossiles</h3>
+<p>L'activité des organismes provoque, en surface et au sein des dépôts, des perturbations du sédiment : c'est la bioturbation. Les traces qui en témoignent (terriers, pistes, empreintes) sont les ichnofossiles. Une bioturbation intense peut effacer complètement les autres structures sédimentaires.</p>
+<ul>
+<li><p><strong>Zoophycos :</strong> trace en spirale ou en éventail produite par un organisme fouisseur en milieu marin calme et profond. Très caractéristique des milieux marno-calcaires de plateforme distale.</p></li>
+</ul>
+<figure class="fig"><img src="assets/media/image60.jpg" loading="lazy" decoding="async" alt="" style="width:565px"></figure>
+<p><em>Zoophycos – trace fossile en éventail.</em></p>
+<p>En fonction du type d'ichnofossile, il est donc possible de préciser l'environnement de dépôt, en complément des informations données par la roche elle-même.</p>
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 53%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Structure</strong></th>
+<th><strong>Critère observé</strong></th>
+<th><strong>Comment lire la polarité</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td colspan="3"><strong>Récapitulatif – critères de polarité stratigraphique</strong></td>
+</tr>
+<tr class="even">
+<td>Laminations obliques</td>
+<td>Terminaison des lamines</td>
+<td>La base du banc est la surface vers laquelle les lamines convergent en biseau</td>
+</tr>
+<tr class="odd">
+<td>Granoclassement normal</td>
+<td>Taille des grains</td>
+<td>Base = grains grossiers, sommet = grains fins</td>
+</tr>
+<tr class="even">
+<td>Rides (courant ou vagues)</td>
+<td>Crêtes des rides</td>
+<td>Les crêtes pointent vers le haut stratigraphique</td>
+</tr>
+<tr class="odd">
+<td>Flute casts</td>
+<td>Moulages en relief sous le banc</td>
+<td>La surface qui porte les moulages est la base ; le bourrelet arrondi pointe vers l'amont</td>
+</tr>
+<tr class="even">
+<td>Figures de charge (load casts)</td>
+<td>Lobes de grès et flammes d'argile</td>
+<td>Les lobes s'enfoncent vers le bas, les flammes pointent vers le haut</td>
+</tr>
+<tr class="odd">
+<td>Groove casts</td>
+<td>Sillons rectilignes en relief</td>
+<td>La surface qui porte les sillons est la base du banc</td>
+</tr>
+<tr class="even">
+<td>Fentes de dessiccation</td>
+<td>Ouverture des fentes</td>
+<td>Les fentes s'évasent vers le haut</td>
+</tr>
+<tr class="odd">
+<td>Hardground perforé</td>
+<td>Sens des perforations</td>
+<td>Les perforations partent de la surface et pénètrent vers le bas</td>
+</tr>
+<tr class="even">
+<td>Stylolithes</td>
+<td>Orientation</td>
+<td><em>Ne donne pas la polarité</em> – indique seulement que la série a été enfouie, puis éventuellement basculée</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://opengeology.org/historicalgeology/tools-of-historical-geology/way-up-structures/"><u>Compléments en ligne – way-up structures (OpenGeology)</u></a></p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p class="callout-head"><strong>À retenir – 2.2</strong></p>
+<ul>
+<li><p><strong>Courant unidirectionnel</strong> (rivière, turbidite) → figures <strong>asymétriques</strong> → on retrouve le <strong>sens</strong> du paléocourant. <strong>Courant oscillatoire</strong> (vagues) → figures <strong>symétriques</strong> → on retrouve seulement l'<strong>orientation</strong>.</p></li>
+<li><p>La séquence rides → mégarides → fond plan traduit une <strong>énergie croissante</strong>, mais dépend aussi de la taille des grains.</p></li>
+<li><p>Les quatre modes de transport : <strong>traction, saltation, suspension, solution</strong>.</p></li>
+<li><p>Critères de polarité fiables et faciles : <strong>granoclassement, laminations obliques, crêtes de rides, fentes de dessiccation</strong> — et, sous les bancs turbiditiques, les <strong>figures de semelle</strong> (flute casts et load casts).</p></li>
+<li><p>Le stylolithe n'est <strong>pas</strong> un critère de polarité.</p></li>
+<li><p>Réflexe de terrain : dès qu'une couche penche fortement, cherche un critère de polarité <strong>avant</strong> d'interpréter la série.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<h1 id="2-3-les-milieux-de-d-p-t">2.3 Les milieux de dépôt</h1>
+<p><strong>Pourquoi le milieu de dépôt est-il important ?</strong></p>
+<p>L'environnement de dépôt contrôle tout : la granulométrie des sédiments (l'énergie du milieu), leur composition chimique (salinité, oxygénation), les fossiles présents et les structures sédimentaires qui s'y forment. En reconstituant la succession des milieux de dépôt à travers le temps, on reconstitue l'histoire paléogéographique d'une région.</p>
+<figure class="fig"><img src="assets/media/image61.png" loading="lazy" decoding="async" alt="" style="width:565px"></figure>
+<p><em>Les principaux milieux de dépôt et leurs figures sédimentaires caractéristiques.</em></p>
+<h2 id="le-milieu-continental">Le milieu continental</h2>
+<h3 id="les-syst-mes-fluviatiles">Les systèmes fluviatiles</h3>
+<p>Les systèmes fluviatiles sont le principal vecteur des sédiments détritiques issus de l'érosion des reliefs. Une partie de la charge se dépose sur le continent, l'autre atteint l'océan. Le type de système dépend surtout de la distance au relief : cônes alluviaux au pied des montagnes, puis systèmes en tresses et enfin méandriformes vers l'aval.</p>
+<figure class="fig"><img src="assets/media/image62.png" loading="lazy" decoding="async" alt="" style="width:423px"></figure>
+<p><em>Organisation des systèmes de dépôt continentaux, du relief vers le bassin.</em></p>
+<h3 id="les-c-nes-alluviaux">Les cônes alluviaux</h3>
+<p>Corps sédimentaires en forme d'éventail, constitués de matériaux grossiers, qui se développent au pied d'un relief à la faveur d'une rupture de pente (l'apex). Les cônes alluviaux apparaissent fréquemment en contexte de tectonique active, où des montagnes en surrection bordent des zones subsidentes ; la coalescence de plusieurs cônes forme un vaste ensemble appelé piémont.</p>
+<p>Leur pente est régulière, de l'ordre de 3 à 6°. Leur taille varie énormément, de quelques centaines de mètres à plusieurs dizaines de kilomètres (les plus grands, les mégacônes, peuvent dépasser la centaine de kilomètres). Les sédiments y sont immatures et très mal triés, et leur granulométrie décroît rapidement en s'éloignant de l'apex ; leur composition reflète directement la nature des roches du bassin versant. En amont, les dépôts proviennent surtout de coulées de débris ou de boue, processus assez énergétiques pour transporter des blocs ; en aval, ils s'organisent en couches plus ou moins parallèles, accumulées lors des crues qui redistribuent les matériaux sur la surface du cône.</p>
+<figure class="fig"><img src="assets/media/image63.png" loading="lazy" decoding="async" alt="" style="width:474px"></figure>
+<p><em>Coupe schématique d'un cône alluvial.</em></p>
+<h3 id="chenaux-berges-et-plaine-d-inondation">Chenaux, berges et plaine d'inondation</h3>
+<p>Les dépôts fluviatiles correspondent aux sédiments accumulés dans les lits des cours d'eau. Leur organisation dépend fortement de la morphologie du chenal, elle-même contrôlée par la sinuosité, la charge sédimentaire et l'énergie du système.</p>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 14%" />
+<col style="width: 65%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Type de chenal</strong></th>
+<th><strong>Sinuosité</strong></th>
+<th><strong>Caractères et corps sédimentaires</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rectiligne</td>
+<td>Faible</td>
+<td>Rare dans la nature. Bancs sableux régulièrement espacés, migrant lentement vers l'aval. Dès que le courant est dévié, le tracé devient sinueux.</td>
+</tr>
+<tr class="even">
+<td>En méandres</td>
+<td>Élevée</td>
+<td>Chenal unique très sinueux : érosion sur la rive concave, dépôt sur la rive convexe. Les bancs mobiles deviennent des <strong>barres de méandre</strong> (<em>point bars</em>) qui s'agrègent par accrétion latérale.</td>
+</tr>
+<tr class="odd">
+<td>En tresses</td>
+<td>Faible</td>
+<td>Un chenal principal se divise en chenaux secondaires contournant des îlots sableux ou graveleux. Bancs longitudinaux, aggradation verticale.</td>
+</tr>
+<tr class="even">
+<td>Anastomosé</td>
+<td>–</td>
+<td>Plusieurs chenaux stables se séparent et se rejoignent dans la plaine alluviale, formant un réseau permanent.</td>
+</tr>
+</tbody>
+</table>
+<figure class="fig"><img src="assets/media/image64.png" loading="lazy" decoding="async" alt="" style="width:556px"></figure>
+<p><em>Les trois grands types de chenaux et leurs corps sédimentaires.</em></p>
+<p>Les dépôts fluviatiles se regroupent ensuite en trois ensembles :</p>
+<ul>
+<li><p><strong>Dépôts de chenal :</strong> sédiments grossiers puis sableux qui comblent progressivement le lit du cours d'eau. Discontinus, souvent organisés en lentilles ou en corps allongés à base érosive.</p></li>
+<li><p><strong>Dépôts de berge :</strong> mis en place lors des crues, quand le cours d'eau déborde de son lit. Les sédiments les plus grossiers se déposent immédiatement au bord du chenal ; granulométrie et épaisseur décroissent très rapidement en s'éloignant du lit.</p></li>
+<li><p><strong>Dépôts de plaine d'inondation :</strong> sédiments fins (limons, argiles laminées) déposés lors des crues exceptionnelles. En période de crue, des sols hydromorphes se développent ; en période d'étiage, l'abaissement de la nappe phréatique favorise la formation de nodules calcaires, la marmorisation (oxydation du fer) et les fentes de dessiccation.</p></li>
+</ul>
+<p>Cette succession chenal → berge → plaine d'inondation constitue la base de la lecture d'un affleurement fluviatile : elle permet de comprendre la dynamique du cours d'eau, la répartition des faciès et l'évolution du paysage alluvial.</p>
+<figure class="fig"><img src="assets/media/image65.png" loading="lazy" decoding="async" alt="" style="width:661px"></figure>
+<p><em>Séquences fluviatiles types. <strong>A.</strong> Comblement d'un chenal en méandres (accrétion latérale, migration des barres de méandre lors des crues). <strong>B.</strong> Comblement d'un chenal en tresses (aggradation verticale lors de crues successives).</em></p>
+<h3 id="autres-milieux-continentaux">Autres milieux continentaux</h3>
+<p><strong>Lacustre (lacs) :</strong> milieu calme, dépôts fins (argiles, marnes). Peut produire des carbonates si le lac est peu profond et ensoleillé. Absence de fossiles marins.</p>
+<p><strong>Continental oxydant :</strong> conditions arides ou semi-arides avec alternance d'humidité. Les oxydes de fer donnent une coloration rouge caractéristique aux sédiments – c'est l'indice clé pour reconnaître un dépôt continental oxydant sur le terrain.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>Indice terrain – milieu continental</strong></p>
+<ul>
+<li><p>Couleur rouge à orangée de la matrice → dépôt continental oxydant (conditions arides)</p></li>
+<li><p>Laminations obliques → courant unidirectionnel, milieu fluviatile</p></li>
+<li><p>Base de banc érosive, géométrie de chenal → rivière</p></li>
+<li><p>Absence totale de fossiles marins</p></li>
+<li><p>Fentes de dessiccation dans les argiles → exposition à l'air, milieu très peu profond ou émergé</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<figure class="fig"><img src="assets/media/image66.jpg" loading="lazy" decoding="async" alt="" style="width:605px"></figure>
+<p><em>Dépôts fluviatiles à galets et matrice rouge.</em></p>
+<p><a href="https://broceliande.brecilien.org/Origine-des-reliefs-a-Broceliande-I"><u>broceliande.brecilien.org – Origine des reliefs à Brocéliande</u></a></p>
+<h2 id="le-milieu-marin-peu-profond-plateforme">Le milieu marin peu profond (plateforme)</h2>
+<p>Pour les environnements marins, on distingue trois grands domaines : le plateau continental, le talus et la pente continentale, puis les plaines abyssales. Chacun possède une terminologie propre – et il faut savoir que plusieurs vocabulaires coexistent, selon que l'on décrit la profondeur, la position par rapport aux marées ou le type de sédimentation.</p>
+<figure class="fig"><img src="assets/media/image67.png" loading="lazy" decoding="async" alt="" style="width:568px"></figure>
+<p><em>Zonation d'une marge continentale, du plateau continental aux plaines abyssales.</em></p>
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Ce que le terme décrit</strong></th>
+<th><strong>Termes employés</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>La profondeur</td>
+<td><strong>Néritique</strong> (faibles profondeurs, plateau continental) · <strong>bathyal</strong> (profondeurs intermédiaires, talus et pente) · <strong>abyssal</strong> (grandes profondeurs)</td>
+</tr>
+<tr class="even">
+<td>La position par rapport aux marées</td>
+<td><strong>Supratidal</strong> (au-dessus des plus hautes mers) · <strong>intertidal</strong> (zone de balancement des marées) · <strong>subtidal</strong> (en permanence immergé)</td>
+</tr>
+<tr class="odd">
+<td>La zonation du littoral</td>
+<td><strong>Supralittoral</strong> · <strong>médiolittoral</strong> · <strong>infralittoral</strong> (0–50 m environ) · <strong>circalittoral</strong> (50–200 m)</td>
+</tr>
+<tr class="even">
+<td>Le type de sédimentation</td>
+<td><strong>Benthique</strong> (sur le fond) · <strong>gravitaire</strong> (transport par la pente) · <strong>pélagique</strong> (décantation depuis la colonne d'eau)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Zone littorale et infralittorale (0–50 m) :</strong> forte énergie, sables bioclastiques, oolithes, récifs coralliens, faune riche et variée. Structures : rides de courant et de vagues, laminations obliques.</p>
+<p><strong>Zone circalittorale (50–200 m) :</strong> énergie modérée à faible, boues carbonatées (calcaires micritiques), faune abondante (bivalves, brachiopodes, échinides).</p>
+<h3 id="la-plateforme-carbonat-e">La plateforme carbonatée</h3>
+<p>C'est le système sédimentaire caractéristique du domaine néritique. Sa dynamique repose sur trois facteurs : la morphologie du plateau continental, l'hydrodynamisme (vagues, houle, marées) et la production de l'« usine à carbonates », c'est-à-dire l'ensemble des organismes et des processus qui fabriquent le carbonate sur place.</p>
+<figure class="fig"><img src="assets/media/image68.gif" loading="lazy" decoding="async" alt="" style="width:609px"></figure>
+<p><em>Sédimentation littorale carbonatée.</em></p>
+<p>Les plates-formes et rampes ouvertes sont directement exposées à l'énergie des vagues et de la houle. Cette exposition favorise le développement de faciès de haute énergie, une grande diversité de faciès littoraux et une exportation efficace des sédiments carbonatés vers le bassin.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>Pour aller plus loin – les types de plates-formes carbonatées</strong></p>
+<ul>
+<li><p><strong>Plate-forme ouverte</strong> : bordant le continent, directement exposée à la houle, avec souvent une rupture nette au bord externe.</p></li>
+<li><p><strong>Plate-forme barrée</strong> : protégée par une barre sableuse ou un récif, avec un lagon calme à l'arrière.</p></li>
+<li><p><strong>Rampe carbonatée</strong> : pente très douce et régulière vers le bassin, sans rupture topographique.</p></li>
+<li><p><strong>Banc carbonaté (haut-fond)</strong> : plate-forme isolée en pleine mer, totalement coupée des apports continentaux ; son fonctionnement dépend exclusivement de la production biologique locale.</p></li>
+<li><p><strong>Plate-forme épicontinentale</strong> : très large (100 à 1 000 km), développée à l'intérieur d'un continent.</p></li>
+</ul>
+<p>Dans tous les cas sauf le banc isolé, la proximité du continent apporte sédiments terrigènes, eau douce, nutriments et matière organique – autant de facteurs qui limitent la production carbonatée.</p></td>
+</tr>
+</tbody>
+</table>
+<figure class="fig"><img src="assets/media/image69.png" loading="lazy" decoding="async" alt="" style="width:622px"></figure>
+<p><em>Les principaux types de plates-formes carbonatées.</em></p>
+<h2 id="le-milieu-de-bassin-profond-h-mip-lagique-et-p-lagique">Le milieu de bassin profond (hémipélagique et pélagique)</h2>
+<p>Au-delà du plateau continental, dans des eaux profondes et calmes, les sédiments déposés sont extrêmement fins. L'oxygène est souvent appauvri, ce qui favorise la conservation de la matière organique.</p>
+<p><strong>Sédiments hémipélagiques :</strong> alternances marno-calcaires rythmiques déposées loin des côtes. Les niveaux marneux correspondent à des apports terrigènes ou à des phases de dilution du carbonate ; les bancs calcaires correspondent à des blooms planctoniques.</p>
+<p><strong>Terres noires (black shales) :</strong> argiles et marnes riches en matière organique, de couleur très sombre. Dépôt en milieu profond et anoxique (sans oxygène). Indicateur d'une subsidence importante et d'un bassin isolé.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>Règle générale – granulométrie et énergie</strong></p>
+<p>La taille des grains est proportionnelle à l'énergie du milieu de dépôt :</p>
+<ul>
+<li><p>Conglomérat / grès grossier → énergie forte (torrent, rivière rapide, littoral agité)</p></li>
+<li><p>Grès fin / siltite → énergie modérée (rivière calme, plage)</p></li>
+<li><p>Argile / marne → énergie très faible (lac, mer calme, bassin profond)</p></li>
+</ul>
+<p>Sur le terrain, observe d'abord la taille des grains, puis cherche les structures sédimentaires pour préciser le milieu.</p></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p class="callout-head"><strong>À retenir – 2.3</strong></p>
+<ul>
+<li><p>Trois grands domaines : <strong>continental</strong>, <strong>marin peu profond (plateforme)</strong>, <strong>bassin profond</strong>.</p></li>
+<li><p>Le <strong>rouge</strong> signe l'oxydation continentale ; l'<strong>absence de faune marine</strong> confirme le milieu continental.</p></li>
+<li><p>Un système fluviatile se lit dans l'ordre <strong>chenal → berge → plaine d'inondation</strong>, avec une base de chenal érosive.</p></li>
+<li><p>La plateforme carbonatée est le milieu dominant du Mésozoïque alpin : calcaires bioclastiques et oolithiques en zone agitée, micrites en zone calme.</p></li>
+<li><p>Les alternances <strong>marno-calcaires</strong> et les <strong>terres noires</strong> signent le bassin profond.</p></li>
+<li><p>Une même succession verticale de faciès enregistre le <strong>déplacement des milieux</strong> dans le temps : c'est ainsi qu'on lit une transgression ou une régression.</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Synthèse de la Partie 2</strong></p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>Ce que tu dois savoir faire après cette partie</strong></p>
+<ul>
+<li><p>Décrire un faciès sédimentaire de façon complète (lithologie, texture, structures, contenu fossile) avant de l'interpréter</p></li>
+<li><p>Distinguer calcaire, dolomie et marne par le test à l'acide, et identifier grès, argilite, conglomérat, gypse et cargneule</p></li>
+<li><p>Expliquer les quatre modes de transport et relier la granulométrie d'une roche à l'énergie du milieu de dépôt</p></li>
+<li><p>Distinguer une figure de courant unidirectionnel d'une figure de courant oscillatoire, et en déduire le paléocourant</p></li>
+<li><p>Reconnaître et nommer les principales structures sédimentaires sur le terrain</p></li>
+<li><p>Utiliser les critères de polarité stratigraphique pour déterminer si une série est normale ou inverse</p></li>
+<li><p>Identifier le milieu de dépôt d'une roche sédimentaire à partir de ses caractéristiques (granulométrie, structures, fossiles, couleur)</p></li>
+<li><p>Comprendre le rôle structural du gypse et des cargneules en terrain alpin</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>Mots-clés à maîtriser</strong></p>
+<p>Faciès · Succession de faciès · Cycle sédimentaire · Granulométrie · Calcaire · Dolomie · Marne · Grès · Argilite · Conglomérat · Gypse · Cargneule · Évaporite · Courant unidirectionnel · Courant oscillatoire · Traction · Saltation · Suspension · Solution · Diagramme de Hjulström · Ride de courant · Ride de vague · Mégaride · Laminations obliques · Fond plan · Granoclassement · Figures de semelle · Flute cast · Load cast (figure de charge) · Flamme · Groove cast · Hardground · Stylolithe · Fentes de dessiccation · Bioturbation · Ichnofossile · Zoophycos · Polarité stratigraphique · Série normale · Série inverse · Milieu fluviatile · Cône alluvial · Barre de méandre · Plaine d'inondation · Lacustre · Continental oxydant · Néritique · Bathyal · Abyssal · Intertidal · Subtidal · Plateforme carbonatée · Rampe · Hémipélagique · Terres noires</p></td>
+</tr>
+</tbody>
+</table>
+<figure class="fig"><img src="assets/media/image70.png" loading="lazy" decoding="async" alt="Highway scene" style="width:66px"></figure><strong>PARTIE 3</strong></p>
+<h1 id="structures-tectoniques">Structures tectoniques</h1>
+<p><em><u>La tectonique est l'étude des déformations de la croûte terrestre. Sur un terrain alpin, les roches ne se trouvent presque jamais dans leur position de dépôt originale : elles ont été plissées, fracturées, chevauchées, parfois retournées. Comprendre ces déformations est indispensable pour lire une carte géologique, construire une coupe, et interpréter ce que tu vois sur le terrain.</u></em></p>
+<p><figure class="fig"><img src="assets/media/image72.jpeg" loading="lazy" decoding="async" alt="" style="width:280px"></figure>
+<h1 id="3-1-types-de-failles">3.1 Types de failles</h1>
+<p>Une faille est une discontinuité dans la roche le long de laquelle un déplacement relatif des deux blocs a eu lieu.</p>
+<p><strong>Vocabulaire de base</strong></p>
+<p><strong>Plan de faille :</strong> surface de rupture le long de laquelle s'est produit le glissement. Il peut être plan ou légèrement courbe.</p>
+<p><strong>Toit ("Hanging wall") :</strong> bloc situé au-dessus du plan de faille incliné.</p>
+<p><strong>Mur ("Footwall") :</strong> bloc situé en dessous du plan de faille incliné.</p>
+<figure class="fig"><img src="assets/media/image73.png" loading="lazy" decoding="async" alt="" style="width:620px"></figure>
+<p><strong>Rejet :</strong> amplitude du déplacement le long du plan de faille. On distingue le rejet horizontal (déplacement latéral) et le rejet vertical (déplacement en hauteur).</p>
+<p><strong>Stries de faille :</strong> rainures ou cannelures gravées sur le plan de faille par le glissement. Elles indiquent la direction et le sens du mouvement.</p>
+<figure class="fig"><img src="assets/media/image74.png" loading="lazy" decoding="async" alt="Les déformations tectoniques 2BAC - Kezakoo" style="width:336px"></figure>
+<p><strong>Les trois grands types de failles</strong></p>
+<h3 id="faille-normale">Faille normale</h3>
+<p>Dans une faille normale, le toit descend par rapport au mur. Le plan de faille est généralement incliné à 45–70°.</p>
+<ul>
+<li><p><strong>Contexte tectonique :</strong> extension – les deux compartiments s'éloignent l'un de l'autre. Typique des zones de rift, des dorsales océaniques, et des zones d'effondrement en arrière d'une chaîne de montagnes.</p></li>
+<li><p><strong>Effet sur la géologie :</strong> la faille normale crée un abaissement d'un compartiment, ce qui met en contact des roches d'âges différents : les roches les plus jeunes (en surface) se retrouvent au niveau des plus anciennes de l'autre côté.</p>
+<figure class="model">
+  <model-viewer src="assets/models/model3d2.glb" alt="Faille normale"
+    camera-controls touch-action="pan-y" autoplay animation-name="All Animations"
+    camera-orbit="0deg 72deg auto" field-of-view="26deg"
+    shadow-intensity="0.6" exposure="1.1" interaction-prompt="none"
+    poster-color="transparent" loading="lazy" reveal="auto"></model-viewer>
+  <figcaption><b>Faille normale</b> — Le toit descend le long du plan de faille : la croûte s&#x27;étire.
+  <span class="hint">Glisse pour faire tourner le bloc · molette ou pincement pour zoomer</span></figcaption>
+</figure>
+</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Moyen mnémotechnique – faille normale</strong></p>
+<p>Dans une faille normale, le toit descend. C'est « normal » que ce qui est en haut tombe – comme une personne qui glisse sur une pente. Le plan de faille est une pente, et le bloc d'en haut glisse vers le bas.</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<h3 id="faille-inverse-ou-chevauchement">Faille inverse (ou chevauchement)</h3>
+<p>Dans une faille inverse, le toit monte par rapport au mur. Le plan de faille est généralement plus pentu (30–60°) en profondeur. Quand l'angle devient très faible (&lt; 30°), on parle de chevauchement, et quand le plan est quasi-horizontal sur de très longues distances, on parle de nappe de charriage.</p>
+<ul>
+<li><p><strong>Contexte tectonique :</strong> compression – les deux compartiments se rapprochent. Typique des zones de collision (chaînes de montagnes) et de subduction.</p></li>
+<li><p><strong>Effet sur la géologie :</strong> la faille inverse fait remonter des roches plus anciennes (profondes) au-dessus de roches plus jeunes. Elle raccourcit la croûte horizontalement et l'épaissit verticalement.</p>
+<figure class="model">
+  <model-viewer src="assets/models/model3d1.glb" alt="Faille inverse"
+    camera-controls touch-action="pan-y" autoplay animation-name="All Animations"
+    camera-orbit="0deg 72deg auto" field-of-view="26deg"
+    shadow-intensity="0.6" exposure="1.1" interaction-prompt="none"
+    poster-color="transparent" loading="lazy" reveal="auto"></model-viewer>
+  <figcaption><b>Faille inverse</b> — Raccourcissement horizontal, épaississement vertical. Typique des zones de collision.
+  <span class="hint">Glisse pour faire tourner le bloc · molette ou pincement pour zoomer</span></figcaption>
+</figure>
+</li>
+</ul>
+<h3 id="faille-d-crochante">Faille décrochante </h3>
+<p>Dans une faille décrochante, le mouvement est essentiellement horizontal – les deux compartiments glissent latéralement l'un par rapport à l'autre. Le plan de faille est sub-vertical.</p>
+<ul>
+<li><p><strong>Sens de décrochement :</strong> on détermine le sens en se plaçant d'un côté de la faille et en regardant l'autre compartiment. Si l'autre bloc se déplace vers la droite → décrochement dextre (droite). Vers la gauche → décrochement senestre (gauche).</p></li>
+<li><p><strong>Contexte tectonique :</strong> cisaillement latéral. Typique des failles transformantes aux frontières de plaques, mais aussi des failles conjuguées en contexte compressif ou extensif.</p>
+<figure class="model">
+  <model-viewer src="assets/models/model3d3.glb" alt="Faille décrochante"
+    camera-controls touch-action="pan-y" autoplay animation-name="All Animations"
+    camera-orbit="0deg 72deg auto" field-of-view="26deg"
+    shadow-intensity="0.6" exposure="1.1" interaction-prompt="none"
+    poster-color="transparent" loading="lazy" reveal="auto"></model-viewer>
+  <figcaption><b>Faille décrochante</b> — Le mouvement est essentiellement horizontal : les deux blocs glissent latéralement.
+  <span class="hint">Glisse pour faire tourner le bloc · molette ou pincement pour zoomer</span></figcaption>
+</figure>
+</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 31%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th colspan="3"><strong>Récapitulatif – les trois types de failles</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Type de faille</strong></td>
+<td><strong>Contexte tectonique</strong></td>
+<td><strong>Effet géologique</strong></td>
+</tr>
+<tr class="even">
+<td>Faille normale</td>
+<td>Extension – les blocs s'éloignent</td>
+<td>Le hanging wall descend – met les jeunes sur les vieilles</td>
+</tr>
+<tr class="odd">
+<td>Faille inverse / chevauchement</td>
+<td>Compression – les blocs se rapprochent</td>
+<td>Le hanging wall monte – met les vieilles sur les jeunes</td>
+</tr>
+<tr class="even">
+<td>Faille décrochante</td>
+<td>Cisaillement latéral</td>
+<td>Mouvement horizontal – décale les marqueurs latéralement</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Reconnaître une faille sur le terrain</strong></p>
+<p>En pratique, une faille se reconnaît rarement par son plan seul. Il faut chercher un faisceau d'indices convergents :</p>
+<ul>
+<li><p>Contact brusque et anormal entre deux formations qui ne devraient pas être en contact (âges très différents, ou lithologies incompatibles)</p></li>
+<li><p>Plan de faille : surface lisse, polie, striée (miroir de faille). Les stries indiquent la direction du mouvement, leur asymétrie indique le sens</p></li>
+<li><p>Brèche de faille : roche fragmentée et cimentée dans la zone de faille</p></li>
+<li><p>Mylonite : roche très déformée plastiquement (en profondeur), texture en bandes</p></li>
+<li><p>Déformation des couches au voisinage de la faille : les couches sont souvent courbées (drag fold) près du plan de faille, dans le sens du mouvement</p></li>
+<li><p>Décalage de marqueurs géologiques observables de part et d'autre (filon, banc repère, contact lithologique)</p></li>
+</ul>
+<figure class="fig"><img src="assets/media/image78.jpeg" loading="lazy" decoding="async" alt="BRECCIAS" style="width:462px"></figure>
+<h1 id="3-2-types-de-plis">3.2 Types de plis</h1>
+<p>Un pli est une déformation ductile de couches rocheuses qui produit une courbure. Les plis se forment lorsque les roches, soumises à une compression, se déforment de façon plastique plutôt que de rompre. Ils sont caractéristiques des zones de collision, comme les Alpes.</p>
+<figure class="fig"><video src="assets/vid/image79.mp4" style="width:475px" poster="assets/poster/image79.jpg" autoplay loop muted playsinline preload="none" controls></video></figure>
+<p><strong>Morphologie d'un pli – le vocabulaire essentiel</strong></p>
+<p><strong>Charnière :</strong> zone de courbure maximale du pli, où les couches changent de direction. C'est la partie la plus courbée.</p>
+<p><strong>Flancs :</strong> les deux surfaces inclinées de part et d'autre de la charnière.</p>
+<p><strong>Plan axial :</strong> plan imaginaire qui divise le pli en deux parties approximativement symétriques et passe par la charnière. Son orientation (direction et pendage) définit l'attitude du pli.</p>
+<p><strong>Axe du pli :</strong> ligne d'intersection du plan axial avec les couches. Elle est parallèle à la charnière.</p>
+<p><strong>Plongement de l'axe (plunge) :</strong> inclinaison de l'axe du pli par rapport à l'horizontale. Un pli peut avoir un axe horizontal (pli cylindrique) ou incliné (pli plongeant).</p>
+<figure class="fig"><img src="assets/media/image80.png" loading="lazy" decoding="async" alt="Séance 14 - Les déformations tectoniques - Cours (Partie 2) - AlloSchool" style="width:538px"></figure>
+<p><strong>Anticlinal et synclinal</strong></p>
+<p>La distinction anticlinal/synclinal est basée sur la géométrie des couches, pas sur la forme du relief (une montagne n'est pas forcément un anticlinal !) :</p>
+<p><strong>Anticlinal :</strong> pli dont les flancs divergent vers le haut – les couches les plus anciennes se trouvent au cœur du pli (dans la charnière). La courbure est convexe vers le haut.</p>
+<p><strong>Synclinal :</strong> pli dont les flancs convergent vers le haut – les couches les plus récentes se trouvent au cœur du pli. La courbure est concave vers le haut.</p>
+<figure class="fig"><img src="assets/media/image81.jpeg" loading="lazy" decoding="async" alt="What are the differences between anticline and syncline formations?" style="width:400px"></figure>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Comment distinguer anticlinal et synclinal sur le terrain ?</strong></p>
+<p>La forme du relief peut induire en erreur (l'érosion creuse souvent les anticlinaux et préserve les synclinaux). La seule méthode fiable est stratigraphique :</p>
+<ul>
+<li><p>Au cœur du pli, les couches sont-elles plus anciennes que celles des flancs ? → Anticlinal</p></li>
+<li><p>Au cœur du pli, les couches sont-elles plus récentes que celles des flancs ? → Synclinal</p></li>
+</ul>
+<p>Pour déterminer l'âge relatif des couches, utilise les critères de polarité stratigraphique (partie 2.2) et, si possible, le contenu en fossiles.</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<figure class="fig"><img src="assets/media/image82.jpeg" loading="lazy" decoding="async" alt="Les caractères du bocage du Haut-Anjou | Atlas de Paysage des Pays de la Loire" style="width:602px"></figure>
+<p><strong>Classification des plis selon leur attitude</strong></p>
+<h3 id="pli-droit-ou-sym-trique">Pli droit (ou symétrique)</h3>
+<p>Le plan axial est vertical, les deux flancs sont symétriques et ont des pendages opposés de valeur égale. C'est la forme « classique » du pli en manuels scolaires. En terrain alpin, les plis parfaitement droits sont rares.</p>
+<h3 id="pli-d-vers">Pli déversé</h3>
+<p>Le plan axial est incliné – l'un des deux flancs a un pendage plus fort que l'autre. Les deux flancs pendent dans la même direction, mais avec des angles différents. La compression était asymétrique.</p>
+<h3 id="pli-couch">Pli couché</h3>
+<p>Le plan axial est sub-horizontal. Les deux flancs sont l'un au-dessus de l'autre, et les couches du flanc inférieur présentent une polarité inverse (les plus vieilles sont au-dessus des plus récentes sur ce flanc). C'est une configuration très fréquente en terrain alpin, produite par une compression intense.</p>
+<figure class="fig"><img src="assets/media/image83.jpeg" loading="lazy" decoding="async" alt="Les plis" style="width:517px"></figure>
+<p><strong>Pli couché – piège classique sur le terrain</strong></p>
+<p>Quand on traverse un pli couché, on peut observer la même succession de couches deux fois : une fois en série normale (flanc supérieur) et une fois en série inverse (flanc inférieur). Si tu observes une série stratigraphique qui « se répète » ou qui semble « à l'envers », pense immédiatement au pli couché. Utilise les critères de polarité pour confirmer.</p>
+<ul>
+<li><p>Série normale : couches de plus en plus jeunes vers le haut stratigraphique</p></li>
+<li><p>Série inverse : couches de plus en plus vieilles vers le haut stratigraphique – signal d'un flanc inverse de pli couché</p></li>
+</ul>
+<figure class="fig"><img src="assets/media/image84.jpeg" loading="lazy" decoding="async" alt="Pli couché - Dessin géologie école - Education environnement, nature, patrimoine" style="width:368px"></figure>
+<figure class="fig"><img src="assets/media/image85.jpeg" loading="lazy" decoding="async" alt="Le Pli Couché (Saint-Clément-sur-Durance) | Office de tourisme du Guillestrois et du Queyras" style="width:595px"></figure>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Récapitulatif – classification des plis</strong></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Type / terme</strong></th>
+<th><strong>Description et critère de reconnaissance</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pli droit</td>
+<td>Plan axial vertical, flancs symétriques, pendages opposés</td>
+</tr>
+<tr class="even">
+<td>Pli déversé</td>
+<td>Plan axial incliné, un flanc plus fort que l'autre, même direction générale</td>
+</tr>
+<tr class="odd">
+<td>Pli couché</td>
+<td>Plan axial sub-horizontal, flanc inférieur en série inverse</td>
+</tr>
+<tr class="even">
+<td>Anticlinal</td>
+<td>Cœur plus ancien, convexe vers le haut</td>
+</tr>
+<tr class="odd">
+<td>Synclinal</td>
+<td>Cœur plus récent, concave vers le haut</td>
+</tr>
+</tbody>
+</table>
+<h1 id="3-3-nappes-de-charriage-et-fen-tres-tectoniques">3.3 Nappes de charriage et fenêtres tectoniques</h1>
+<p>Les nappes de charriage sont l'une des structures les plus spectaculaires et les plus importantes des chaînes de collision comme les Alpes. Comprendre leur logique est indispensable pour interpréter la géologie d'une région comme celle que tu vas étudier.</p>
+<p><strong>Qu'est-ce qu'une nappe de charriage ?</strong></p>
+<p>Une nappe de charriage est une grande masse rocheuse qui a été déplacée horizontalement sur de longues distances (des dizaines à des centaines de kilomètres) par rapport à son substrat d'origine, le long d'un plan de chevauchement à faible pendage.</p>
+<p><strong>Unité allochtone :</strong> la nappe elle-même – la masse rocheuse qui a voyagé.</p>
+<p><strong>Unité autochtone :</strong> le substrat sur lequel la nappe s'est mise en place, qui n'a pas (ou peu) bougé.</p>
+<p><strong>Niveau de décollement :</strong> le niveau stratigraphique faible qui a servi de plan de glissement. En terrain alpin, le Trias évaporitique (Keuper) joue souvent ce rôle.</p>
+<figure class="fig"><img src="assets/media/image86.png" loading="lazy" decoding="async" alt="" style="width:601px"></figure>
+<p><strong>Comment se forme une nappe ?</strong></p>
+<p>Dans une zone de collision, la compression est telle qu'une écaille de croûte se décolle de son substrat le long d'un niveau mécanique faible (évaporites, argiles), puis glisse sur des dizaines à des centaines de kilomètres vers l'avant de la chaîne (vers les zones externes). Ce processus se propage progressivement de la zone interne vers la zone externe au cours du temps.</p>
+<ul>
+<li><p>La nappe charrie avec elle toute sa pile sédimentaire originale, parfois très différente de celle de l'autochtone sous-jacent – c'est ce qui crée des contacts géologiques « impossibles » (des roches très anciennes directement sur des roches très récentes).</p></li>
+</ul>
+<blockquote>
+<figure class="fig"><video src="assets/vid/image87.mp4" style="width:529px" poster="assets/poster/image87.jpg" autoplay loop muted playsinline preload="none" controls></video></figure>
+</blockquote>
+<p><strong>Fenêtre tectonique et demi-fenêtre</strong></p>
+<p>Une fois la nappe en place, l'érosion peut l'entamer progressivement. Selon l'avancement de l'érosion, on obtient des structures différentes :</p>
+<p><strong>Fenêtre tectonique :</strong> l'érosion a traversé complètement la nappe et expose l'autochtone sous-jacent. Sur une carte géologique, l'autochtone apparaît encerclé de toutes parts par la nappe (comme une île entourée d'eau). La fenêtre est entièrement « fermée » par la nappe tout autour.</p>
+<p><strong>Demi-fenêtre :</strong> l'érosion n'a entamé la nappe que d'un côté (par exemple là où une rivière a creusé une vallée). L'autochtone affleure sur trois côtés seulement, le quatrième étant encore recouvert par la nappe ou limité par un relief. Sur une carte, la demi-fenêtre est ouverte d'un côté.</p>
+<p><strong>Klippe :</strong> l'inverse de la fenêtre – un lambeau de nappe isolé par l'érosion, entouré de toutes parts par l'autochtone. C'est un « îlot » de nappe posé sur l'autochtone.</p>
+<figure class="fig"><img src="assets/media/image88.jpeg" loading="lazy" decoding="async" alt="Le Vélodrome : un objet géologique emblématique des Alpes — Planet-Terre" style="width:575px"></figure>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Fenêtre, demi-fenêtre, klippe – comment les distinguer sur une carte ?</strong></p>
+<ul>
+<li><p>Fenêtre : l'unité autochtone est au centre, entourée de la nappe tout autour → cercle complet de contact chevauchant</p></li>
+<li><p>Demi-fenêtre : l'unité autochtone est au centre mais le contact n'est pas fermé de tous côtés → arc de cercle ouvert d'un côté</p></li>
+<li><p>Klippe : la nappe est au centre, entourée de l'autochtone tout autour → îlot de nappe isolé</p></li>
+</ul>
+<p>Dans les trois cas, le contact entre nappe et autochtone est un contact tectonique – une faille de chevauchement – et non un contact stratigraphique normal.</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><strong>Lire un contact tectonique sur le terrain</strong></p>
+<p>Sur le terrain, le contact entre une nappe et son autochtone se reconnaît à plusieurs indices :</p>
+<ul>
+<li><p>Contact brusque et géologiquement « anormal » : deux formations très différentes (en âge et en lithologie) se retrouvent en contact direct, sans transition progressive</p></li>
+<li><p>Présence d'une brèche tectonique ou d'une zone mylonitique à l'interface (roches broyées, fragmentées ou très déformées)</p></li>
+<li><p>Niveau de décollement visible : souvent du Trias évaporitique (gypse, cargneule, argiles du Keuper) ou des argiles très déformées</p></li>
+<li><p>Les couches de l'unité autochtone sous le contact sont souvent sub-horizontales ou peu déformées, tandis que les couches de la nappe juste au-dessus peuvent être fortement inclinées ou plissées</p></li>
+<li><p>Blocs exotiques : parfois des blocs de roches « étrangères » sont inclus dans la zone de contact (arrachés à d'autres structures sur le trajet de la nappe)</p></li>
+</ul>
+<p><strong>La propagation de l'orogenèse – de l’interne vers l'externe</strong></p>
+<p>Un principe fondamental pour comprendre la tectonique alpine : l'orogenèse ne se développe pas partout en même temps. Elle progresse comme une vague, depuis les zones les plus internes (les plus proches de la zone de collision, à l'est) vers les zones les plus externes (à l'ouest), au cours du temps.</p>
+<h1 id="3-4-discordances">3.4 Discordances</h1>
+<p>On vient de voir que le contact entre une nappe et son autochtone est un contact tectonique : le plan de contact lui-même est une faille, le long de laquelle les deux blocs ont glissé. Il existe un autre type de contact « anormal » : <strong>la discordance</strong>. La différence ne porte pas sur le fait que la tectonique ait joué un rôle dans l'histoire de la région, mais sur la nature de la surface de contact elle-même : dans une discordance, cette surface n'est jamais un plan de glissement – c'est une ancienne surface d'érosion ou de non-dépôt. Rien n'a bougé le long de cette surface précise.</p>
+<p><strong>Qu'est-ce qu'une discordance ?</strong></p>
+<p>Une discordance est une surface qui marque une interruption dans la sédimentation, c'est-à-dire une lacune de temps entre deux ensembles de couches : entre elles, la sédimentation s'est arrêtée pendant un temps plus ou moins long, parfois accompagnée d'érosion, avant de reprendre.</p>
+<figure class="fig"><img src="assets/media/image89.jpeg" loading="lazy" decoding="async" alt="Carboniferous – Triassic Unconformity in Telheiro - IUGS" style="width:386px"></figure>
+<p><strong>Un exemple – discordance angulaire</strong></p>
+<p>Les couches sous la surface de discordance sont inclinées ou plissées, tandis que les couches au-dessus sont déposées à nouveau à l'horizontale par-dessus. Cela montre qu'une déformation tectonique a eu lieu – mais ailleurs et avant, pas le long de cette surface : le plissement a créé un relief, qui s'est ensuite aplani par érosion, avant que la sédimentation ne reprenne par-dessus. La surface de discordance n'est donc qu'une surface d'érosion, jamais un plan de faille.</p>
+<figure class="fig"><video src="assets/vid/image90.mp4" style="width:471px" poster="assets/poster/image90.jpg" autoplay loop muted playsinline preload="none" controls></video></figure>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Discordance ou contact tectonique – ne pas confondre</strong></p>
+<p>Ce qui compte n'est pas si la tectonique a joué un rôle dans l'histoire de la région, mais si la surface de contact elle-même est un plan de faille ou non :</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 37%" />
+<col style="width: 37%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Critère</strong></th>
+<th><strong>Discordance</strong></th>
+<th><strong>Contact tectonique</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ordre des âges</td>
+<td>Toujours normal : le dessus est plus jeune que le dessous</td>
+<td>Peut être inversé : roches très anciennes directement sur des roches très récentes</td>
+</tr>
+<tr class="even">
+<td>Aspect de la surface</td>
+<td>Simple surface d'érosion (parfois galets remaniés à la base)</td>
+<td>Roches broyées, brèche, mylonite, stries de glissement</td>
+</tr>
+<tr class="odd">
+<td>Ce qui manque</td>
+<td>Un intervalle de temps (érosion ou pause de sédimentation)</td>
+<td>Rien ne manque forcément dans le temps – c'est un déplacement dans l'espace</td>
+</tr>
+</tbody>
+</table>
+<p><em>Image simple : une discordance, c'est comme un livre où il manque des pages – l'histoire continue dans le bon ordre, juste avec un blanc. Un contact tectonique, c'est comme si on avait arraché un chapitre d'un autre livre et qu'on l'avait collé au milieu, dans le désordre.</em></p>
+<p>Une discordance est donc un repère de chronologie relative (comme la superposition et le recoupement), tandis qu'un contact tectonique est un repère de déformation.</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><strong>Synthèse de la Partie 3</strong></p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Ce que tu dois savoir faire après cette partie</strong></p>
+<ul>
+<li><p>Distinguer faille normale, faille inverse et faille décrochante – et associer chacune à son contexte tectonique</p></li>
+<li><p>Lire les indices de terrain d'une faille : miroir de faille, stries, brèche, décalage de couches</p></li>
+<li><p>Distinguer anticlinal et synclinal en utilisant la stratigraphie (âge des couches au cœur), pas la forme du relief</p></li>
+<li><p>Reconnaître un pli couché et comprendre pourquoi le flanc inférieur est en série inverse</p></li>
+<li><p>Expliquer ce qu'est une nappe de charriage, un niveau de décollement, et comment l'érosion peut créer une fenêtre ou une demi-fenêtre</p></li>
+<li><p>Lire un contact tectonique sur le terrain et l'interpréter comme un chevauchement</p></li>
+<li><p>Comprendre la propagation de l'orogenèse de l'interne vers l'externe</p></li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Mots-clés à maîtriser</strong></p>
+<p>Faille normale · Faille inverse · Chevauchement · Faille décrochante · Dextre · Senestre · Plan de faille · Stries · Miroir de faille · Rejet · Hanging wall · Foot wall · Pli · Anticlinal · Synclinal · Charnière · Flanc · Plan axial · Axe · Pli droit · Pli déversé · Pli couché · Série normale · Série inverse · Nappe de charriage · Allochtone · Autochtone · Niveau de décollement · Fenêtre tectonique · Demi-fenêtre · Klippe · Contact tectonique · Propagation de l'orogenèse</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<figure class="fig"><img src="assets/media/image91.png" loading="lazy" decoding="async" alt="Image" style="width:73px"></figure><strong>PARTIE 4</strong></p>
+<h1 id="g-ologie-alpine">Géologie alpine</h1>
+<p><em><u>Les Alpes sont l'une des chaînes de montagnes les mieux étudiées au monde, et elles constituent un laboratoire naturel exceptionnel pour comprendre la tectonique des plaques en action. Cette partie te donne le cadre géodynamique et la zonation structurale indispensables pour comprendre ce que tu vas observer sur le terrain. Pas de détails sur une localité particulière – seulement les clés de lecture générales de l'ensemble de la chaîne.</u></em></p>
+<h1 id="4-1-formation-des-alpes-du-trias-aujourd-hui">4.1 Formation des Alpes – du Trias à aujourd'hui</h1>
+<p><figure class="fig"><img src="assets/media/image93.jpeg" loading="lazy" decoding="async" alt="Géologie des Alpes" style="width:632px"></figure>
+<p>L’histoire des Alpes s’étend sur plus de 250 millions d’années et se déroule en trois actes successifs.</p>
+<p><strong>Étape 1 – Le rift et l’ouverture océanique (Trias–Jurassique, ~250–145 Ma)</strong></p>
+<p>Au Trias, la Pangée se fragmente. La croûte européenne s’étire, des failles normales s’ouvrent et des bassins en demi-graben se remplissent de sédiments. La trilogie germanique s’y dépose : grès rouges du Buntsandstein, dolomies du Muschelkalk, évaporites du Keuper. Ces niveaux de gypse et de sel du Keuper joueront plus tard un rôle structural majeur comme plans de décollement des nappes.</p>
+<p>Au Jurassique moyen, la croûte s’amincit jusqu’à rompre complètement. Un véritable océan s’ouvre : la Téthys alpine (ou océan liguro-piémontais). Des basaltes en coussins et des ophiolites se forment le long des dorsales.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>La Téthys alpine – un océan disparu</strong></p>
+<p>La Téthys alpine est l’ancêtre disparu de la Méditerranée, ouvert entre la plaque européenne (au nord) et la plaque africaine (au sud). Elle a existé du Jurassique moyen au Crétacé supérieur avant d’être fermée par subduction. Ses vestiges – les ophiolites – sont charriées dans les zones internes des Alpes et constituent certains des seuls endroits au monde où l’on peut marcher sur un ancien plancher océanique intact.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Étape 2 – La subduction crétacée (~100–35 Ma)</strong></p>
+<p>La plaque africaine (et son promontoire adriatique) commence à converger vers l’Europe. La croûte océanique de la Téthys, plus dense, plonge en subduction. Elle se métamorphise à haute pression et basse température (schistes bleus, éclogites). Les ophiolites qui résistent à la subduction s’accumulent dans un prisme d’accrétion. Vers 50–35 Ma, la croûte océanique est entièrement avalée ; les deux croûtes continentales entrent en contact.</p>
+<p><strong>Étape 3 – La collision et la propagation de la déformation (~35 Ma–aujourd’hui)</strong></p>
+<p>Les deux croûtes continentales, trop légères pour plonger dans le manteau, s’épaississent, se plissent et se chevauchent. La déformation se propage progressivement de l’est (zones internes) vers l’ouest (zones externes), comme une vague.</p>
+<ul>
+<li><p>Éocène–Oligocène : empilement des grandes nappes dans les zones internes.</p></li>
+<li><p>Miocène : la déformation atteint les zones externes (chaînes sub-alpines) ; les nappes glissent sur les niveaux évaporitiques du Keuper.</p></li>
+<li><p>Pliocène–aujourd’hui : surrection continue, incision glaciaire, chaîne encore active sismiquement.</p></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Période</strong></th>
+<th><strong>Ce qui se passe</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Trias ~250–200 Ma</td>
+<td>Rift – extension. Amincissement de la croûte, blocs basculés, bassins en demi-graben</td>
+</tr>
+<tr class="even">
+<td>Jurassique ~200–145 Ma</td>
+<td>Ouverture océanique – Téthys (basaltes en coussins et ophiolites à la dorsale)</td>
+</tr>
+<tr class="odd">
+<td>Crétacé ~145–66 Ma</td>
+<td>Convergence, puis subduction de la Téthys</td>
+</tr>
+<tr class="even">
+<td>Éocène ~56–34 Ma</td>
+<td>Collision continentale : les nappes s'empilent à l'est</td>
+</tr>
+<tr class="odd">
+<td>Oligocène ~34–23 Ma</td>
+<td>Le bassin s'effondre sous la charge des nappes</td>
+</tr>
+<tr class="even">
+<td>Miocène à aujourd'hui ~23–0 Ma</td>
+<td>La déformation atteint les zones externes, puis la chaîne se soulève</td>
+</tr>
+</tbody>
+</table>
+<figure class="fig"><img src="assets/media/image94.jpeg" loading="lazy" decoding="async" alt="La formation des Alpes : une introduction à la géodynamique" style="width:583px"></figure>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>Synthèse de la Partie 4 – Ce que tu dois savoir faire</strong></p>
+<ul>
+<li><p>Raconter l’histoire des Alpes en trois phases (rift → subduction → collision) en citant les roches et structures produites à chaque étape</p></li>
+<li><p>Expliquer ce qu’est la Téthys alpine, pourquoi elle a disparu, et où retrouver ses traces aujourd’hui (ophiolites)</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><strong>Mots-clés à maîtriser</strong></p>
+<p>Téthys alpine · Rift · Subduction · Collision · Métamorphisme haute pression · Schistes bleus · Éclogite · Trilogie germanique · Niveau de décollement</p></td>
+</tr>
+</tbody>
+</table>
+<figure class="fig"><img src="assets/media/image95.png" loading="lazy" decoding="async" alt="Map with pin" style="width:79px"></figure><strong>PARTIE 5</strong></p>
+<h1 id="cartographie-de-terrain">Cartographie de terrain</h1>
+<p><em><u>La cartographie est le cœur du travail de terrain : c’est la traduction de ce que tu vois dans la roche en une représentation spatiale lisible et communicable. Cette partie t’apprend à organiser une campagne de cartographie en petits groupes, à tenir un carnet de terrain rigoureux, à mesurer les structures géologiques avec une boussole-clinomètre et avec FieldMove Clino, puis à construire progressivement ta minute de terrain jusqu’à la carte géologique colorée et ses coupes. Toutes ces compétences sont indissociables : sans un carnet structuré, de bonnes mesures et une minute bien tenue, aucune carte ne peut être fiable.</u></em></p>
+<h1 id="5-1-organiser-une-campagne-de-cartographie-de-terrain">5.1 Organiser une campagne de cartographie de terrain</h1>
+<p>Avant de partir chacun sur son secteur, le groupe entier observe et discute ensemble un log stratigraphique de référence pour la région : c’est la colonne des unités, avec leur âge et leurs caractères, sur laquelle tout le monde s’appuiera ensuite.</p>
+<p><figure class="fig"><img src="assets/media/image97.jpeg" loading="lazy" decoding="async" alt="DESSINER un LOG ou COLONNE LITHOSTRATIGRAPHIQUE" style="width:502px"></figure>
+<p>C’est aussi l’occasion d’une démonstration collective des mesures à la boussole et avec FieldMove Clino sur un premier affleurement. Une fois ces bases posées, la classe se répartit en petits groupes, chacun responsable d’un territoire délimité sur la carte topographique.</p>
+<p><strong>Le déroulé d’une journée type</strong></p>
+<ul>
+<li><p><strong>Mise en commun du log de référence.</strong> Rappel en groupe complet des unités reconnues, de leur âge et de leur ordre de superposition, avant de partir sur le terrain.</p></li>
+<li><p><strong>Démonstration des mesures.</strong> Sur un affleurement partagé, l’encadrant montre comment mesurer la direction de pendage et le pendage à la boussole, puis avec FieldMove Clino (détails en 5.3 et 5.4).</p></li>
+<li><p><strong>Répartition en petits groupes.</strong> Chaque groupe de 3 à 4 étudiants reçoit un territoire précis, délimité sur la carte topo.</p></li>
+<li><p><strong>Travail autonome sur le territoire.</strong> Chaque groupe parcourt son secteur, remplit sa minute de terrain et son carnet (voir 5.5).</p></li>
+<li><p><strong>Retour au camp.</strong> Mise en commun le soir : comparaison des limites aux bords des territoires, discussion des échantillons prélevés dans la journée.</p></li>
+</ul>
+<p><strong>Les deux documents de terrain</strong></p>
+<p>Sur le terrain, chaque groupe travaille avec deux supports complémentaires et indissociables</p>
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Document</strong></th>
+<th><strong>Rôle et contenu</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Minute de terrain (carte topo)</td>
+<td>Support cartographique collectif du groupe : position précise des affleurements, symboles de mesure (direction/pendage), âge proposé, limites entre unités et, progressivement, les couleurs de la future carte géologique.</td>
+</tr>
+<tr class="even">
+<td>Carnet de terrain</td>
+<td>Journal individuel détaillé : description lithologique, croquis, numéro d’arrêt, interprétations. Il documente ce que la minute ne fait que résumer (voir 5.2).</td>
+</tr>
+</tbody>
+</table>
+<p>La suite de cette partie détaille, dans l’ordre où tu en auras besoin sur le terrain : comment tenir ton carnet (5.2), comment mesurer une surface à la boussole (5.3) puis avec FieldMove Clino (5.4), et enfin comment transformer ta minute de terrain en carte géologique colorée avec ses coupes (5.5, 5.6 et 5.7).</p>
+<h1 id="5-2-tenir-un-carnet-de-terrain">5.2 Tenir un carnet de terrain</h1>
+<p>Le carnet de terrain est le document central de toute sortie géologique. C’est à la fois un journal de bord, un recueil d’observations brutes et une base de données personnelle. Un bon carnet te permettra de reconstruire ta journée des semaines plus tard et de localiser chaque observation à son arrêt exact. Il est la base indispensable à toute cartographie, numérique ou non.</p>
+<figure class="fig"><img src="assets/media/image98.jpeg" loading="lazy" decoding="async" alt="Section d&amp;#39;Etudes des Gîtes Minéraux. Service Géologique du Maroc. Rabat. Carnet de Bled commencé le 12 novembre 1955. [ On joint : ] Notes de terrain 1953-1959 par PELLETIER DOISY, Charles: Bon rigide (1953) | Librairie du Cardinal" style="width:379px"></figure>
+<p><strong>Les règles fondamentales</strong></p>
+<ul>
+<li><p><strong>Un arrêt = une entrée numérotée. </strong>Note en premier lieu les coordonnées GPS (ou ta position sur la carte topo), la date et l’heure. Numérote les arrêts de façon séquentielle tout au long du stage.</p></li>
+<li><p><strong>Décrire avant d’interpréter. </strong>Consigne d’abord exactement ce que tu vois : couleur, texture, grain, épaisseur des bancs, nature des contacts. L’interprétation vient ensuite.</p></li>
+<li><p><strong>Dessiner systématiquement. </strong>Un croquis annoté vaut souvent mieux qu’un paragraphe. Schématise l’affleurement avec échelle et orientation.</p></li>
+<li><p><strong>Photographier et référencer. </strong>Chaque photo reçoit un numéro noté dans le carnet : « Photo 12 : contact calcaire/schiste, vu vers le NE ». Sans cette référence, les photos deviennent inexploitables après le retour.</p></li>
+<li><p><strong>Écrire au crayon à papier. </strong>Il résiste à la pluie et à l’humidité, contrairement au stylo. Emporte toujours deux crayons taillés.</p></li>
+<li><p><strong>Ne jamais effacer, toujours barrer. </strong>Une observation barrée reste lisible et peut s’avérer utile. Un espace blanc est une information perdue.</p></li>
+</ul>
+<p><strong>Structure d’un arrêt</strong></p>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 38%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Champ</strong></th>
+<th><strong>Contenu</strong></th>
+<th><strong>Exemple</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Numéro d’arrêt</td>
+<td>Numéro unique séquentiel</td>
+<td>Arrêt 07</td>
+</tr>
+<tr class="even">
+<td>Localisation</td>
+<td>Coordonnées GPS, ou position décrite par rapport à un repère sur la carte topo</td>
+<td>N 44°52'13" E 6°38'42" – alt. 1 420 m – ou, sans GPS : « 500 m au sud de Barles »</td>
+</tr>
+<tr class="odd">
+<td>Lithologie</td>
+<td>Type de roche, couleur, grain, fossiles, test acide</td>
+<td>Calcaire micritique gris, fin grain, quelques bivalves</td>
+</tr>
+<tr class="even">
+<td>Structures sédimentaires</td>
+<td>Granoclassement, laminations, polarité</td>
+<td>Laminations obliques, base érosive → polarité normale</td>
+</tr>
+<tr class="odd">
+<td>Structures tectoniques</td>
+<td>Failles, plis, foliation, stries</td>
+<td>Faille : 110°∠55°</td>
+</tr>
+<tr class="even">
+<td>Mesures</td>
+<td>Direction et pendage de toutes les surfaces planes</td>
+<td>Strat. : 220°∠25°</td>
+</tr>
+<tr class="odd">
+<td>Interprétation</td>
+<td>Milieu de dépôt, contexte tectonique, questions</td>
+<td>Plateforme carbonatée peu profonde (Lias ?) – à vérifier</td>
+</tr>
+<tr class="even">
+<td>Croquis / photos</td>
+<td>Référence aux photos, schémas de l’affleurement</td>
+<td>Photos 14–16, croquis p. 23</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Indice terrain – le piège de l’interprétation prématurée</strong></p>
+<p>Un piège très fréquent chez les étudiants est de noter directement « calcaire de plateforme » sans décrire la roche. Si l’interprétation est fausse, il n’y a plus aucun moyen de revenir à l’observation brute. La règle est absolue : décrire d’abord (lithologie, texture, couleur, structures), interpréter ensuite. En cas de doute sur la lithologie, effectue le test à l’acide et note le résultat brut.</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<h1 id="5-3-mesurer-les-structures-avec-une-boussole-clinom-tre">5.3 Mesurer les structures avec une boussole-clinomètre</h1>
+<p>Mesurer l’orientation des surfaces rocheuses est l’opération de base de toute cartographie géologique. Toute surface plane – couche sédimentaire, plan de faille, foliation, contact lithologique – peut être caractérisée par deux angles complémentaires : sa direction de pendage et son pendage. Maîtriser cette mesure est non négociable avant d’arriver sur le terrain.</p>
+<p><strong>Vocabulaire fondamental</strong></p>
+<p><strong>Direction de pendage (« dip direction ») :</strong> azimut, entre 0° et 360°, de la ligne de plus grande pente de la surface (projetée à l’horizontale) – c’est la direction vers laquelle la couche plonge. C’est la convention retenue dans ce manuel : elle est directe, sans ambiguïté de sens, et c’est celle qu’utilise FieldMove Clino.</p>
+<p><strong>Pendage (« dip angle ») :</strong> angle d’inclinaison maximale de la surface par rapport à l’horizontale, mesuré perpendiculairement à la direction de pendage. Exprimé en degrés, de 0° à 90°.</p>
+<p><strong>Notation complète :</strong> Direction de pendage/Pendage. Exemple : 130°∠30° = la couche plonge vers l’azimut 130°, avec l’angle de pendage de 30°.</p>
+<figure class="fig"><img src="assets/media/image99.jpeg" loading="lazy" decoding="async" alt="Guides &amp;amp; Conseils Géologiques | Geologeek" style="width:264px"></figure><figure class="fig"><img src="assets/media/image100.png" loading="lazy" decoding="async" alt="" style="width:306px"></figure>
+<p><strong>La boussole-clinomètre</strong></p>
+<p>La boussole-clinomètre comporte une boussole magnétique pour mesurer la direction de pendage et un clinomètre interne (niveau à bulle inclinable) pour mesurer le pendage. Les deux mesures se font en deux étapes successives sur la même surface.</p>
+<figure class="fig"><img src="assets/media/image101.jpg" loading="lazy" decoding="async" alt="" style="width:385px"></figure>
+<figure class="fig"><img src="assets/media/image102.png" loading="lazy" decoding="async" alt="Tilted Beds and Strike and Dip – Physical Geology Laboratory" style="width:379px"></figure>
+<h3 id="tape-1-trouver-la-ligne-de-plus-grande-pente">Étape 1 – Trouver la ligne de plus grande pente</h3>
+<ol type="1">
+<li><p>Pose un petit caillou rond sur la surface (ou verse un peu d'eau) et laisse-le rouler (ou l'eau s'écouler) librement : il suivra naturellement la ligne de plus grande pente.</p></li>
+<li><p>Repère mentalement ou marque cette trajectoire sur la surface.</p></li>
+</ol>
+<p><strong>Étape 2 – Mesurer la direction de pendage</strong></p>
+<p>4. Aligne le bord long de la boussole sur cette ligne de plus grande pente, pointant vers le bas de la pente, puis bascule la boussole à l'horizontale.<br />
+5. Maintiens la boussole horizontale : le niveau à bulle circulaire doit être centré.<br />
+6. Lis la valeur indiquée par l'aiguille nord, dans le sens où pointe le bord de la boussole (vers le bas de la pente) : c'est la direction de pendage, un azimut entre 0° et 360°.</p>
+<p><strong>Étape 3 – Mesurer le pendage</strong></p>
+<p>7. Sans bouger cette orientation, redresse la boussole en position verticale, bord plaqué contre la surface, le long de cette même ligne.<br />
+8. Fais tourner la molette du clinomètre interne jusqu'à ce que la bulle soit centrée, puis lis l'angle : c'est le pendage.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Indice terrain – sources d’erreur courantes à la boussole</strong></p>
+<ul>
+<li><p><strong>Objets métalliques :</strong> éloigne la boussole d’au moins 30 cm de tout métal. Les roches ferromagnétiques perturbent aussi l’aiguille.</p></li>
+<li><p><strong>Surface altérée :</strong> mesure toujours sur une surface fraîche et plane. Une face érodée peut ne pas refléter le vrai pendage.</p></li>
+<li><p><strong>Boussole non horizontale :</strong> si la boussole est inclinée lors de la mesure de direction, l’aiguille coince ou donne une valeur fausse. Le niveau à bulle doit être centré.</p></li>
+<li><p><strong>Mauvaise ligne de plus grande pente :</strong> si tu t’arrêtes avant d’avoir trouvé l’angle maximal du clinomètre en pivotant la boussole, tu mesures un pendage apparent, plus faible que le vrai pendage, et une direction de pendage erronée.</p></li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><strong>Représentation cartographique des mesures</strong></p>
+<p>Sur une carte géologique, toute mesure de pendage se représente par un symbole standardisé : un trait dans la direction de la couche, un tiret perpendiculaire court indiquant le sens du pendage, et la valeur en degrés à côté. Ces symboles sont normalisés et doivent être utilisés de façon cohérente sur toute la carte.</p>
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 19%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Structure</strong></th>
+<th><strong>Symbole conventionnel</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Stratification inclinée</td>
+<td>35˧</td>
+<td>Trait (direction) + tiret perpendiculaire (sens pendage) + valeur</td>
+</tr>
+<tr class="even">
+<td>Stratification verticale</td>
+<td>─┼─ 90</td>
+<td>Trait + tirets symétriques des deux côtés</td>
+</tr>
+<tr class="odd">
+<td>Stratification horizontale</td>
+<td>⊕</td>
+<td>Cercle avec croix</td>
+</tr>
+</tbody>
+</table>
+<p>35˧ = 270°∠35° = la couche plonge vers l’azimut 270°, avec un pendage de 35°</p>
+<h1 id="5-4-fieldmove-clino-carnet-de-terrain-num-rique">5.4 FieldMove Clino – carnet de terrain numérique</h1>
+<p>FieldMove Clino (Petex Ltd) est une application de carnet de terrain numérique disponible sur iOS et Android. Elle utilise le magnétomètre et l’accéléromètre du smartphone pour mesurer direction et pendage, le GPS pour géolocaliser chaque observation, et permet d’intégrer photos, croquis et notes texte au même endroit. Elle ne remplace pas la compréhension – elle accélère la saisie et garantit la géolocalisation automatique de chaque mesure.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Ressource vidéo – le geste à la boussole et FieldMove Clino</strong></p>
+<figure class="fig"><img src="assets/media/image103.png" loading="lazy" decoding="async" alt="" style="width:326px"></figure>
+<p><a href="https://youtu.be/PQUfpKIfbN0">https://youtu.be/PQUfpKIfbN0</a></p>
+<figure class="fig"><img src="assets/media/image104.png" loading="lazy" decoding="async" alt="" style="width:386px"></figure>
+<p><a href="https://youtu.be/XIejEV6EKGQ">https://youtu.be/XIejEV6EKGQ</a>.</p>
+<p><strong>Ressource en ligne pour jouer et mieux comprendre la relation entre géologie, topographie et mesures</strong></p>
+<p><a href="https://www.visiblegeology.com">https://www.visiblegeology.com</a></p>
+<figure class="fig"><video src="assets/vid/image105.mp4" style="width:477px" poster="assets/poster/image105.jpg" autoplay loop muted playsinline preload="none" controls></video></figure></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><strong>Démarrer un projet</strong></p>
+<ol type="1">
+<li><blockquote>
+<p>Ouvre FieldMove Clino → « Nouveau projet » → donne un nom explicite (ex. : « Stage_Digne_M1_2026 »).</p>
+</blockquote></li>
+<li><blockquote>
+<p>Active le GPS : l’application positionne automatiquement les nouveaux arrêts sur la carte intégrée. Si le fond de carte ne charge pas (pas de réseau), il est possible d’importer un fond raster préchargé en local.</p>
+</blockquote></li>
+<li><blockquote>
+<p>Renseigne la légende stratigraphique du projet : dans les paramètres, crée la liste des unités reconnues sur le log de référence (5.1), avec le code couleur donné par l’encadrant. Cette légende sera ensuite proposée à chaque arrêt, pour choisir l’unité plutôt que la ressaisir à la main.</p>
+</blockquote></li>
+</ol>
+<p><strong>Créer un arrêt et ajouter des observations (si besoin)</strong></p>
+<ol start="4" type="1">
+<li><blockquote>
+<p>Appuie sur « + » → « Ajouter une localité ». FieldMove crée un arrêt à ta position GPS actuelle.</p>
+</blockquote></li>
+<li><blockquote>
+<p>Nomme l’arrêt de façon explicite : <strong>07_Calcaire_gris_contact</strong> est exploitable des mois après ; <strong>Localité_12</strong> ne l’est pas.</p>
+</blockquote></li>
+<li><blockquote>
+<p>Ajoute une description en texte libre : lithologie, observations principales, polarité stratigraphique, interprétation préliminaire.</p>
+</blockquote></li>
+<li><blockquote>
+<p>Ajoute des photos directement depuis l’arrêt (icône appareil photo) – elles sont géolocalisées et associées à l’arrêt automatiquement.</p>
+</blockquote></li>
+<li><blockquote>
+<p>Choisis l’unité stratigraphique dans la légende du projet (définie ci-dessus) plutôt que d’en improviser une nouvelle : si l’affleurement ne correspond à aucune unité existante, laisse le champ vide et signale le cas pour la mise en commun du soir (5.1, 5.5).</p>
+</blockquote></li>
+</ol>
+<p><strong>Mesurer une surface plane</strong></p>
+<ol start="9" type="1">
+<li><blockquote>
+<p>Appuie sur « Compass / Clino » (icône plan incliné).</p>
+</blockquote></li>
+<li><blockquote>
+<p>Choisis le type de surface dans le menu : Stratification, Foliation, Plan de faille, Contact, Veine, etc.</p>
+</blockquote></li>
+<li><blockquote>
+<p>Pose le dos du téléphone à plat sur la surface à mesurer (écran vers le ciel). La surface doit être propre, fraîche et suffisamment étendue.</p>
+</blockquote></li>
+<li><blockquote>
+<p>Maintiens le téléphone stable, puis appuie sur le symbole rouge de pendage ˧ : il devient noir ˧ et s'arrête de bouger. Appuie ensuite sur « Save ». L'application enregistre la direction de pendage et le pendage en une seule opération.</p>
+</blockquote></li>
+</ol>
+<h1 id="5-5-de-la-minute-de-terrain-la-carte-g-ologique">5.5 De la minute de terrain à la carte géologique</h1>
+<p>La minute de terrain est la carte topo sur laquelle chaque groupe reporte, affleurement après affleurement, tout ce qui permet ensuite de tracer les limites entre unités et de les colorer. Elle se construit progressivement, au fur et à mesure de la journée : ce n’est pas un exercice de fin de stage, mais un document que tu remplis en marchant.</p>
+<figure class="fig"><img src="assets/media/image106.jpeg" loading="lazy" decoding="async" alt="Les Cévennes : Un Paradis de Randonnée à Découvrir Absolument" style="width:518px"></figure>
+<p><strong>Trouver et documenter un affleurement</strong></p>
+<ul>
+<li><p>Positionner l’affleurement précisément sur la minute (GPS ou repérage visuel sur la carte topo).</p></li>
+<li><p>Identifier la roche : couleur, texture, grain, test à l’acide si nécessaire (voir la fiche arrêt en 5.2).</p></li>
+<li><p>Proposer un âge en te référant au log stratigraphique vu en groupe (voir 5.1) : on compare avec les unités déjà caractérisées, on n’improvise pas une nouvelle unité seul sur le terrain.</p></li>
+<li><p>En cas de doute, prélever un échantillon (voir ci-dessous) pour discussion collective le soir au camp.</p></li>
+</ul>
+<p><strong>Bien prélever un échantillon</strong></p>
+<ul>
+<li><p><strong>Taille.</strong> Vise une taille poing fermé environ, quand la roche le permet : assez grand pour rester représentatif et manipulable au camp, sans démolir inutilement l’affleurement. Pour une roche friable ou un fossile fragile, adapte la taille à ce que la roche permet plutôt que de forcer.</p></li>
+<li><p><strong>Cassure fraîche.</strong> La majorité de l’échantillon doit montrer une cassure fraîche : c’est elle qui donne la vraie couleur et la vraie texture de la roche, non masquées par l’altération.</p></li>
+<li><p><strong>Garder un bout de surface altérée.</strong> Ne rabats pas tout l’échantillon en cassure fraîche : conserve si possible un coin de la surface altérée d’origine, car elle aussi renseigne. Une dolomie développe souvent une patine brune craquelée dite « peau d’éléphant » ; un calcaire s’altère fréquemment en brun-gris. Ce sont des indices de terrain utiles, à ne pas jeter.</p></li>
+<li><p><strong>Étiqueter tout de suite.</strong> Avant de continuer ta route, note le numéro de l’échantillon directement dessus (feutre indélébile) et glisse une étiquette portant le même numéro dans le sachet. Reporte ce numéro dans le carnet avec le numéro d’arrêt, les coordonnées et une brève description. Un échantillon non étiqueté sur le moment se mélange vite avec les autres et devient inexploitable au retour.</p></li>
+</ul>
+<blockquote>
+<figure class="fig"><img src="assets/media/image107.jpeg" loading="lazy" decoding="async" alt="Programme de cartographie géologique et d&amp;#39;échantillonnage - CMA" style="width:337px"></figure>
+</blockquote>
+<p><strong>Reporter la mesure de direction et de pendage</strong></p>
+<p>Sur chaque affleurement où une surface planaire est mesurable (stratification, foliation, faille), prends la direction de pendage et le pendage à la boussole-clinomètre (5.3) ou avec FieldMove Clino (5.4), puis place le symbole conventionnel correspondant directement sur la minute, au point exact de la mesure, avec sa valeur en degrés.</p>
+<figure class="fig"><img src="assets/media/image108.png" loading="lazy" decoding="async" alt="" style="width:211px"></figure><figure class="fig"><img src="assets/media/image110.jpeg" loading="lazy" decoding="async" alt="Les Cévennes : Un Paradis de Randonnée à Découvrir Absolument" style="width:417px"></figure>
+<p><strong>Mettre en commun le soir au camp</strong></p>
+<p>En fin de journée, les groupes comparent leurs minutes : les limites doivent se raccorder d’un territoire à l’autre, et la légende doit être commune à toute la carte finale. C’est aussi le moment de trancher, avec l’ensemble du groupe, les cas douteux mis de côté sur le terrain et de statuer sur les échantillons prélevés.</p>
+<h1 id="5-6-la-carte-g-ologique">5.6 La carte géologique</h1>
+<p><strong>Définir les limites et colorer la carte</strong></p>
+<p>Au fur et à mesure que la minute se remplit de symboles de mesure et d’âges proposés, des limites apparaissent naturellement entre les zones d’unités différentes :</p>
+<ul>
+<li><p>Entre deux points d’âges différents, trace une limite probable ; entre deux points de même âge, c’est la même unité, donc la même couleur.</p></li>
+<li><p>Utilise le pendage mesuré pour orienter la courbure de la limite entre deux arrêts : une couche penche dans une direction donnée, sa limite doit suivre une logique cohérente avec la topographie (une couche inclinée ne suit pas les courbes de niveau, une couche horizontale les suit).</p></li>
+<li><p>Construis ta légende au fur et à mesure : une couleur et un indice par unité, rangés dans l’ordre stratigraphique (la plus ancienne en bas, la plus récente en haut), avec l’âge et une description lithologique brève.</p></li>
+<li><p>Colore ta minute progressivement plutôt qu’en fin de journée : cela permet de repérer tout de suite une incohérence (deux couleurs qui se touchent sans limite tracée, par exemple) pendant que l’affleurement est encore sous les yeux.</p></li>
+</ul>
+<figure class="fig"><img src="assets/media/image106.jpeg" loading="lazy" decoding="async" alt="Les Cévennes : Un Paradis de Randonnée à Découvrir Absolument" style="width:275px"></figure><figure class="fig"><img src="assets/media/image111.png" loading="lazy" decoding="async" alt="" style="width:297px"></figure>
+<p><strong>La qualité de ta carte finale dépend directement de la qualité et de la quantité des mesures prises sur le terrain, et de la rigueur de leur interprétation.</strong></p>
+<h1 id="5-7-les-coupes-g-ologiques">5.7 Les coupes géologiques</h1>
+<p><strong>Principe</strong></p>
+<p>Une fois les limites de la carte tracées, la coupe géologique montre ce qu’il se passe en profondeur, sous la surface topographique. C’est une hypothèse graphique, construite logiquement à partir des pendages mesurés sur le terrain et des contacts observés sur la carte.</p>
+<p>Une coupe est une section verticale, tracée le plus souvent perpendiculairement à la direction dominante des structures, afin de montrer leur pendage réel plutôt qu’un pendage apparent raccourci.</p>
+<p><strong>Méthode simplifiée</strong></p>
+<ol type="1">
+<li><p>Trace la ligne de coupe sur la carte, perpendiculairement à la direction dominante des couches.</p></li>
+<li><p>Construis le profil topographique le long de cette ligne, en reportant les altitudes des courbes de niveau croisées.</p></li>
+<li><p>Reporte sur ce profil les limites géologiques (contacts) là où elles croisent la ligne de coupe.</p></li>
+<li><p>Prolonge chaque contact en profondeur selon le pendage mesuré, en commençant par la couche la plus récente dont tu connais le toit sur toute sa longueur.</p></li>
+<li><p>Complète avec la légende (un figuré conventionnel par lithologie, cohérent avec celui de la carte) et les échelles horizontale et verticale.</p></li>
+</ol>
+<figure class="fig"><img src="assets/media/image112.png" loading="lazy" decoding="async" alt="" style="width:607px"></figure>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Indice terrain – attention à l’exagération verticale</strong></p>
+<p>Pour une coupe structurale, garde la même échelle en horizontal et en vertical : une exagération verticale déforme les pendages apparents et fausse la lecture de la structure. Elle ne se justifie que si elle est clairement indiquée, pour un usage précis (ex. relief très aplati).</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Synthèse de la Partie 5 – Ce que tu dois savoir faire</strong></p>
+<ul>
+<li><p>Tenir un carnet de terrain structuré : numérotation des arrêts, description avant interprétation, croquis avec nord et échelle, référencement des photos</p></li>
+<li><p>Mesurer la direction de pendage et le pendage d’une surface plane avec une boussole-clinomètre, en trouvant la ligne de plus grande pente</p></li>
+<li><p>Identifier et éviter les sources d’erreur courantes (métal, surface altérée, boussole inclinée)</p></li>
+<li><p>Représenter une mesure de pendage avec le symbole conventionnel sur une carte</p></li>
+<li><p>Utiliser FieldMove Clino : créer un projet, ajouter des arrêts géolocalisés, mesurer des surfaces planes, ajouter des photos et des notes</p></li>
+<li><p>Organiser une campagne de terrain en petits groupes, chacun responsable d’un territoire, à partir d’un log stratigraphique de référence discuté collectivement</p></li>
+<li><p>Construire une minute de terrain : positionner les affleurements, proposer un âge, tracer les limites entre unités et les colorer au fur et à mesure</p></li>
+<li><p>Réaliser une coupe géologique simple à partir des contacts et des pendages reportés sur la carte</p></li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Mots-clés à maîtriser</strong></p>
+<p>Direction de pendage · Pendage · Azimut · Clinomètre · Arrêt · Carnet de terrain · FieldMove Clino · Magnétomètre · Accéléromètre · GPS · Calibration · Symbole de pendage · Foliation · Plan de faille · Localité · Mesure planaire · Minute de terrain · Territoire · Affleurement · Log stratigraphique · Échantillon · Limite géologique · Légende · Coupe géologique</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><em>Manuel de préparation au stage alpin – M1 GEOSEN · CY Cergy Paris Université</em></p>
+
+    <footer class="doc-foot">
+      <p>Master GEOSEN — CY Cergy Paris Université</p>
+      <p><a href="M1_GEOSEN_stage_Digne_2026.docx" download>Version Word téléchargeable</a></p>
+    </footer>
+  </main>
+</div>
+
+<script src="assets/js/model-viewer.min.js" type="module"></script>
+<script>
+// Sidebar toggle for narrow screens
+const btn = document.querySelector('.nav-toggle');
+const rail = document.getElementById('sommaire');
+btn.addEventListener('click', () => {
+  const open = rail.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+});
+rail.addEventListener('click', e => {
+  if (e.target.tagName === 'A' && window.innerWidth < 900) {
+    rail.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  }
+});
+
+// Highlight the section currently on screen
+const links = [...document.querySelectorAll('.toc a')];
+const map = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    const a = map.get(en.target.id);
+    if (!a) return;
+    if (en.isIntersecting) {
+      links.forEach(l => l.classList.remove('current'));
+      a.classList.add('current');
+    }
+  });
+}, { rootMargin: '-10% 0px -80% 0px' });
+document.querySelectorAll('h1[id], h2[id]').forEach(h => obs.observe(h));
+
+// Pause off-screen videos so a long page stays light
+const vobs = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    const v = en.target;
+    if (en.isIntersecting) { v.play().catch(() => {}); } else { v.pause(); }
+  });
+}, { rootMargin: '200px' });
+document.querySelectorAll('video').forEach(v => vobs.observe(v));
+</script>
+</body>
+</html>

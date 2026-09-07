@@ -1,0 +1,737 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vérification des figures</title><style>
+body{font:15px/1.5 ui-sans-serif,system-ui,sans-serif;background:#EEEFEA;color:#191D1B;margin:0;padding:2rem 1.25rem 4rem;max-width:960px;margin-inline:auto}
+h1{font-size:1.4rem;margin:0 0 .4rem}
+.lede{color:#55605B;margin:0 0 1.5rem;max-width:65ch}
+.legend{background:#fff;border:1px solid #CDD0C8;border-radius:3px;padding:.85rem 1rem;margin-bottom:1.75rem;font-size:.875rem}
+ul{list-style:none;padding:0;margin:0}
+li{display:grid;grid-template-columns:2.5rem 190px 1fr;gap:1rem;align-items:start;
+   padding:1rem;border:1px solid #CDD0C8;border-radius:3px;margin-bottom:.6rem;background:#fff}
+li.sus{border-color:#B4741F;border-left-width:4px;background:#FDF8F0}
+.n{color:#8A928D;font-variant-numeric:tabular-nums;font-size:.8125rem;padding-top:.2rem}
+.th img,.th video{width:100%;height:auto;max-height:150px;object-fit:contain;background:#E5E7E0;border-radius:2px;display:block}
+code{background:#E5E7E0;padding:.1rem .3rem;border-radius:2px;font-size:.8125rem}
+.flag{color:#8A6520;font-weight:600;font-size:.8125rem;margin-left:.3rem}
+.ok{color:#6C7671;font-size:.8125rem;margin-left:.3rem}
+.ctx{color:#55605B;font-size:.8125rem;margin:.5rem 0 .35rem;font-style:italic}
+.find{margin:0;font-size:.78125rem;color:#6C7671}
+@media(max-width:700px){li{grid-template-columns:1fr}.n{display:none}}
+</style></head><body>
+<h1>Vérification des figures</h1>
+<p class="lede">Chaque figure du manuel, dans l'ordre de la page. Les figures signalées étaient
+<b>flottantes</b> dans Word : leur point d'ancrage n'était pas forcément là où elles apparaissaient
+à l'écran, donc ce sont elles qui ont pu changer de place. Les autres étaient ancrées dans le texte
+et n'ont pas bougé.</p>
+<div class="legend"><b>Pour corriger une figure mal placée :</b> ouvrir <code>index.html</code>
+dans un éditeur de texte, chercher le nom de fichier indiqué, puis déplacer tout le bloc
+<code>&lt;figure class="fig"&gt;…&lt;/figure&gt;</code> à l'endroit voulu.
+Ne rien changer d'autre dans le bloc.</div>
+<ul><li class="sus">
+  <div class="n">1</div>
+  <div class="th"><img src="assets/media/image1.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image1</code> <span class="flag">déplacée ? (wrapNone)</span>
+    <p class="ctx">…s structures avec une boussole-clinomètre 5.4 FieldMove Clino – carnet de terrain numérique 5.5 De la minute de terrain à la carte géologique 5.6 La carte géologique 5.7 Les coupes géologiques Télécharger la version Word</p>
+    <p class="find">Dans index.html, chercher : <code>image1</code></p>
+  </div></li><li class="sus">
+  <div class="n">2</div>
+  <div class="th"><img src="assets/media/image2.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image2</code> <span class="flag">déplacée ? (wrapNone)</span>
+    <p class="ctx">…harriage · Fenêtres tectoniques Partie 4 – Géologie alpine Formation des Alpes (rift → subduction → collision) Partie 5 – Cartographie de terrain Carnet de terrain · Boussole-clinomètre · FieldMove Clino / carte / coupes</p>
+    <p class="find">Dans index.html, chercher : <code>image2</code></p>
+  </div></li><li class="sus">
+  <div class="n">3</div>
+  <div class="th"><img src="assets/media/image4.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image4</code> <span class="flag">déplacée ? (wrapNone)</span>
+    <p class="ctx">… niveau de départ), après (pour valider tes acquis), ou les deux. Tu peux le repasser autant de fois que tu le souhaites. Il n’y a pas de piège : toutes les réponses se trouvent dans ce manuel. Accéder au quiz → [ QUIZ ]</p>
+    <p class="find">Dans index.html, chercher : <code>image4</code></p>
+  </div></li><li class="sus">
+  <div class="n">4</div>
+  <div class="th"><img src="assets/media/image6.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image6</code> <span class="flag">déplacée ? (wrapNone)</span>
+    <p class="ctx">….3 Mesurer les structures avec une boussole-clinomètre 64 5.4 FieldMove Clino – carnet de terrain numérique 66 5.5 De la minute de terrain à la carte géologique 68 5.6 La carte géologique 70 5.7 Les coupes géologiques 71</p>
+    <p class="find">Dans index.html, chercher : <code>image6</code></p>
+  </div></li><li class="">
+  <div class="n">5</div>
+  <div class="th"><img src="assets/media/image8.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image8</code> <span class="ok">position sûre</span>
+    <p class="ctx">…ne : liquide, composé principalement de fer et de nickel. Sa convection génère le champ magnétique terrestre. Le noyau interne : solide malgré des températures extrêmes (~5 000-6 000 °C), car la pression y est colossale.</p>
+    <p class="find">Dans index.html, chercher : <code>image8</code></p>
+  </div></li><li class="sus">
+  <div class="n">6</div>
+  <div class="th"><img src="assets/media/image9.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image9</code> <span class="flag">déplacée ? (wrapNone)</span>
+    <p class="ctx">…aques peuvent se déplacer. Faille inverse — Le compartiment supérieur remonte le long du plan de faille. Fais tourner le bloc pour voir le déplacement. Glisse pour faire tourner le bloc · molette ou pincement pour zoomer</p>
+    <p class="find">Dans index.html, chercher : <code>image9</code></p>
+  </div></li><li class="sus">
+  <div class="n">7</div>
+  <div class="th"><video src="assets/vid/image10.mp4" muted playsinline controls></video></div>
+  <div class="meta">
+    <code>image10</code> <span class="flag">déplacée ? (wrapNone)</span>
+    <p class="ctx">…aques peuvent se déplacer. Faille inverse — Le compartiment supérieur remonte le long du plan de faille. Fais tourner le bloc pour voir le déplacement. Glisse pour faire tourner le bloc · molette ou pincement pour zoomer</p>
+    <p class="find">Dans index.html, chercher : <code>image10</code></p>
+  </div></li><li class="">
+  <div class="n">8</div>
+  <div class="th"><video src="assets/vid/image11.mp4" muted playsinline controls></video></div>
+  <div class="meta">
+    <code>image11</code> <span class="ok">position sûre</span>
+    <p class="ctx">…aques peuvent se déplacer. Faille inverse — Le compartiment supérieur remonte le long du plan de faille. Fais tourner le bloc pour voir le déplacement. Glisse pour faire tourner le bloc · molette ou pincement pour zoomer</p>
+    <p class="find">Dans index.html, chercher : <code>image11</code></p>
+  </div></li><li class="">
+  <div class="n">9</div>
+  <div class="th"><img src="assets/media/image13.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image13</code> <span class="ok">position sûre</span>
+    <p class="ctx">…he. Une roche est un assemblage naturel d’un ou plusieurs minéraux. C’est cet assemblage – sa composition minéralogique, la taille des cristaux, leur agencement – qui détermine le nom de la roche et raconte son histoire.</p>
+    <p class="find">Dans index.html, chercher : <code>image13</code></p>
+  </div></li><li class="">
+  <div class="n">10</div>
+  <div class="th"><img src="assets/media/image14.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image14</code> <span class="ok">position sûre</span>
+    <p class="ctx">… océanique, sombre, fin grain Dolérite Filonien, sombre, grain moyen, dykes océaniques Rhyolite Volcanique, pâle, équivalent volcanique du granite Péridotite Plutonique, manteau supérieur, très sombre, olivine + pyroxène</p>
+    <p class="find">Dans index.html, chercher : <code>image14</code></p>
+  </div></li><li class="">
+  <div class="n">11</div>
+  <div class="th"><img src="assets/media/image15.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image15</code> <span class="ok">position sûre</span>
+    <p class="ctx">…de Quartzite Grès métamorphosé, très dur, ne réagit pas à l&#x27;acide Serpentinite Péridotite hydratée, vert sombre, aspect gras, manteau supérieur Métagabbro Gabbro métamorphosé, reconnaissable aux pyroxènes et plagioclases</p>
+    <p class="find">Dans index.html, chercher : <code>image15</code></p>
+  </div></li><li class="">
+  <div class="n">12</div>
+  <div class="th"><img src="assets/media/image16.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image16</code> <span class="ok">position sûre</span>
+    <p class="ctx">…es : Roches détritiques : formées de fragments de roches transportés et déposés. La taille des grains reflète l&#x27;énergie du milieu de dépôt. Exemples : conglomérat (galet), grès (sable), siltite (silt), argilite (argile).</p>
+    <p class="find">Dans index.html, chercher : <code>image16</code></p>
+  </div></li><li class="">
+  <div class="n">13</div>
+  <div class="th"><img src="assets/media/image17.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image17</code> <span class="ok">position sûre</span>
+    <p class="ctx">…l) en produisant des bulles de CO₂. Roches évaporitiques : précipitées par évaporation d&#x27;eau de mer dans des bassins confinés. Exemples : gypse (dureté 2 sur l&#x27;échelle de Mohs – s&#x27;érafle à l&#x27;ongle), sel gemme, anhydrite.</p>
+    <p class="find">Dans index.html, chercher : <code>image17</code></p>
+  </div></li><li class="sus">
+  <div class="n">14</div>
+  <div class="th"><img src="assets/media/image18.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image18</code> <span class="flag">déplacée ? (wrapSquare)</span>
+    <p class="ctx">… roche magmatique s&#x27;érode → sédiment → roche sédimentaire → enfouie et chauffée → roche métamorphique → fondue → magma → roche magmatique. Ce cycle est continu, mais très lent (millions à centaines de millions d&#x27;années).</p>
+    <p class="find">Dans index.html, chercher : <code>image18</code></p>
+  </div></li><li class="">
+  <div class="n">15</div>
+  <div class="th"><video src="assets/vid/image19.mp4" muted playsinline controls></video></div>
+  <div class="meta">
+    <code>image19</code> <span class="ok">position sûre</span>
+    <p class="ctx">… Roches typiques : basaltes en coussins (pillow lavas), gabbros, péridotites serpentinisées, ophiolites Structures : rift, failles normales, fissures éruptives Exemple actuel : dorsale médio-atlantique, rift Est-africain</p>
+    <p class="find">Dans index.html, chercher : <code>image19</code></p>
+  </div></li><li class="">
+  <div class="n">16</div>
+  <div class="th"><video src="assets/vid/image20.mp4" muted playsinline controls></video></div>
+  <div class="meta">
+    <code>image20</code> <span class="ok">position sûre</span>
+    <p class="ctx">…entale, ou deux croûtes océaniques) : la plaque dense plonge dans le manteau. Fusion partielle → volcanisme d&#x27;arc, formation de roches plutoniques (granitoïdes d&#x27;arc). Métamorphisme haute-pression sur la plaque subduite.</p>
+    <p class="find">Dans index.html, chercher : <code>image20</code></p>
+  </div></li><li class="">
+  <div class="n">17</div>
+  <div class="th"><video src="assets/vid/image21.mp4" muted playsinline controls></video></div>
+  <div class="meta">
+    <code>image21</code> <span class="ok">position sûre</span>
+    <p class="ctx">…nentales) : aucune des deux ne peut facilement plonger (trop légères). La croûte s&#x27;épaissit, se déforme, se plisse, se chevauche → formation d&#x27;une chaîne de montagnes. Métamorphisme régional. C&#x27;est le contexte des Alpes.</p>
+    <p class="find">Dans index.html, chercher : <code>image21</code></p>
+  </div></li><li class="">
+  <div class="n">18</div>
+  <div class="th"><video src="assets/vid/image22.mp4" muted playsinline controls></video></div>
+  <div class="meta">
+    <code>image22</code> <span class="ok">position sûre</span>
+    <p class="ctx">… glissent horizontalement l&#x27;une contre l&#x27;autre. Pas de création ni de destruction de croûte. Structures typiques : failles décrochantes sub-verticales, bassins en pull-apart. Exemple : faille de San Andreas (Californie).</p>
+    <p class="find">Dans index.html, chercher : <code>image22</code></p>
+  </div></li><li class="">
+  <div class="n">19</div>
+  <div class="th"><img src="assets/media/image23.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image23</code> <span class="ok">position sûre</span>
+    <p class="ctx">… glissent horizontalement l&#x27;une contre l&#x27;autre. Pas de création ni de destruction de croûte. Structures typiques : failles décrochantes sub-verticales, bassins en pull-apart. Exemple : faille de San Andreas (Californie).</p>
+    <p class="find">Dans index.html, chercher : <code>image23</code></p>
+  </div></li><li class="">
+  <div class="n">20</div>
+  <div class="th"><img src="assets/media/image24.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image24</code> <span class="ok">position sûre</span>
+    <p class="ctx">… glissent horizontalement l&#x27;une contre l&#x27;autre. Pas de création ni de destruction de croûte. Structures typiques : failles décrochantes sub-verticales, bassins en pull-apart. Exemple : faille de San Andreas (Californie).</p>
+    <p class="find">Dans index.html, chercher : <code>image24</code></p>
+  </div></li><li class="sus">
+  <div class="n">21</div>
+  <div class="th"><img src="assets/media/image25.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image25</code> <span class="flag">déplacée ? (wrapNone)</span>
+    <p class="ctx">…ère · Asthénosphère · Rhéologie · Roche magmatique · Roche sédimentaire · Roche métamorphique · Granite · Basalte · Gabbro · Calcaire · Dolomie · Gypse · Schiste · Gneiss · Divergence · Subduction · Collision · Foliation</p>
+    <p class="find">Dans index.html, chercher : <code>image25</code></p>
+  </div></li><li class="">
+  <div class="n">22</div>
+  <div class="th"><img src="assets/media/image27.jpg" loading="lazy"></div>
+  <div class="meta">
+    <code>image27</code> <span class="ok">position sûre</span>
+    <p class="ctx">…rme aujourd&#x27;hui sur une plage, tu peux interpréter une ride fossilisée dans un grès de 150 millions d&#x27;années. Le mécanisme est le même, seul le temps les sépare. Sans ce principe, une roche sédimentaire resterait muette.</p>
+    <p class="find">Dans index.html, chercher : <code>image27</code></p>
+  </div></li><li class="">
+  <div class="n">23</div>
+  <div class="th"><img src="assets/media/image28.jpg" loading="lazy"></div>
+  <div class="meta">
+    <code>image28</code> <span class="ok">position sûre</span>
+    <p class="ctx">…) Figures et structures sédimentaires Litage, laminations, rides, granoclassement, surfaces particulières (détaillées en 2.2) Contenu paléobiologique Éléments biominéralisés et fossiles · traces fossiles ou ichnofossiles</p>
+    <p class="find">Dans index.html, chercher : <code>image28</code></p>
+  </div></li><li class="">
+  <div class="n">24</div>
+  <div class="th"><img src="assets/media/image29.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image29</code> <span class="ok">position sûre</span>
+    <p class="ctx">…ontrent les trois schémas qui ouvrent chacune des sous-sections ci-dessous. Dans les archives géologiques, il se traduit par des successions de faciès qui enregistrent une évolution systématique du milieu. Les carbonates</p>
+    <p class="find">Dans index.html, chercher : <code>image29</code></p>
+  </div></li><li class="sus">
+  <div class="n">25</div>
+  <div class="th"><img src="assets/media/image30.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image30</code> <span class="flag">déplacée ? (wrapSquare)</span>
+    <p class="ctx">…e cycle des carbonates : le sédiment n&#x27;est pas seulement érodé puis transporté, il est produit sur place , par les organismes et par précipitation chimique. Le transport ne concerne que la fraction bioclastique. Calcaire</p>
+    <p class="find">Dans index.html, chercher : <code>image30</code></p>
+  </div></li><li class="sus">
+  <div class="n">26</div>
+  <div class="th"><img src="assets/media/image31.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image31</code> <span class="flag">déplacée ? (wrapSquare)</span>
+    <p class="ctx">…que (fragments de coquilles visibles), calcaire oolithique (grains sphériques concentriques ~0,5 mm), calcaire noduleux (bancs discontinus en nodules, milieu profond), calcaire massif (bancs épais résistants à l&#x27;érosion)</p>
+    <p class="find">Dans index.html, chercher : <code>image31</code></p>
+  </div></li><li class="">
+  <div class="n">27</div>
+  <div class="th"><img src="assets/media/image32.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image32</code> <span class="ok">position sûre</span>
+    <p class="ctx">…s se délitent facilement en feuillets ou en éclats. Peu compétentes – elles créent des niveaux de glissement potentiels Milieu : plateforme distale à bassin peu profond, dépôt en eaux calmes Les roches silico-détritiques</p>
+    <p class="find">Dans index.html, chercher : <code>image32</code></p>
+  </div></li><li class="">
+  <div class="n">28</div>
+  <div class="th"><img src="assets/media/image33.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image33</code> <span class="ok">position sûre</span>
+    <p class="ctx">…genèse. Ici le sédiment vient d&#x27;ailleurs — il n&#x27;est pas produit sur place. La nomenclature des roches silico-détritiques dépend avant tout de la taille des particules qui les composent (classification d&#x27;Udden-Wentworth).</p>
+    <p class="find">Dans index.html, chercher : <code>image33</code></p>
+  </div></li><li class="sus">
+  <div class="n">29</div>
+  <div class="th"><img src="assets/media/image34.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image34</code> <span class="flag">déplacée ? (wrapSquare)</span>
+    <p class="ctx">…e la taille des particules qui les composent (classification d&#x27;Udden-Wentworth). Classification granulométrique d&#x27;Udden-Wentworth : à chaque classe de taille correspondent un sédiment meuble et une roche consolidée. Grès</p>
+    <p class="find">Dans index.html, chercher : <code>image34</code></p>
+  </div></li><li class="sus">
+  <div class="n">30</div>
+  <div class="th"><img src="assets/media/image35.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image35</code> <span class="flag">déplacée ? (wrapSquare)</span>
+    <p class="ctx">…z, dureté 7) Structures visibles : laminations obliques, rides de courant, granoclassement Milieux : fluviatile (grès grossiers, laminés), littoral (grès bien triés), éolien (grès à grandes laminations obliques en dunes)</p>
+    <p class="find">Dans index.html, chercher : <code>image35</code></p>
+  </div></li><li class="sus">
+  <div class="n">31</div>
+  <div class="th"><img src="assets/media/image36.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image36</code> <span class="flag">déplacée ? (wrapSquare)</span>
+    <p class="ctx">…feuilletage) si légèrement métamorphisée Sur le terrain : l&#x27;argilite tache les doigts, a une texture savonneuse humide et colle légèrement à la langue Milieux : plaine alluviale, lac, bassin marin calme, zone intertidale</p>
+    <p class="find">Dans index.html, chercher : <code>image36</code></p>
+  </div></li><li class="">
+  <div class="n">32</div>
+  <div class="th"><img src="assets/media/image37.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image37</code> <span class="ok">position sûre</span>
+    <p class="ctx">…g transport fluviatile ; galets anguleux → dépôt proche de la source, peu de transport (cône alluvial, éboulis) Milieux : torrents, cônes alluviaux, littoral à haute énergie, base de séquence transgressive Les évaporites</p>
+    <p class="find">Dans index.html, chercher : <code>image37</code></p>
+  </div></li><li class="sus">
+  <div class="n">33</div>
+  <div class="th"><img src="assets/media/image38.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image38</code> <span class="flag">déplacée ? (wrapSquare)</span>
+    <p class="ctx">…ents, cônes alluviaux, littoral à haute énergie, base de séquence transgressive Les évaporites Le cycle des évaporites : le transport se fait en phase dissoute , et le dépôt par précipitation lors de l&#x27;évaporation. Gypse</p>
+    <p class="find">Dans index.html, chercher : <code>image38</code></p>
+  </div></li><li class="sus">
+  <div class="n">34</div>
+  <div class="th"><img src="assets/media/image39.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image39</code> <span class="flag">déplacée ? (wrapSquare)</span>
+    <p class="ctx">…es évaporites associées (sel, anhydrite) sont des niveaux de décollement majeurs. En terrain alpin, le Keuper (Trias supérieur) évaporitique joue souvent ce rôle de « savon » facilitant le glissement des nappes Cargneule</p>
+    <p class="find">Dans index.html, chercher : <code>image39</code></p>
+  </div></li><li class="">
+  <div class="n">35</div>
+  <div class="th"><video src="assets/vid/image40.mp4" muted playsinline controls></video></div>
+  <div class="meta">
+    <code>image40</code> <span class="ok">position sûre</span>
+    <p class="ctx">…t, mais aussi la façon dont il est arrivé là. Comprendre les mécanismes de transport permet de lire directement les figures observées sur le terrain – et inversement, de remonter d&#x27;une figure au courant qui l&#x27;a produite.</p>
+    <p class="find">Dans index.html, chercher : <code>image40</code></p>
+  </div></li><li class="">
+  <div class="n">36</div>
+  <div class="th"><img src="assets/media/image41.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image41</code> <span class="ok">position sûre</span>
+    <p class="ctx">… oscillatoires, liés à l&#x27;action des vagues et de la marée, alternent entre deux directions opposées : ils ne produisent pas de déplacement net des particules à long terme, mais ils remobilisent régulièrement le sédiment.</p>
+    <p class="find">Dans index.html, chercher : <code>image41</code></p>
+  </div></li><li class="">
+  <div class="n">37</div>
+  <div class="th"><img src="assets/media/image42.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image42</code> <span class="ok">position sûre</span>
+    <p class="ctx">…variations brutales lors de crues, de tempêtes ou d&#x27;événements ponctuels. Ces pics d&#x27;énergie expliquent la présence de dépôts grossiers intercalés dans des séries plus fines, ou des successions de faciès très contrastés.</p>
+    <p class="find">Dans index.html, chercher : <code>image42</code></p>
+  </div></li><li class="">
+  <div class="n">38</div>
+  <div class="th"><img src="assets/media/image43.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image43</code> <span class="ok">position sûre</span>
+    <p class="ctx">…plique la présence de niveaux fins dans les milieux calmes ou distaux. Solution : une partie des éléments chimiques voyage dissoute, sans phase solide. C&#x27;est le mode dominant dans les milieux carbonatés et évaporitiques.</p>
+    <p class="find">Dans index.html, chercher : <code>image43</code></p>
+  </div></li><li class="">
+  <div class="n">39</div>
+  <div class="th"><img src="assets/media/image44.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image44</code> <span class="ok">position sûre</span>
+    <p class="ctx">…ritiques. Les modes de transport des particules dans un courant. Le diagramme de Hjulström Ce diagramme relie la vitesse du courant et la taille des grains, et délimite trois domaines : érosion, transport, sédimentation.</p>
+    <p class="find">Dans index.html, chercher : <code>image44</code></p>
+  </div></li><li class="">
+  <div class="n">40</div>
+  <div class="th"><img src="assets/media/image45.jpg" loading="lazy"></div>
+  <div class="meta">
+    <code>image45</code> <span class="ok">position sûre</span>
+    <p class="ctx">…dimentent en micro-avalanches successives sur le versant aval. Ces avalanches construisent des laminations obliques inclinées dans le sens du courant : c&#x27;est le critère de terrain qui permet de restituer un paléocourant.</p>
+    <p class="find">Dans index.html, chercher : <code>image45</code></p>
+  </div></li><li class="">
+  <div class="n">41</div>
+  <div class="th"><img src="assets/media/image46.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image46</code> <span class="ok">position sûre</span>
+    <p class="ctx">…éristiques. Attention : cette succession dépend aussi de la granulométrie. Les mégarides ne se forment pas dans les silts et les sables très fins, et les rides ne se forment pas dans les sables grossiers et les graviers.</p>
+    <p class="find">Dans index.html, chercher : <code>image46</code></p>
+  </div></li><li class="">
+  <div class="n">42</div>
+  <div class="th"><img src="assets/media/image47.jpg" loading="lazy"></div>
+  <div class="meta">
+    <code>image47</code> <span class="ok">position sûre</span>
+    <p class="ctx">…rès forte Le courant est trop intense pour que les mégarides subsistent. Transport par traction et saltation contre le fond. Laminations planes, stries longitudinales (linéation de délit) et figures d&#x27;impact et d&#x27;érosion</p>
+    <p class="find">Dans index.html, chercher : <code>image47</code></p>
+  </div></li><li class="">
+  <div class="n">43</div>
+  <div class="th"><img src="assets/media/image48.jpg" loading="lazy"></div>
+  <div class="meta">
+    <code>image48</code> <span class="ok">position sûre</span>
+    <p class="ctx">…port par traction et saltation contre le fond. Laminations planes, stries longitudinales (linéation de délit) et figures d&#x27;impact et d&#x27;érosion Mégarides et stratifications obliques associées. D&#x27;après Harms et al. (1975).</p>
+    <p class="find">Dans index.html, chercher : <code>image48</code></p>
+  </div></li><li class="">
+  <div class="n">44</div>
+  <div class="th"><img src="assets/media/image49.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image49</code> <span class="ok">position sûre</span>
+    <p class="ctx">… al. (1975). ▶ Animation – Crossbedding, Wind and Water Les figures de courant oscillatoire Comme pour les courants unidirectionnels, les figures produites par les vagues dépendent de l&#x27;intensité du courant oscillatoire.</p>
+    <p class="find">Dans index.html, chercher : <code>image49</code></p>
+  </div></li><li class="">
+  <div class="n">45</div>
+  <div class="th"><img src="assets/media/image50.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image50</code> <span class="ok">position sûre</span>
+    <p class="ctx">…imentation : les laminations obliques sont symétriques, en chevron, et suivent approximativement le contour de la ride. Conséquence pratique : les rides de vagues donnent l&#x27;orientation du paléocourant, mais pas son sens.</p>
+    <p class="find">Dans index.html, chercher : <code>image50</code></p>
+  </div></li><li class="">
+  <div class="n">46</div>
+  <div class="th"><img src="assets/media/image51.jpg" loading="lazy"></div>
+  <div class="meta">
+    <code>image51</code> <span class="ok">position sûre</span>
+    <p class="ctx">…s d&#x27;une turbidite ou d&#x27;une crue. Critère de polarité : le grain le plus grossier est à la base – c&#x27;est donc le bas du banc. Milieu : turbidites (dépôts de courants de turbidité en milieu profond), cônes alluviaux, crues.</p>
+    <p class="find">Dans index.html, chercher : <code>image51</code></p>
+  </div></li><li class="">
+  <div class="n">47</div>
+  <div class="th"><img src="assets/media/image52.jpg" loading="lazy"></div>
+  <div class="meta">
+    <code>image52</code> <span class="ok">position sûre</span>
+    <p class="ctx">… fossiles condensés (accumulation de fossiles de plusieurs niveaux). Critère de polarité : les perforations d&#x27;organismes foreurs s&#x27;enfoncent vers le bas, depuis la surface – elles indiquent donc le sommet du banc induré.</p>
+    <p class="find">Dans index.html, chercher : <code>image52</code></p>
+  </div></li><li class="">
+  <div class="n">48</div>
+  <div class="th"><img src="assets/media/image53.jpg" loading="lazy"></div>
+  <div class="meta">
+    <code>image53</code> <span class="ok">position sûre</span>
+    <p class="ctx">…on sont sub-horizontaux. S&#x27;ils sont verticaux ou fortement inclinés, c&#x27;est que la série a été basculée ou que des stylolithes tectoniques se sont développés. Ils te disent que la série a été déformée, pas où est le haut.</p>
+    <p class="find">Dans index.html, chercher : <code>image53</code></p>
+  </div></li><li class="">
+  <div class="n">49</div>
+  <div class="th"><img src="assets/media/image54.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image54</code> <span class="ok">position sûre</span>
+    <p class="ctx">…e inférieure des bancs, en relief. Elles sont particulièrement fréquentes dans les séries turbiditiques, où chaque banc gréseux repose sur les argiles du dépôt précédent – un contexte omniprésent dans la région de Digne.</p>
+    <p class="find">Dans index.html, chercher : <code>image54</code></p>
+  </div></li><li class="sus">
+  <div class="n">50</div>
+  <div class="th"><img src="assets/media/image55.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image55</code> <span class="flag">déplacée ? (wrapSquare)</span>
+    <p class="ctx">… en amont, effilée en aval ; le sable la moule. B. Load casts : sans courant, le sable dense s&#x27;enfonce par gravité dans la boue gorgée d&#x27;eau, qui remonte en flammes entre les lobes. Flute casts (moulages d&#x27;affouillement)</p>
+    <p class="find">Dans index.html, chercher : <code>image55</code></p>
+  </div></li><li class="sus">
+  <div class="n">51</div>
+  <div class="th"><img src="assets/media/image56.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image56</code> <span class="flag">déplacée ? (wrapSquare)</span>
+    <p class="ctx">…paléocourant : le bourrelet arrondi pointe vers l&#x27;amont, la queue effilée vers l&#x27;aval. Le flute cast est ainsi l&#x27;un des rares critères qui donne à la fois la polarité et le sens du courant. Load casts (figures de charge)</p>
+    <p class="find">Dans index.html, chercher : <code>image56</code></p>
+  </div></li><li class="sus">
+  <div class="n">52</div>
+  <div class="th"><img src="assets/media/image57.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image57</code> <span class="flag">déplacée ? (wrapSquare)</span>
+    <p class="ctx">…&#x27;enfoncent vers le bas, les flammes d&#x27;argile pointent vers le haut. Le critère reste lisible même dans une série renversée. Attention : contrairement aux flute casts, les figures de charge ne donnent pas le paléocourant.</p>
+    <p class="find">Dans index.html, chercher : <code>image57</code></p>
+  </div></li><li class="">
+  <div class="n">53</div>
+  <div class="th"><img src="assets/media/image58.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image58</code> <span class="ok">position sûre</span>
+    <p class="ctx">…le haut, où elles s&#x27;évasent. Signification : émersion temporaire – le fond était exondé. Milieu de plaine alluviale, lagon peu profond, sebkha. Critère de polarité : les fentes s&#x27;élargissent vers le haut stratigraphique.</p>
+    <p class="find">Dans index.html, chercher : <code>image58</code></p>
+  </div></li><li class="">
+  <div class="n">54</div>
+  <div class="th"><img src="assets/media/image59.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image59</code> <span class="ok">position sûre</span>
+    <p class="ctx">…cation : émersion temporaire – le fond était exondé. Milieu de plaine alluviale, lagon peu profond, sebkha. Critère de polarité : les fentes s&#x27;élargissent vers le haut stratigraphique. Fentes de dessiccation polygonales.</p>
+    <p class="find">Dans index.html, chercher : <code>image59</code></p>
+  </div></li><li class="">
+  <div class="n">55</div>
+  <div class="th"><img src="assets/media/image60.jpg" loading="lazy"></div>
+  <div class="meta">
+    <code>image60</code> <span class="ok">position sûre</span>
+    <p class="ctx">…s autres structures sédimentaires. Zoophycos : trace en spirale ou en éventail produite par un organisme fouisseur en milieu marin calme et profond. Très caractéristique des milieux marno-calcaires de plateforme distale.</p>
+    <p class="find">Dans index.html, chercher : <code>image60</code></p>
+  </div></li><li class="">
+  <div class="n">56</div>
+  <div class="th"><img src="assets/media/image61.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image61</code> <span class="ok">position sûre</span>
+    <p class="ctx">…nité, oxygénation), les fossiles présents et les structures sédimentaires qui s&#x27;y forment. En reconstituant la succession des milieux de dépôt à travers le temps, on reconstitue l&#x27;histoire paléogéographique d&#x27;une région.</p>
+    <p class="find">Dans index.html, chercher : <code>image61</code></p>
+  </div></li><li class="">
+  <div class="n">57</div>
+  <div class="th"><img src="assets/media/image62.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image62</code> <span class="ok">position sûre</span>
+    <p class="ctx">…charge se dépose sur le continent, l&#x27;autre atteint l&#x27;océan. Le type de système dépend surtout de la distance au relief : cônes alluviaux au pied des montagnes, puis systèmes en tresses et enfin méandriformes vers l&#x27;aval.</p>
+    <p class="find">Dans index.html, chercher : <code>image62</code></p>
+  </div></li><li class="">
+  <div class="n">58</div>
+  <div class="th"><img src="assets/media/image63.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image63</code> <span class="ok">position sûre</span>
+    <p class="ctx">…ébris ou de boue, processus assez énergétiques pour transporter des blocs ; en aval, ils s&#x27;organisent en couches plus ou moins parallèles, accumulées lors des crues qui redistribuent les matériaux sur la surface du cône.</p>
+    <p class="find">Dans index.html, chercher : <code>image63</code></p>
+  </div></li><li class="">
+  <div class="n">59</div>
+  <div class="th"><img src="assets/media/image64.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image64</code> <span class="ok">position sûre</span>
+    <p class="ctx">…condaires contournant des îlots sableux ou graveleux. Bancs longitudinaux, aggradation verticale. Anastomosé – Plusieurs chenaux stables se séparent et se rejoignent dans la plaine alluviale, formant un réseau permanent.</p>
+    <p class="find">Dans index.html, chercher : <code>image64</code></p>
+  </div></li><li class="">
+  <div class="n">60</div>
+  <div class="th"><img src="assets/media/image65.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image65</code> <span class="ok">position sûre</span>
+    <p class="ctx">…ion chenal → berge → plaine d&#x27;inondation constitue la base de la lecture d&#x27;un affleurement fluviatile : elle permet de comprendre la dynamique du cours d&#x27;eau, la répartition des faciès et l&#x27;évolution du paysage alluvial.</p>
+    <p class="find">Dans index.html, chercher : <code>image65</code></p>
+  </div></li><li class="">
+  <div class="n">61</div>
+  <div class="th"><img src="assets/media/image66.jpg" loading="lazy"></div>
+  <div class="meta">
+    <code>image66</code> <span class="ok">position sûre</span>
+    <p class="ctx">…ant unidirectionnel, milieu fluviatile Base de banc érosive, géométrie de chenal → rivière Absence totale de fossiles marins Fentes de dessiccation dans les argiles → exposition à l&#x27;air, milieu très peu profond ou émergé</p>
+    <p class="find">Dans index.html, chercher : <code>image66</code></p>
+  </div></li><li class="">
+  <div class="n">62</div>
+  <div class="th"><img src="assets/media/image67.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image67</code> <span class="ok">position sûre</span>
+    <p class="ctx">…es plaines abyssales. Chacun possède une terminologie propre – et il faut savoir que plusieurs vocabulaires coexistent, selon que l&#x27;on décrit la profondeur, la position par rapport aux marées ou le type de sédimentation.</p>
+    <p class="find">Dans index.html, chercher : <code>image67</code></p>
+  </div></li><li class="">
+  <div class="n">63</div>
+  <div class="th"><img src="assets/media/image68.gif" loading="lazy"></div>
+  <div class="meta">
+    <code>image68</code> <span class="ok">position sûre</span>
+    <p class="ctx">…la morphologie du plateau continental, l&#x27;hydrodynamisme (vagues, houle, marées) et la production de l&#x27;« usine à carbonates », c&#x27;est-à-dire l&#x27;ensemble des organismes et des processus qui fabriquent le carbonate sur place.</p>
+    <p class="find">Dans index.html, chercher : <code>image68</code></p>
+  </div></li><li class="">
+  <div class="n">64</div>
+  <div class="th"><img src="assets/media/image69.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image69</code> <span class="ok">position sûre</span>
+    <p class="ctx">…térieur d&#x27;un continent. Dans tous les cas sauf le banc isolé, la proximité du continent apporte sédiments terrigènes, eau douce, nutriments et matière organique – autant de facteurs qui limitent la production carbonatée.</p>
+    <p class="find">Dans index.html, chercher : <code>image69</code></p>
+  </div></li><li class="sus">
+  <div class="n">65</div>
+  <div class="th"><img src="assets/media/image70.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image70</code> <span class="flag">déplacée ? (wrapNone)</span>
+    <p class="ctx">…fluviatile · Cône alluvial · Barre de méandre · Plaine d&#x27;inondation · Lacustre · Continental oxydant · Néritique · Bathyal · Abyssal · Intertidal · Subtidal · Plateforme carbonatée · Rampe · Hémipélagique · Terres noires</p>
+    <p class="find">Dans index.html, chercher : <code>image70</code></p>
+  </div></li><li class="">
+  <div class="n">66</div>
+  <div class="th"><img src="assets/media/image72.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image72</code> <span class="ok">position sûre</span>
+    <p class="ctx">…ale : elles ont été plissées, fracturées, chevauchées, parfois retournées. Comprendre ces déformations est indispensable pour lire une carte géologique, construire une coupe, et interpréter ce que tu vois sur le terrain.</p>
+    <p class="find">Dans index.html, chercher : <code>image72</code></p>
+  </div></li><li class="">
+  <div class="n">67</div>
+  <div class="th"><img src="assets/media/image73.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image73</code> <span class="ok">position sûre</span>
+    <p class="ctx">…de laquelle s&#x27;est produit le glissement. Il peut être plan ou légèrement courbe. Toit (&quot;Hanging wall&quot;) : bloc situé au-dessus du plan de faille incliné. Mur (&quot;Footwall&quot;) : bloc situé en dessous du plan de faille incliné.</p>
+    <p class="find">Dans index.html, chercher : <code>image73</code></p>
+  </div></li><li class="">
+  <div class="n">68</div>
+  <div class="th"><img src="assets/media/image74.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image74</code> <span class="ok">position sûre</span>
+    <p class="ctx">…zontal (déplacement latéral) et le rejet vertical (déplacement en hauteur). Stries de faille : rainures ou cannelures gravées sur le plan de faille par le glissement. Elles indiquent la direction et le sens du mouvement.</p>
+    <p class="find">Dans index.html, chercher : <code>image74</code></p>
+  </div></li><li class="">
+  <div class="n">69</div>
+  <div class="th"><img src="assets/media/image78.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image78</code> <span class="ok">position sûre</span>
+    <p class="ctx">…e de la faille : les couches sont souvent courbées (drag fold) près du plan de faille, dans le sens du mouvement Décalage de marqueurs géologiques observables de part et d&#x27;autre (filon, banc repère, contact lithologique)</p>
+    <p class="find">Dans index.html, chercher : <code>image78</code></p>
+  </div></li><li class="">
+  <div class="n">70</div>
+  <div class="th"><video src="assets/vid/image79.mp4" muted playsinline controls></video></div>
+  <div class="meta">
+    <code>image79</code> <span class="ok">position sûre</span>
+    <p class="ctx">…euses qui produit une courbure. Les plis se forment lorsque les roches, soumises à une compression, se déforment de façon plastique plutôt que de rompre. Ils sont caractéristiques des zones de collision, comme les Alpes.</p>
+    <p class="find">Dans index.html, chercher : <code>image79</code></p>
+  </div></li><li class="">
+  <div class="n">71</div>
+  <div class="th"><img src="assets/media/image80.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image80</code> <span class="ok">position sûre</span>
+    <p class="ctx">…ec les couches. Elle est parallèle à la charnière. Plongement de l&#x27;axe (plunge) : inclinaison de l&#x27;axe du pli par rapport à l&#x27;horizontale. Un pli peut avoir un axe horizontal (pli cylindrique) ou incliné (pli plongeant).</p>
+    <p class="find">Dans index.html, chercher : <code>image80</code></p>
+  </div></li><li class="">
+  <div class="n">72</div>
+  <div class="th"><img src="assets/media/image81.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image81</code> <span class="ok">position sûre</span>
+    <p class="ctx">… du pli (dans la charnière). La courbure est convexe vers le haut. Synclinal : pli dont les flancs convergent vers le haut – les couches les plus récentes se trouvent au cœur du pli. La courbure est concave vers le haut.</p>
+    <p class="find">Dans index.html, chercher : <code>image81</code></p>
+  </div></li><li class="">
+  <div class="n">73</div>
+  <div class="th"><img src="assets/media/image82.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image82</code> <span class="ok">position sûre</span>
+    <p class="ctx">…, les couches sont-elles plus récentes que celles des flancs ? → Synclinal Pour déterminer l&#x27;âge relatif des couches, utilise les critères de polarité stratigraphique (partie 2.2) et, si possible, le contenu en fossiles.</p>
+    <p class="find">Dans index.html, chercher : <code>image82</code></p>
+  </div></li><li class="">
+  <div class="n">74</div>
+  <div class="th"><img src="assets/media/image83.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image83</code> <span class="ok">position sûre</span>
+    <p class="ctx">…couches du flanc inférieur présentent une polarité inverse (les plus vieilles sont au-dessus des plus récentes sur ce flanc). C&#x27;est une configuration très fréquente en terrain alpin, produite par une compression intense.</p>
+    <p class="find">Dans index.html, chercher : <code>image83</code></p>
+  </div></li><li class="">
+  <div class="n">75</div>
+  <div class="th"><img src="assets/media/image84.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image84</code> <span class="ok">position sûre</span>
+    <p class="ctx">…polarité pour confirmer. Série normale : couches de plus en plus jeunes vers le haut stratigraphique Série inverse : couches de plus en plus vieilles vers le haut stratigraphique – signal d&#x27;un flanc inverse de pli couché</p>
+    <p class="find">Dans index.html, chercher : <code>image84</code></p>
+  </div></li><li class="">
+  <div class="n">76</div>
+  <div class="th"><img src="assets/media/image85.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image85</code> <span class="ok">position sûre</span>
+    <p class="ctx">…polarité pour confirmer. Série normale : couches de plus en plus jeunes vers le haut stratigraphique Série inverse : couches de plus en plus vieilles vers le haut stratigraphique – signal d&#x27;un flanc inverse de pli couché</p>
+    <p class="find">Dans index.html, chercher : <code>image85</code></p>
+  </div></li><li class="">
+  <div class="n">77</div>
+  <div class="th"><img src="assets/media/image86.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image86</code> <span class="ok">position sûre</span>
+    <p class="ctx">…la nappe s&#x27;est mise en place, qui n&#x27;a pas (ou peu) bougé. Niveau de décollement : le niveau stratigraphique faible qui a servi de plan de glissement. En terrain alpin, le Trias évaporitique (Keuper) joue souvent ce rôle.</p>
+    <p class="find">Dans index.html, chercher : <code>image86</code></p>
+  </div></li><li class="">
+  <div class="n">78</div>
+  <div class="th"><video src="assets/vid/image87.mp4" muted playsinline controls></video></div>
+  <div class="meta">
+    <code>image87</code> <span class="ok">position sûre</span>
+    <p class="ctx">…pile sédimentaire originale, parfois très différente de celle de l&#x27;autochtone sous-jacent – c&#x27;est ce qui crée des contacts géologiques « impossibles » (des roches très anciennes directement sur des roches très récentes).</p>
+    <p class="find">Dans index.html, chercher : <code>image87</code></p>
+  </div></li><li class="">
+  <div class="n">79</div>
+  <div class="th"><img src="assets/media/image88.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image88</code> <span class="ok">position sûre</span>
+    <p class="ctx">…ur une carte, la demi-fenêtre est ouverte d&#x27;un côté. Klippe : l&#x27;inverse de la fenêtre – un lambeau de nappe isolé par l&#x27;érosion, entouré de toutes parts par l&#x27;autochtone. C&#x27;est un « îlot » de nappe posé sur l&#x27;autochtone.</p>
+    <p class="find">Dans index.html, chercher : <code>image88</code></p>
+  </div></li><li class="">
+  <div class="n">80</div>
+  <div class="th"><img src="assets/media/image89.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image89</code> <span class="ok">position sûre</span>
+    <p class="ctx">…ans la sédimentation, c&#x27;est-à-dire une lacune de temps entre deux ensembles de couches : entre elles, la sédimentation s&#x27;est arrêtée pendant un temps plus ou moins long, parfois accompagnée d&#x27;érosion, avant de reprendre.</p>
+    <p class="find">Dans index.html, chercher : <code>image89</code></p>
+  </div></li><li class="">
+  <div class="n">81</div>
+  <div class="th"><video src="assets/vid/image90.mp4" muted playsinline controls></video></div>
+  <div class="meta">
+    <code>image90</code> <span class="ok">position sûre</span>
+    <p class="ctx">… surface : le plissement a créé un relief, qui s&#x27;est ensuite aplani par érosion, avant que la sédimentation ne reprenne par-dessus. La surface de discordance n&#x27;est donc qu&#x27;une surface d&#x27;érosion, jamais un plan de faille.</p>
+    <p class="find">Dans index.html, chercher : <code>image90</code></p>
+  </div></li><li class="sus">
+  <div class="n">82</div>
+  <div class="th"><img src="assets/media/image91.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image91</code> <span class="flag">déplacée ? (wrapNone)</span>
+    <p class="ctx">…i déversé · Pli couché · Série normale · Série inverse · Nappe de charriage · Allochtone · Autochtone · Niveau de décollement · Fenêtre tectonique · Demi-fenêtre · Klippe · Contact tectonique · Propagation de l&#x27;orogenèse</p>
+    <p class="find">Dans index.html, chercher : <code>image91</code></p>
+  </div></li><li class="">
+  <div class="n">83</div>
+  <div class="th"><img src="assets/media/image93.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image93</code> <span class="ok">position sûre</span>
+    <p class="ctx">…s pour comprendre ce que tu vas observer sur le terrain. Pas de détails sur une localité particulière – seulement les clés de lecture générales de l&#x27;ensemble de la chaîne. 4.1 Formation des Alpes – du Trias à aujourd&#x27;hui</p>
+    <p class="find">Dans index.html, chercher : <code>image93</code></p>
+  </div></li><li class="">
+  <div class="n">84</div>
+  <div class="th"><img src="assets/media/image94.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image94</code> <span class="ok">position sûre</span>
+    <p class="ctx">…ollision continentale : les nappes s&#x27;empilent à l&#x27;est Oligocène ~34–23 Ma Le bassin s&#x27;effondre sous la charge des nappes Miocène à aujourd&#x27;hui ~23–0 Ma La déformation atteint les zones externes, puis la chaîne se soulève</p>
+    <p class="find">Dans index.html, chercher : <code>image94</code></p>
+  </div></li><li class="sus">
+  <div class="n">85</div>
+  <div class="th"><img src="assets/media/image95.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image95</code> <span class="flag">déplacée ? (wrapNone)</span>
+    <p class="ctx">…ù retrouver ses traces aujourd’hui (ophiolites) Mots-clés à maîtriser Téthys alpine · Rift · Subduction · Collision · Métamorphisme haute pression · Schistes bleus · Éclogite · Trilogie germanique · Niveau de décollement</p>
+    <p class="find">Dans index.html, chercher : <code>image95</code></p>
+  </div></li><li class="">
+  <div class="n">86</div>
+  <div class="th"><img src="assets/media/image97.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image97</code> <span class="ok">position sûre</span>
+    <p class="ctx">…on secteur, le groupe entier observe et discute ensemble un log stratigraphique de référence pour la région : c’est la colonne des unités, avec leur âge et leurs caractères, sur laquelle tout le monde s’appuiera ensuite.</p>
+    <p class="find">Dans index.html, chercher : <code>image97</code></p>
+  </div></li><li class="">
+  <div class="n">87</div>
+  <div class="th"><img src="assets/media/image98.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image98</code> <span class="ok">position sûre</span>
+    <p class="ctx">…données personnelle. Un bon carnet te permettra de reconstruire ta journée des semaines plus tard et de localiser chaque observation à son arrêt exact. Il est la base indispensable à toute cartographie, numérique ou non.</p>
+    <p class="find">Dans index.html, chercher : <code>image98</code></p>
+  </div></li><li class="sus">
+  <div class="n">88</div>
+  <div class="th"><img src="assets/media/image99.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image99</code> <span class="flag">déplacée ? (wrapNone)</span>
+    <p class="ctx">…é perpendiculairement à la direction de pendage. Exprimé en degrés, de 0° à 90°. Notation complète : Direction de pendage/Pendage. Exemple : 130°∠30° = la couche plonge vers l’azimut 130°, avec l’angle de pendage de 30°.</p>
+    <p class="find">Dans index.html, chercher : <code>image99</code></p>
+  </div></li><li class="">
+  <div class="n">89</div>
+  <div class="th"><img src="assets/media/image100.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image100</code> <span class="ok">position sûre</span>
+    <p class="ctx">…é perpendiculairement à la direction de pendage. Exprimé en degrés, de 0° à 90°. Notation complète : Direction de pendage/Pendage. Exemple : 130°∠30° = la couche plonge vers l’azimut 130°, avec l’angle de pendage de 30°.</p>
+    <p class="find">Dans index.html, chercher : <code>image100</code></p>
+  </div></li><li class="">
+  <div class="n">90</div>
+  <div class="th"><img src="assets/media/image101.jpg" loading="lazy"></div>
+  <div class="meta">
+    <code>image101</code> <span class="ok">position sûre</span>
+    <p class="ctx">…comporte une boussole magnétique pour mesurer la direction de pendage et un clinomètre interne (niveau à bulle inclinable) pour mesurer le pendage. Les deux mesures se font en deux étapes successives sur la même surface.</p>
+    <p class="find">Dans index.html, chercher : <code>image101</code></p>
+  </div></li><li class="">
+  <div class="n">91</div>
+  <div class="th"><img src="assets/media/image102.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image102</code> <span class="ok">position sûre</span>
+    <p class="ctx">…comporte une boussole magnétique pour mesurer la direction de pendage et un clinomètre interne (niveau à bulle inclinable) pour mesurer le pendage. Les deux mesures se font en deux étapes successives sur la même surface.</p>
+    <p class="find">Dans index.html, chercher : <code>image102</code></p>
+  </div></li><li class="">
+  <div class="n">92</div>
+  <div class="th"><img src="assets/media/image103.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image103</code> <span class="ok">position sûre</span>
+    <p class="ctx">…uis et notes texte au même endroit. Elle ne remplace pas la compréhension – elle accélère la saisie et garantit la géolocalisation automatique de chaque mesure. Ressource vidéo – le geste à la boussole et FieldMove Clino</p>
+    <p class="find">Dans index.html, chercher : <code>image103</code></p>
+  </div></li><li class="">
+  <div class="n">93</div>
+  <div class="th"><img src="assets/media/image104.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image104</code> <span class="ok">position sûre</span>
+    <p class="ctx">…droit. Elle ne remplace pas la compréhension – elle accélère la saisie et garantit la géolocalisation automatique de chaque mesure. Ressource vidéo – le geste à la boussole et FieldMove Clino https://youtu.be/PQUfpKIfbN0</p>
+    <p class="find">Dans index.html, chercher : <code>image104</code></p>
+  </div></li><li class="">
+  <div class="n">94</div>
+  <div class="th"><video src="assets/vid/image105.mp4" muted playsinline controls></video></div>
+  <div class="meta">
+    <code>image105</code> <span class="ok">position sûre</span>
+    <p class="ctx">… boussole et FieldMove Clino https://youtu.be/PQUfpKIfbN0 https://youtu.be/XIejEV6EKGQ . Ressource en ligne pour jouer et mieux comprendre la relation entre géologie, topographie et mesures https://www.visiblegeology.com</p>
+    <p class="find">Dans index.html, chercher : <code>image105</code></p>
+  </div></li><li class="sus">
+  <div class="n">95</div>
+  <div class="th"><img src="assets/media/image106.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image106</code> <span class="flag">déplacée ? (wrapNone)</span>
+    <p class="ctx">…t ensuite de tracer les limites entre unités et de les colorer. Elle se construit progressivement, au fur et à mesure de la journée : ce n’est pas un exercice de fin de stage, mais un document que tu remplis en marchant.</p>
+    <p class="find">Dans index.html, chercher : <code>image106</code></p>
+  </div></li><li class="">
+  <div class="n">96</div>
+  <div class="th"><img src="assets/media/image107.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image107</code> <span class="ok">position sûre</span>
+    <p class="ctx">… le sachet. Reporte ce numéro dans le carnet avec le numéro d’arrêt, les coordonnées et une brève description. Un échantillon non étiqueté sur le moment se mélange vite avec les autres et devient inexploitable au retour.</p>
+    <p class="find">Dans index.html, chercher : <code>image107</code></p>
+  </div></li><li class="sus">
+  <div class="n">97</div>
+  <div class="th"><img src="assets/media/image108.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image108</code> <span class="flag">déplacée ? (wrapNone)</span>
+    <p class="ctx">…n de pendage et le pendage à la boussole-clinomètre (5.3) ou avec FieldMove Clino (5.4), puis place le symbole conventionnel correspondant directement sur la minute, au point exact de la mesure, avec sa valeur en degrés.</p>
+    <p class="find">Dans index.html, chercher : <code>image108</code></p>
+  </div></li><li class="">
+  <div class="n">98</div>
+  <div class="th"><img src="assets/media/image110.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image110</code> <span class="ok">position sûre</span>
+    <p class="ctx">…n de pendage et le pendage à la boussole-clinomètre (5.3) ou avec FieldMove Clino (5.4), puis place le symbole conventionnel correspondant directement sur la minute, au point exact de la mesure, avec sa valeur en degrés.</p>
+    <p class="find">Dans index.html, chercher : <code>image110</code></p>
+  </div></li><li class="sus">
+  <div class="n">99</div>
+  <div class="th"><img src="assets/media/image106.jpeg" loading="lazy"></div>
+  <div class="meta">
+    <code>image106</code> <span class="flag">déplacée ? (wrapNone)</span>
+    <p class="ctx">…nute progressivement plutôt qu’en fin de journée : cela permet de repérer tout de suite une incohérence (deux couleurs qui se touchent sans limite tracée, par exemple) pendant que l’affleurement est encore sous les yeux.</p>
+    <p class="find">Dans index.html, chercher : <code>image106</code></p>
+  </div></li><li class="">
+  <div class="n">100</div>
+  <div class="th"><img src="assets/media/image111.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image111</code> <span class="ok">position sûre</span>
+    <p class="ctx">…nute progressivement plutôt qu’en fin de journée : cela permet de repérer tout de suite une incohérence (deux couleurs qui se touchent sans limite tracée, par exemple) pendant que l’affleurement est encore sous les yeux.</p>
+    <p class="find">Dans index.html, chercher : <code>image111</code></p>
+  </div></li><li class="">
+  <div class="n">101</div>
+  <div class="th"><img src="assets/media/image112.png" loading="lazy"></div>
+  <div class="meta">
+    <code>image112</code> <span class="ok">position sûre</span>
+    <p class="ctx">…nt par la couche la plus récente dont tu connais le toit sur toute sa longueur. Complète avec la légende (un figuré conventionnel par lithologie, cohérent avec celui de la carte) et les échelles horizontale et verticale.</p>
+    <p class="find">Dans index.html, chercher : <code>image112</code></p>
+  </div></li></ul></body></html>
