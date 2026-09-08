@@ -428,7 +428,7 @@ th{background:var(--paper-2);font-weight:600}
 <td colspan="2"><strong>Savoirs disciplinaires</strong></td>
 </tr>
 <tr class="odd">
-<td>Je comprends la stratigraphie, la tectonique et l’histoire géologique de la demi-fenêtre de Digne</td>
+<td>Je comprends la stratigraphie, la tectonique et l’histoire géologique de la demi-fenêtre de Barles</td>
 <td>☐</td>
 </tr>
 <tr class="even">
@@ -2367,7 +2367,7 @@ th{background:var(--paper-2);font-weight:600}
 <thead>
 <tr class="header">
 <th><p><strong>Mots-clés à maîtriser</strong></p>
-<p>Direction de pendage · Pendage · Azimut · Clinomètre · Arrêt · Carnet de terrain · FieldMove Clino · Magnétomètre · Accéléromètre · GPS · Calibration · Symbole de pendage · Foliation · Plan de faille · Localité · Mesure planaire · Minute de terrain · Territoire · Affleurement · Log stratigraphique · Échantillon · Limite géologique · Légende · Coupe géologique</p></th>
+<p>Direction de pendage · Pendage · Azimut · Clinomètre · Arrêt · Carnet de terrain · FieldMove Clino · GPS · Calibration · Symbole de pendage · Foliation · Plan de faille · Localité · Mesure planaire · Minute de terrain · Territoire · Affleurement · Log stratigraphique · Échantillon · Limite géologique · Légende · Coupe géologique</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2383,6 +2383,21 @@ th{background:var(--paper-2);font-weight:600}
 </div>
 
 <script src="assets/js/model-viewer.min.js" type="module"></script>
+<script>
+(function () {
+  const norm = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                    .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const cibles = [...document.querySelectorAll('[id]')];
+  document.querySelectorAll('.toc a[href^="#"]').forEach(a => {
+    const cle = decodeURIComponent(a.getAttribute('href').slice(1));
+    if (document.getElementById(cle)) return;              // ce lien marche déjà
+    let h = cibles.find(el => norm(el.id) === norm(cle));   // même id, accents en moins
+    if (!h) h = cibles.find(el => /^H[1-6]$/.test(el.tagName)
+                              && norm(el.textContent) === norm(a.textContent));
+    if (h) a.setAttribute('href', '#' + h.id);
+  });
+})();
+</script>
 <script>
 // Sidebar toggle for narrow screens
 const btn = document.querySelector('.nav-toggle');
